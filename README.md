@@ -1,7 +1,7 @@
 <div align="center">
   <br>
 
-  <a href="https://github.com/MATBEO/PLAT-OSIA">
+  <a href="https://matbeo.github.io/PLAT-OSIA/">
     <img src="assets/images/All_Color.png" width="600">
   </a>
 
