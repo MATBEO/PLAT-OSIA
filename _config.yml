@@ -215,7 +215,7 @@ click_to_top:
 # set follow_site_theme true to make utterances' theme follow the site's
 
 utterances:
-   repo: "owner/repo"
+   repo: "MATBEO/PLAT-OSIA"
    issue_term: "title"
    label: "utterances comment"
    theme: "github-light"
