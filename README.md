@@ -2,7 +2,7 @@
   <br>
 
   <a href="https://github.com/MATBEO/PLAT-OSIA">
-    <img src="https://github.com/MATBEO/PLAT-OSIA/assets/images/All_Color.png" width="600">
+    <img src="assets/images/All_Color.png" width="600">
   </a>
 
   <h1>PLAT-OSIA</h1>
