@@ -6,7 +6,9 @@
   </a>
 
   <h1>PLAT-OSIA</h1>
+</div>
 
+<div align="left">
 ## <img src="assets/images/visualisation.svg" width="100"> Visualisation
 
 ## <img src="assets/images/cell.svg" width="100"> Cell
@@ -18,7 +20,7 @@
 ## <img src="assets/images/pattern.svg" width="100"> Pattern
 
 ## <img src="assets/images/align.svg" width="100"> Align
-
-
-
 </div>
+
+
+
