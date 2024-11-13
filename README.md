@@ -9,17 +9,18 @@
 </div>
 
 <div align="left">
-## <img src="assets/images/visualisation.svg" width="100"> Visualisation
+<br>
+## <img src="assets/images/visualisation.svg" width="50"> Visualisation
 
-## <img src="assets/images/cell.svg" width="100"> Cell
+## <img src="assets/images/cell.svg" width="50"> Cell
 
-## <img src="assets/images/cluster.svg" width="100"> Cluster
+## <img src="assets/images/cluster.svg" width="50"> Cluster
 
-## <img src="assets/images/multiplex.svg" width="100"> Multiplex
+## <img src="assets/images/multiplex.svg" width="50"> Multiplex
 
-## <img src="assets/images/pattern.svg" width="100"> Pattern
+## <img src="assets/images/pattern.svg" width="50"> Pattern
 
-## <img src="assets/images/align.svg" width="100"> Align
+## <img src="assets/images/align.svg" width="50"> Align
 </div>
 
 
