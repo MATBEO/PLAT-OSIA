@@ -7,7 +7,7 @@
 
   <h1>PLAT-OSIA</h1>
 
-## <img src="assets/images/visulisation.svg" width="100"> Visualisation
+## <img src="assets/images/visualisation.svg" width="100"> Visualisation
 
 ## <img src="assets/images/cell.svg" width="100"> Cell
 
