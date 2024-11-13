@@ -218,8 +218,7 @@ utterances:
    repo: "MATBEO/PLAT-OSIA"
    issue_term: "title"
    label: "utterances comment"
-#   theme: "github-light"
-   remote_theme: "jeffreytse/jekyll-theme-yat"
+   theme: "jekyll-theme-yat"
    follow_site_theme: true
 
 # Build settings
