@@ -20,6 +20,9 @@
 
 <h2><img src="assets/images/pattern.svg" width="50"> Pattern</h2>
 
+<h3>detection object / classe</h3>
+<h3>detection pixel</h3>
+
 <h2><img src="assets/images/align.svg" width="50"> Align</h2>
 
 </div>
