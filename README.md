@@ -24,6 +24,8 @@
 
   <h3>detection object / classe</h3>
   <h3>detection pixel</h3>
+  <h3>deconvolution couleur IHC pour multiplex</h3>
+
 
 <h2><img src="assets/images/align.svg" width="50"> Align</h2>
 
