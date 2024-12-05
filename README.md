@@ -13,16 +13,17 @@
 <h2><img src="assets/images/visualisation.svg" width="50"> Visualisation</h2>
 
   <h3>geojson extraction</h3>
+  ```java
   // Define output where to save annotations
-def pathOutput = buildFilePath('PATH_TO_SAVE', 'Annotations')
-print pathOutput
-mkdirs(pathOutput)
+  def pathOutput = buildFilePath('PATH_TO_SAVE', 'Annotations')
+  print pathOutput
+  mkdirs(pathOutput)
 
-// To get all image of the project -> in order to run the scripts on all function (if no project: just getCurrentImageData() and remove the loop)
-def project = getProject()
+  // To get all image of the project -> in order to run the scripts on all function (if no project: just getCurrentImageData() and remove the loop)
+  def project = getProject()
 
-// loop over all image
-for (img in project.getImageList()) {
+  // loop over all image
+  for (img in project.getImageList()) {
     // get image
     def imageData = img.readImageData()
     // get all annotations
@@ -38,8 +39,9 @@ for (img in project.getImageList()) {
     // write (save) the json file
     try (Writer writer = new FileWriter(fileOutput+".json")) {
         gson.toJson(rois, writer);
-    }
-}
+      }
+  }
+  ```
 
 <h2><img src="assets/images/cell.svg" width="50"> Cell</h2>
 
