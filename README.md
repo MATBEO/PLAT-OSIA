@@ -14,8 +14,8 @@
 
   <h3>geojson extraction</h3>
   
-    ```
-    // Define output where to save annotations
+    
+    // Define output where to save annotations source : https://gist.github.com/maduc7
     def pathOutput = buildFilePath('PATH_TO_SAVE', 'Annotations')
     print pathOutput
     mkdirs(pathOutput)
@@ -42,7 +42,7 @@
           gson.toJson(rois, writer);
         }
     }
-    ```
+    
 
 <h2><img src="assets/images/cell.svg" width="50"> Cell</h2>
 
