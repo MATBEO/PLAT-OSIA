@@ -16,32 +16,31 @@
   
     
     // Define output where to save annotations source : https://gist.github.com/maduc7
-    def pathOutput = buildFilePath('PATH_TO_SAVE', 'Annotations')
+    def pathOutput = buildFilePath('/Users/mtihy/Documents/1_MT/test_geo', 'Annotations')
     print pathOutput
     mkdirs(pathOutput)
-  
+
     // To get all image of the project -> in order to run the scripts on all function (if no project: just getCurrentImageData() and remove the loop)
     def project = getProject()
+
+    for (img in project.getImageList()){
+        // Get image data, hierarchy and annotations for given image
+        def imageData = img.readImageData()
+        def hierarchy=imageData.getHierarchy()
+        def annotations=hierarchy.getAnnotationObjects()
+        def gson = GsonTools.getInstance(true)
+    
+        // name of the output file to save
+        def name = GeneralTools.getNameWithoutExtension(imageData.getServer().getMetadata().getName())
+        def fileOutput = buildFilePath(pathOutput, name)
+        println "save annotation: "+fileOutput+".geojson"
   
-    // loop over all image
-    for (img in project.getImageList()) {
-      // get image
-      def imageData = img.readImageData()
-      // get all annotations
-      def rois = getAnnotationObjects().collect {it.getROI()}
-      //create a gson instance
-      def gson = GsonTools.getInstance(true)
-      
-      // name of the output file to save
-      def name = GeneralTools.getNameWithoutExtension(imageData.getServer().getMetadata().getName())
-      def fileOutput = buildFilePath(pathOutput, name)
-      println "save annotation: "+fileOutput+".json"
-      
-      // write (save) the json file
-      try (Writer writer = new FileWriter(fileOutput+".json")) {
-          gson.toJson(rois, writer);
+        // write (save) the json file
+        try (Writer writer = new FileWriter(fileOutput+".geojson")) {
+        gson.toJson(annotations, writer);
         }
-    }
+     }
+    print("done")
     
 
 <h2><img src="assets/images/cell.svg" width="50"> Cell</h2>
