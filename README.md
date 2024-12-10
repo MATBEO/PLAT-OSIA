@@ -15,8 +15,8 @@
   <h3>geojson extraction</h3>
   
     
-    // Define output where to save annotations source : https://gist.github.com/maduc7
-    def pathOutput = buildFilePath('/Users/mtihy/Documents/1_MT/test_geo', 'Annotations')
+    // Define output where to save annotations
+    def pathOutput = buildFilePath('PATH', 'Annotations')
     print pathOutput
     mkdirs(pathOutput)
 
