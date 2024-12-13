@@ -44,6 +44,16 @@
       print("done")
 
 
+  <h3>annotation to detection</h3>
+
+    def detections = getDetectionObjects()
+    def newAnnotations = detections.collect {
+    return PathObjects.createAnnotationObject(it.getROI(), it.getPathClass())
+    }
+    removeObjects(detections, true)
+    addObjects(newAnnotations)
+
+
 <h2><img src="assets/images/cell.svg" width="50"> Cell</h2>
 
 <h2><img src="assets/images/cluster.svg" width="50"> Cluster</h2>
