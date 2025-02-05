@@ -2,8 +2,9 @@
 title: "Installation de QuPath v0.6.0-rc3"
 date: 2019-04-18T15:34:30-04:00
 categories:
-  - Installation
+  - Visualisation
 tags:
+  - Installation
   - Qupath
 ---
 

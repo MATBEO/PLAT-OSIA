@@ -1,5 +1,5 @@
 ---
-title: "Comment detecter des cellules dans qupath"
+title: "Comment detecter des cellules dans Qupath"
 date: 2024-04-18T15:34:30-04:00
 categories:
   - Cell

@@ -1,5 +1,5 @@
 ---
-title: "Comment regarder les data sur Qupath."
+title: "Script Qupath."
 date: 2024-04-18T15:34:30-04:00
 categories:
   - Visualisation
