@@ -10,7 +10,7 @@ tags:
   - Geojson
 ---
 
-![](/assets/images/align.png)
+![](/assets/images/align.svg)
 
 ## geojson extraction
 
