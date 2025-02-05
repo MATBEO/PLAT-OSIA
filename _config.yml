@@ -81,20 +81,16 @@ defaults:
       layout: single
       read_time: true
       related: true
-      classes: "wide-text"
   # _pages
   - scope:
       path: "_pages"
       type: pages
     values:
       layout: splash
-      classes: "wide-text"
 
 category_archive:
   type: liquid
   path: /categories/
-  classes: "wide-text"
 tag_archive:
   type: liquid
   path: /tags/
-  classes: "wide-text"
