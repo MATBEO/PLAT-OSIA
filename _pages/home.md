@@ -1,7 +1,7 @@
 ---
 title: "Bienvenue"
 layout: splash
-permalink: /home/
+permalink: /
 header:
   overlay_image: "/assets/images/home.svg"
   overlay_filter: "0.5" # Opacité de l’image de fond (0.0 à 1.0)

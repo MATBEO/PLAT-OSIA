@@ -97,6 +97,3 @@ tag_archive:
   type: liquid
   path: /tags/
   classes: "wide-text"
-
-# Définir cette page comme homepage
-homepage: /home/
