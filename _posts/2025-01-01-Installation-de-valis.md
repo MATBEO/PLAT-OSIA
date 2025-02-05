@@ -10,7 +10,7 @@ tags:
 toc: true
 toc_label: "Table of Contents"
 toc_sticky : true
-layout: splash
+layout: single
 classes: wide
 ---
 
