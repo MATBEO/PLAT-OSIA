@@ -8,6 +8,7 @@ tags:
   - Groovy
   - Python
   - Geojson
+layout: splash
 ---
 
 <img src="assets/images/visualisation.svg" width="50">
