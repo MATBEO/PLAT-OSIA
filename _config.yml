@@ -22,7 +22,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 github_username: MATBEO
 minimal_mistakes_skin: default
 search: true
-
+baseurl: "/PLAT-OSIA"
+url: "https://matbeo.github.io"
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
