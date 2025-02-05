@@ -11,8 +11,6 @@ tags:
 ---
 
 <img src=/assets/images/align.png width="50">
-<img src=/assets/images/cell.svg width="50">
-
 
 ## geojson extraction
 
