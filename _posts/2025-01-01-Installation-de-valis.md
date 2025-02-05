@@ -11,7 +11,6 @@ toc: true
 toc_label: "Table of Contents"
 toc_sticky : true
 layout: single
-classes: wide
 ---
 
 # Tutoriel d'installation de VALIS
