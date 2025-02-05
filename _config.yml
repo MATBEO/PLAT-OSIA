@@ -114,4 +114,4 @@ tag_archive:
   path: /tags/
 
   # Définir cette page comme homepage
-homepage: "/home"
+homepage: "/"
