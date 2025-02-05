@@ -94,7 +94,7 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-  
-sass:
-  sass_dir: _sass
-  style: compressed
+
+# Pour toute personnalisation visuelle supplémentaire, vous pouvez inclure des fichiers CSS supplémentaires dans chaque page de votre site. Listez les fichiers CSS personnalisés ici.
+site-css:
+  - "/assets/css/main.css"
