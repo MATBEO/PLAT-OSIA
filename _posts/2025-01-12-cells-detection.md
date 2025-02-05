@@ -1,5 +1,5 @@
 ---
-title: <img src="{{ site.baseurl }}/assets/images/align.svg" alt="Align Image" width="50"> "<img src="{{ site.baseurl }}/assets/images/align.svg" alt="Align Image" width="50"> Comment detecter des cellules dans Qupath"
+title: "Comment detecter des cellules dans Qupath"
 date: 2024-04-18T15:34:30-04:00
 categories:
   - Cell
