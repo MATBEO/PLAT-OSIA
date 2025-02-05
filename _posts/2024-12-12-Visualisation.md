@@ -9,7 +9,7 @@ tags:
   - Python
   - Geojson
 ---
-![Visualisation](/assets/images/visualisation.svg)
+![Visualisation](/assets/images/visualisation.svg =x25)
 
 ## geojson extraction
 
