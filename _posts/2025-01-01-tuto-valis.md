@@ -8,8 +8,8 @@ tags:
   - Python
   - Geojson
 toc: true
-toc_label: "My Table of Contents"
-toc_icon: "cog"
+toc_label: "Table of Contents"
+toc_sticky : true
 ---
 
 # Tutoriel d'installation de VALIS
