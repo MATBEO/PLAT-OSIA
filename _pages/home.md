@@ -26,3 +26,5 @@ feature_row:
 
 ## Bienvenue sur mon site !
 Voici une introduction à mon projet.
+
+{% include feature_row %}
