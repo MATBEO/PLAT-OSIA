@@ -71,10 +71,12 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/MATBEO"
 
+baseurl: ""
 
 defaults:
   # _posts
   - scope:
+      path: ""
       type: posts
     values:
       layout: single
