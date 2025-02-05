@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Matthieu Tihy"
   avatar : "/assets/images/home.svg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "Need to be update"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
