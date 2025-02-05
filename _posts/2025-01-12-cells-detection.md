@@ -1,0 +1,109 @@
+---
+layout: post
+title:  Cell positivity
+subtitle: Comment detecter des cellules dasn qupath.
+author: Matthieu
+categories: Cell
+tags: Qupath Groovy Python
+---
+<img src="https://github.com/MATBEO/PLAT-OSIA/blob/main/assets/images/cell.svg" width="50">
+
+# Tutoriel : Utiliser InstanSeg dans QuPath
+
+Ce document présente un guide étape par étape pour utiliser l'extension **InstanSeg** dans **QuPath**. InstanSeg est une méthode basée sur le deep learning, conçue pour segmenter efficacement les noyaux et les cellules (voire les deux) dans des images histologiques ou fluorescence.
+
+---
+
+## 1. Introduction
+
+**InstanSeg** se distingue par sa rapidité et sa précision dans la segmentation d'images, avec notamment :
+- Une compatibilité pour la segmentation de noyaux, de cellules, ou les deux simultanément.
+- Une prise en charge du GPU (CUDA) ainsi que des architectures Apple Silicon (via MPS).
+- Une gestion automatique du redimensionnement pour respecter la résolution d'entraînement du modèle (par exemple 0.5 µm/px).
+
+Pour en savoir plus sur InstanSeg et ses performances, consultez les publications associées à cette méthode.
+
+---
+
+## 2. Prérequis
+
+Avant de lancer InstanSeg, assurez-vous de disposer :
+- **De QuPath** : Installez la version 0.6.0 (ou le Release Candidate v0.6.0-rc1) qui intègre l'extension InstanSeg.
+  [Lien vers le tuto]({% post_url 2025-01-01-Installation-de-QuPath %})
+- **De l'extension Deep Java Library (DJL)** :  
+  - Ouvrez QuPath, puis allez dans **Extensions → Deep Java Library → Manage DJL Engines**.
+  - Téléchargez et installez PyTorch (la configuration peut nécessiter des ajustements pour l'utilisation de CUDA ou MPS).
+
+> **Note :** Si vous utilisez une carte NVIDIA, configurez CUDA pour accélérer les calculs. Sur Mac avec Apple Silicon, sélectionnez « MPS » comme périphérique.
+
+---
+
+## 3. Lancer InstanSeg dans QuPath
+
+Suivez ces étapes pour exécuter InstanSeg sur vos images :
+
+1. **Préparation de l'environnement :**  
+   - Ouvrez QuPath et chargez l'image ou le projet sur lequel vous souhaitez travailler.
+   - Vérifiez que les annotations (régions d'intérêt) sont créées si vous souhaitez limiter la segmentation à certaines zones.
+
+2. **Téléchargement des modèles pré-entraînés :**  
+   - Allez dans **Extensions → InstanSeg → Run InstanSeg**.
+   - Une boîte de dialogue s'ouvre. Vous serez invité à choisir un répertoire sur votre ordinateur pour télécharger les modèles pré-entraînés.
+   - Sélectionnez le modèle souhaité et téléchargez-le.
+
+3. **Exécution de la segmentation :**  
+   - Dans la même boîte de dialogue, sélectionnez une ou plusieurs annotations sur lesquelles appliquer InstanSeg.
+   - Cliquez sur **Run** pour lancer la segmentation.  
+   Le processus lancera le modèle sur les régions sélectionnées et créera des détections (noyaux et/ou cellules) dans QuPath.
+
+---
+
+## 4. Options et paramètres supplémentaires
+
+La boîte de dialogue d’InstanSeg propose plusieurs options de configuration :
+
+- **Périphérique préféré :**  
+  - `cpu` pour exécuter sur processeur, `gpu` pour utiliser CUDA, ou `mps` pour les systèmes Apple Silicon.
+
+- **Nombre de threads :**  
+  - Déterminez le nombre de threads utilisés pour le traitement des tuiles d'image. Une valeur comprise entre 2 et 4 est généralement un bon compromis.
+
+- **Taille des tuiles (Tile size) :**  
+  - Les grandes images sont découpées en tuiles (exemple : 512 ou 1024 pixels). Adaptez cette valeur selon la taille de vos objets.
+
+- **Marges entre tuiles (Tile padding) :**  
+  - Une marge suffisante permet d'éviter que des objets (noyaux/cellules) soient coupés entre deux tuiles.
+
+- **Sélection des canaux d'entrée (Input channels) :**  
+  - Certains modèles nécessitent un nombre fixe de canaux. Grâce à l'intégration de ChannelNet, il est possible de traiter plusieurs canaux dans n'importe quel ordre.
+  - Vous pouvez également appliquer une déconvolution de couleur si besoin.
+
+- **Sorties (Outputs) et mesures :**  
+  - Choisissez si vous souhaitez obtenir plusieurs types de sorties (par exemple, uniquement les noyaux, uniquement les cellules, ou les deux) et si vous voulez que QuPath ajoute automatiquement des mesures sur les objets détectés.
+  
+- **Couleurs aléatoires :**  
+  - Activez l'option pour attribuer une couleur aléatoire à chaque objet détecté, facilitant ainsi leur distinction.
+
+---
+
+## 5. Traitement par script (optionnel)
+
+InstanSeg est entièrement scriptable. Une fois que vous avez configuré vos paramètres via l'interface, vous pouvez convertir ces paramètres en script pour appliquer la segmentation sur un lot d'images.  
+Exemple de code en pseudo-Java (adaptable selon vos besoins) :
+
+    ```java
+    qupath.ext.instanseg.core.InstanSeg.builder()
+        .modelPath("/chemin/vers/le/modèle")
+        .device("mps") // ou "gpu" ou "cpu"
+        .nThreads(4)
+        .tileDims(512)
+        .interTilePadding(32)
+        .inputChannels(Arrays.asList(
+            ColorTransforms.createChannelExtractor("Red"),
+            ColorTransforms.createChannelExtractor("Green"),
+            ColorTransforms.createChannelExtractor("Blue")))
+        .makeMeasurements(true)
+        .randomColors(false)
+        .build()
+        .detectObjects();
+    ```
