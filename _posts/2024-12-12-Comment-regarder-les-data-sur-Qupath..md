@@ -10,8 +10,6 @@ tags:
   - Geojson
 ---
 
-![](/assets/images/align.svg)
-
 ## geojson extraction
 
     // Define output where to save annotations
@@ -49,8 +47,6 @@ tags:
     }
     removeObjects(detections, true)
     addObjects(newAnnotations)
-
-![](/assets/images/align.png)
 
 ## tissu detection and tiles extraction
 

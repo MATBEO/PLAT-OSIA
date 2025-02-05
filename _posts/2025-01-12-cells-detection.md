@@ -8,7 +8,7 @@ tags:
   - Groovy
 ---
 
-<img src="{{ site.baseurl }}/assets/images/align.svg" alt="Align Image">
+<img src="{{ site.baseurl }}/assets/images/align.svg" alt="Align Image" class="small-image">
 
 # Tutoriel : Utiliser InstanSeg dans QuPath
 
