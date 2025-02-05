@@ -11,7 +11,7 @@ tags:
 layout: splash
 ---
 
-<img src="assets/images/visualisation.svg" width="50">
+<img src="/assets/images/visualisation.svg" width="50">
 
 ## geojson extraction
 
