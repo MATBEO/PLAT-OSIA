@@ -2,3 +2,8 @@
     max-width: 25%; /* Augmente l’image de 50% */
     height: auto;
   }
+
+.wide-text .page__content {
+    max-width: 100%;
+    width: 90%;
+  }

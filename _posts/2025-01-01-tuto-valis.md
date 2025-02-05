@@ -10,7 +10,6 @@ tags:
 toc: true
 toc_label: "Table of Contents"
 toc_sticky : true
-layout: splash
 ---
 
 # Tutoriel d'installation de VALIS
