@@ -10,7 +10,8 @@ tags:
   - Geojson
 ---
 
-<img src="https://github.com/MATBEO/PLAT-OSIA/blob/master/assets/images/cell.svg" width="50">
+<img src=/assets/images/align.png width="50">
+<img src=/assets/images/cell.svg width="50">
 
 
 ## geojson extraction
