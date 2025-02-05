@@ -98,5 +98,5 @@ tag_archive:
   path: /tags/
   classes: "wide-text"
 
-  # Définir cette page comme homepage
+# Définir cette page comme homepage
 homepage: /home/
