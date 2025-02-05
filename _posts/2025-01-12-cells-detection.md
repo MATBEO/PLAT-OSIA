@@ -6,7 +6,7 @@ categories:
 tags:
   - Qupath
   - Groovy
-  - Groovy
+layout: splash
 ---
 
 <img src="/assets/images/cell.svg" width="50">

@@ -5,6 +5,7 @@ categories:
   - Installation
 tags:
   - Qupath
+layout: splash
 ---
 
 QuPath est un logiciel open source pour l’analyse d’images en pathologie numérique. La version 0.6.0-rc3 est une version candidate destinée aux tests et peut contenir des bugs. Il est recommandé de ne pas l’utiliser pour des travaux critiques et de sauvegarder vos projets avant de les ouvrir avec cette version.  ￼
