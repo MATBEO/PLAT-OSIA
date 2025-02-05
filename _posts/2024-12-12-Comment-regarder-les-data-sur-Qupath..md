@@ -8,10 +8,12 @@ tags:
   - Groovy
   - Python
   - Geojson
+layout: single
 classes: wide
+toc: true
 ---
 
-## geojson extraction
+# geojson extraction
 
     // Define output where to save annotations
     def pathOutput = buildFilePath('PATH', 'Annotations')
@@ -41,7 +43,7 @@ classes: wide
     }
     print("done")
 
-## annotation to detection
+# annotation to detection
     def detections = getDetectionObjects()
     def newAnnotations = detections.collect {
     return PathObjects.createAnnotationObject(it.getROI(), it.getPathClass())
@@ -49,7 +51,7 @@ classes: wide
     removeObjects(detections, true)
     addObjects(newAnnotations)
 
-## tissu detection and tiles extraction
+# tissu detection and tiles extraction
 
     import timm
     import os
