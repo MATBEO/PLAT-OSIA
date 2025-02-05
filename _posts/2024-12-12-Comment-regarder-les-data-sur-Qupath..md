@@ -50,6 +50,8 @@ tags:
     removeObjects(detections, true)
     addObjects(newAnnotations)
 
+![](/assets/images/align.png)
+
 ## tissu detection and tiles extraction
 
     import timm
