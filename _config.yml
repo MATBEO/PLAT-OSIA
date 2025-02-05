@@ -81,6 +81,7 @@ defaults:
       read_time: true
       related: true
       classes: "wide-text"
+      permalink: /:basename/
   # _pages
   - scope:
       path: "_pages"
@@ -88,7 +89,8 @@ defaults:
     values:
       layout: splash
       classes: "wide-text"
-
+      permalink: /:basename/
+      
 category_archive:
   type: liquid
   path: /categories/
