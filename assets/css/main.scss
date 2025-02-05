@@ -13,3 +13,9 @@
 .page__content--has-toc {
     width: 80%; // Définit la largeur du contenu principal
   }
+  
+.page__content {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px; // Ajustez le padding selon vos préférences
+  }
