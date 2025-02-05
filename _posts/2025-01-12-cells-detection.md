@@ -9,7 +9,7 @@ tags:
   - Groovy
 ---
 
-<img src="https://github.com/MATBEO/PLAT-OSIA/blob/main/assets/images/cell.svg" width="50">
+<img src="/assets/images/cell.svg" width="50">
 
 # Tutoriel : Utiliser InstanSeg dans QuPath
 
