@@ -9,7 +9,9 @@ tags:
   - Python
   - Geojson
 ---
-![Visualisation](/assets/images/visualisation.svg =x25)
+
+<img src="https://github.com/MATBEO/PLAT-OSIA/blob/master/assets/images/cell.svg" width="50">
+
 
 ## geojson extraction
 
