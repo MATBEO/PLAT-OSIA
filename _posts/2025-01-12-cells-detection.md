@@ -1,11 +1,14 @@
 ---
-layout: post
-title:  Cell positivity
-subtitle: Comment detecter des cellules dasn qupath.
-author: Matthieu
-categories: Cell
-tags: Qupath Groovy Python
+title: "Comment detecter des cellules dans qupath"
+date: 2024-04-18T15:34:30-04:00
+categories:
+  - Cell
+tags:
+  - Qupath
+  - Groovy
+  - Groovy
 ---
+
 <img src="https://github.com/MATBEO/PLAT-OSIA/blob/main/assets/images/cell.svg" width="50">
 
 # Tutoriel : Utiliser InstanSeg dans QuPath
