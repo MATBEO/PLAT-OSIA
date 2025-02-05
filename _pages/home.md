@@ -22,6 +22,7 @@ feature_row:
     url: "/feature2/"
     btn_label: "Découvrir"
     btn_class: "btn--primary"
+author_profile: false
 ---
 
 ## Bienvenue sur mon site !
