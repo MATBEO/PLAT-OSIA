@@ -9,8 +9,8 @@ tags:
   - Python
   - Geojson
 layout: single
-classes: wide
 toc: true
+classes: wide
 ---
 
 # geojson extraction
