@@ -7,6 +7,9 @@ tags:
   - Tutoriel
   - Python
   - Geojson
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
 ---
 
 # Tutoriel d'installation de VALIS
