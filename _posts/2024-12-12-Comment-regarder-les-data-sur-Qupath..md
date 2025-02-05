@@ -10,7 +10,7 @@ tags:
   - Geojson
 ---
 
-<img src=/assets/images/align.png width="50">
+![](/assets/images/align.png)
 
 ## geojson extraction
 
