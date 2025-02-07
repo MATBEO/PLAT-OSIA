@@ -1,4 +1,5 @@
 ---
+title : " "
 layout: splash
 header:
   overlay_image: "/assets/images/banner.svg"
@@ -7,8 +8,9 @@ header:
 <!-- CSS pour l'effet gris/couleur, la disposition responsive et le contrôle de la taille des images -->
 <style>
   :root {
-    /* Variable pour ajuster le diamètre (taille) des images circulaires */
-    --discover-img-diameter: 250px;
+    /* Variables pour ajuster la taille des images */
+    --discover-img-width: 80%;
+    --discover-img-max-width: 300px;
   }
 
   /* Conteneur global pour la grille d'images */
@@ -47,6 +49,9 @@ header:
 
   /* Style pour les images circulaires */
   .discover-images img {
+    width: var(--discover-img-width);
+    max-width: var(--discover-img-max-width);
+    height: auto;
     display: block;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
