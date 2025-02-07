@@ -4,14 +4,28 @@ layout: splash
 header:
   overlay_image: "/assets/images/banner.svg"
 ---
-<!-- {% include feature_row %} -->
 
-<!-- CSS pour l'effet gris/couleur et la disposition responsive -->
+---
+layout: page
+title: "Découvrir - Images interactives"
+permalink: /discover/
+---
+
+<!-- CSS pour l'effet gris/couleur, la disposition responsive et le contrôle de la taille des images -->
 <style>
+  :root {
+    /* Modifiez ces variables pour ajuster la taille des images */
+    --discover-img-width: 50%;       /* Pourcentage de la taille du conteneur pour l'image */
+    --discover-img-max-width: 150px;   /* Taille maximale en pixels */
+  }
+
   /* Appliquer le filtre grayscale et la transition sur toutes les images */
   .discover-images img {
-    width: 100%;         /* Pour occuper toute la largeur du conteneur */
+    width: var(--discover-img-width);
+    max-width: var(--discover-img-max-width);
     height: auto;
+    display: block;
+    margin: 0 auto; /* Centre l'image dans son conteneur */
     filter: grayscale(100%);
     transition: filter 0.3s ease;
   }
@@ -21,20 +35,22 @@ header:
     filter: grayscale(0%);
   }
 
-  /* Organisation en grille responsive */
+  /* Organisation en grille responsive pour les conteneurs d'images */
   .discover-images {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;  /* Espace entre les images */
+    gap: 20px;  /* Espace entre les images */
   }
 
   .discover-images a {
     flex: 1 1 calc(33.33% - 20px);  /* Trois images par ligne sur grand écran */
     max-width: calc(33.33% - 20px);
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
+
   /* Pour les écrans de taille moyenne */
   @media (max-width: 768px) {
     .discover-images a {
