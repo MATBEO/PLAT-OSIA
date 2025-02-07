@@ -8,59 +8,50 @@ header:
 <!-- CSS pour l'effet gris/couleur, la disposition responsive et le contrôle de la taille des images -->
 <style>
   :root {
-    /* Modifiez ces variables pour ajuster la taille des images */
-    --discover-img-width: 80%;       /* Pourcentage de la taille du conteneur pour l'image */
-    --discover-img-max-width: 250px;   /* Taille maximale en pixels */
+    /* Variables pour ajuster la taille des images */
+    --discover-img-width: 80%;
+    --discover-img-max-width: 300px;
   }
-
-  /* Appliquer le filtre grayscale et la transition sur toutes les images */
-  .discover-images img {
-    width: var(--discover-img-width);
-    max-width: var(--discover-img-max-width);
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Centre l'image dans son conteneur */
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
+  
+  /* Style pour le bloc de texte global qui s'affichera au-dessus des images */
+  #global-overlay-text {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
-
-  /* Au survol, retirer le filtre pour afficher l'image en couleur */
-  .discover-images img:hover {
-    filter: grayscale(0%);
-  }
-
-  /* Organisation en grille responsive pour les conteneurs d'images */
+  
+  /* Conteneur global pour la grille d'images */
   .discover-images {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;  /* Espace entre les images */
+    gap: 20px;
   }
-
+  
+  /* Chaque lien/image est un conteneur */
   .discover-images a {
-    flex: 1 1 calc(25% - 20px);  /* Trois images par ligne sur grand écran */
-    max-width: calc(25% - 20px);
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1 1 calc(33.33% - 20px);  /* Trois images par ligne sur grand écran */
+    max-width: calc(33.33% - 20px);
   }
-
-  /* Pour les écrans de taille moyenne */
-  @media (max-width: 1080px) {
-      .discover-images a {
-        flex: 1 1 calc(33.33% - 20px);  /* Deux images par ligne */
-        max-width: calc(33.33% - 20px);
-      }
-    }
-
-  /* Pour les écrans de taille moyenne */
+  
+  /* Pour les écrans moyens */
   @media (max-width: 768px) {
     .discover-images a {
       flex: 1 1 calc(50% - 20px);  /* Deux images par ligne */
       max-width: calc(50% - 20px);
     }
   }
-
+  
   /* Pour les petits écrans */
   @media (max-width: 480px) {
     .discover-images a {
@@ -68,8 +59,9 @@ header:
       max-width: 100%;
     }
   }
- /* Style de l'image : affichage en niveaux de gris avec transition */
- .discover-images img {
+  
+  /* Style de l'image : affichage en niveaux de gris avec transition */
+  .discover-images img {
     width: var(--discover-img-width);
     max-width: var(--discover-img-max-width);
     height: auto;
