@@ -1,0 +1,113 @@
+---
+title: "WSI Infer pour QuPath"
+date: 2025-01-01T00:00:00-01:00
+categories:
+  - Pattern
+tags:
+  - Installation
+  - Extension
+  - QuPath
+---
+
+# Tutoriel WSI Infer pour QuPath : Installation et Utilisation sur PC
+
+Ce tutoriel détaille les étapes pour installer et utiliser l'extension **WSI Infer** au sein de **QuPath** sur un PC. Cette extension permet d'exécuter des modèles d'apprentissage profond sur des images de lames entières (Whole Slide Images, WSI) afin d'automatiser la segmentation et l'annotation des tissus.
+
+---
+
+## 1. Introduction
+
+**QuPath** est un logiciel libre dédié à l'analyse d'images en pathologie numérique. L'extension **WSI Infer** étend ses fonctionnalités en permettant l'inférence (i.e. l'exécution de modèles de deep learning) directement sur vos images WSI, facilitant ainsi le repérage et la quantification de régions d'intérêt.
+
+---
+
+## 2. Prérequis
+
+Avant de commencer, assurez-vous de disposer de :
+
+- **QuPath** installé sur votre système :
+  - [Télécharger QuPath](https://qupath.github.io/).
+- Une version récente de Java (souvent fournie avec QuPath).
+- Une connexion Internet pour télécharger l'extension.
+- (Optionnel) Des modèles d'apprentissage profond pré-entraînés, selon les besoins de votre analyse.
+
+---
+
+## 3. Installation de l'Extension WSI Infer
+
+### 3.1. Téléchargement de l'Extension
+
+1. **Accéder à la source de l'extension :**  
+   Rendez-vous sur la page GitHub ou le site de distribution de l'extension WSI Infer (souvent référencée sur le forum QuPath ou la documentation communautaire).
+
+2. **Télécharger le fichier .jar :**  
+   Téléchargez la dernière version stable du fichier `.jar`.
+
+### 3.2. Ajout de l'Extension à QuPath
+
+1. **Localiser le dossier des extensions :**  
+   Le dossier des extensions de QuPath se trouve généralement dans l'installation de QuPath ou dans le répertoire utilisateur (par exemple,  
+   `C:\Users\<VotreNom>\QuPath\extensions` pour pc ou `~/Library/Application Support/QuPath/extensions` pour mac).
+
+2. **Copier le fichier .jar :**  
+   Déposez le fichier `.jar` téléchargé dans ce dossier.
+
+3. **Redémarrer QuPath :**  
+   Fermez puis relancez QuPath pour que l'extension soit détectée et chargée automatiquement.
+
+---
+
+## 4. Utilisation de l'Extension WSI Infer
+
+### 4.1. Chargement d'une Image WSI
+
+1. Lancez QuPath.
+2. Ouvrez une image de lame entière (WSI) via `File > Open` ou en glissant-déposant le fichier dans l'interface.
+
+### 4.2. Exécution de l'Extension
+
+1. **Accéder au plugin :**  
+   Dans la barre de menu de QuPath, rendez-vous dans le menu **Plugins** ou **Extensions** où figure désormais **WSI Infer**.
+
+2. **Configurer l'inférence :**  
+   - Sélectionnez le modèle d'apprentissage profond à utiliser (si plusieurs options sont proposées).
+   - Ajustez les paramètres d'exécution (par exemple, seuils de confiance, options de segmentation).
+
+3. **Lancer l'inférence :**  
+   Cliquez sur le bouton pour démarrer le processus. L'extension analysera l'image et générera des annotations ou contours de segmentation directement sur l'image.
+
+### 4.3. Visualisation et Exportation des Résultats
+
+1. **Examinez les résultats :**  
+   Les annotations générées (par exemple, des contours, des zones colorées) s'affichent en superposition sur l'image WSI.  
+   Vous pouvez ajuster la visibilité ou l'opacité des annotations via l'interface.
+
+2. **Exporter les résultats :**  
+   Utilisez `File > Export` pour sauvegarder les annotations ou l'image traitée dans le format souhaité (CSV, XML ou image annotée).
+
+---
+
+## 5. Ressources et Support
+
+- **Documentation et Tutoriels QuPath :**  
+  Pour plus de détails sur QuPath et ses extensions, consultez la [documentation officielle de QuPath](https://qupath.github.io/).
+
+- **Communauté et Forums :**  
+  Pour poser des questions ou partager vos expériences, rejoignez le forum [image.sc](https://forum.image.sc/) et recherchez les discussions autour de **WSI Infer**.
+
+- **Dépôt GitHub de l'Extension :**  
+  Si disponible, le dépôt GitHub de l'extension peut fournir des mises à jour, des exemples d'utilisation et des conseils de configuration.
+
+---
+
+## 6. Conclusion
+
+En suivant ce tutoriel, vous avez installé et configuré l'extension **WSI Infer** pour QuPath sur votre PC. Cette extension vous permettra de tirer parti de modèles d'apprentissage profond pour analyser automatiquement vos images de lames entières, optimisant ainsi vos flux de travail en pathologie numérique.
+
+Bonne analyse et exploration avec QuPath et WSI Infer !
+
+---
+
+*Sources :*  
+[QuPath Officiel](https://qupath.github.io/)  
+[Forum Image.sc](https://forum.image.sc/)

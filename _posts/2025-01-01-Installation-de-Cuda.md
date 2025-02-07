@@ -1,6 +1,6 @@
 ---
 title: "Installation de CUDA"
-date: 2024-04-18T15:34:30-04:00
+date: 2025-01-01T00:00:00-01:00
 categories:
   - Visualisation
 tags:
