@@ -2,7 +2,7 @@
 title: cell
 layout: collection
 permalink: /cell/
-collection: cell
+collection: Cell
 entries_layout: grid
 classes: wide
 ---
