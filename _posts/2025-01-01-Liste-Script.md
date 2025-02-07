@@ -16,35 +16,35 @@ classes: wide
 
 # geojson extraction
 
-    ```groovy
-    // Define output where to save annotations
-    def pathOutput = buildFilePath('PATH', 'Annotations')
-    print pathOutput
-    mkdirs(pathOutput)
+```groovy
+// Define output where to save annotations
+def pathOutput = buildFilePath('PATH', 'Annotations')
+print pathOutput
+mkdirs(pathOutput)
 
-    // To get all image of the project -> in order to run the scripts on all function (if no project: just getCurrentImageData() and remove the loop)
-    def project = getProject()
+// To get all image of the project -> in order to run the scripts on all function (if no project: just getCurrentImageData() and remove the loop)
+def project = getProject()
 
-    for (img in project.getImageList()){
-    // Get image data, hierarchy and annotations for given image
-    def imageData = img.readImageData()
-    def hierarchy=imageData.getHierarchy()
-    def annotations=hierarchy.getAnnotationObjects()
+for (img in project.getImageList()){
+// Get image data, hierarchy and annotations for given image
+def imageData = img.readImageData()
+def hierarchy=imageData.getHierarchy()
+def annotations=hierarchy.getAnnotationObjects()
 
 
-    // name of the output file to save
-    def name = GeneralTools.getNameWithoutExtension(imageData.getServer().getMetadata().getName())
-    def fileOutput = buildFilePath(pathOutput, name)
-    println "save annotation: "+fileOutput+".geojson"
-    tt=fileOutput+".geojson"
+// name of the output file to save
+def name = GeneralTools.getNameWithoutExtension(imageData.getServer().getMetadata().getName())
+def fileOutput = buildFilePath(pathOutput, name)
+println "save annotation: "+fileOutput+".geojson"
+tt=fileOutput+".geojson"
 
-    // write (save) the json file
-    try (Writer writer = new FileWriter(fileOutput+".geojson")) {
-    exportObjectsToGeoJson(annotations,tt, "FEATURE_COLLECTION")
-     }
+// write (save) the json file
+try (Writer writer = new FileWriter(fileOutput+".geojson")) {
+exportObjectsToGeoJson(annotations,tt, "FEATURE_COLLECTION")
     }
-    print("done")
-    ```
+}
+print("done")
+```
 
 # annotation to detection
     ```groovy   
