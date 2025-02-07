@@ -9,7 +9,7 @@ header:
 <style>
   :root {
     /* Variable pour ajuster le diamètre (taille) des images circulaires */
-    --discover-img-diameter: 300px;
+    --discover-img-diameter: 250px;
   }
 
   /* Conteneur global pour la grille d'images */
@@ -48,8 +48,7 @@ header:
 
   /* Style pour les images circulaires */
   .discover-images img {
-    width: var(--discover-img-diameter);
-    height: var(--discover-img-diameter);
+    max-width: var(--discover-img-diameter);
     display: block;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
