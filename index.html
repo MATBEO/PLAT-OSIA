@@ -5,18 +5,12 @@ header:
   overlay_image: "/assets/images/banner.svg"
 ---
 
----
-layout: page
-title: "Découvrir - Images interactives"
-permalink: /discover/
----
-
 <!-- CSS pour l'effet gris/couleur, la disposition responsive et le contrôle de la taille des images -->
 <style>
   :root {
     /* Modifiez ces variables pour ajuster la taille des images */
-    --discover-img-width: 50%;       /* Pourcentage de la taille du conteneur pour l'image */
-    --discover-img-max-width: 150px;   /* Taille maximale en pixels */
+    --discover-img-width: 80%;       /* Pourcentage de la taille du conteneur pour l'image */
+    --discover-img-max-width: 250px;   /* Taille maximale en pixels */
   }
 
   /* Appliquer le filtre grayscale et la transition sur toutes les images */
@@ -44,12 +38,20 @@ permalink: /discover/
   }
 
   .discover-images a {
-    flex: 1 1 calc(33.33% - 20px);  /* Trois images par ligne sur grand écran */
-    max-width: calc(33.33% - 20px);
+    flex: 1 1 calc(25% - 20px);  /* Trois images par ligne sur grand écran */
+    max-width: calc(25% - 20px);
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+  /* Pour les écrans de taille moyenne */
+  @media (max-width: 1080px) {
+      .discover-images a {
+        flex: 1 1 calc(33.33% - 20px);  /* Deux images par ligne */
+        max-width: calc(33.33% - 20px);
+      }
+    }
 
   /* Pour les écrans de taille moyenne */
   @media (max-width: 768px) {
