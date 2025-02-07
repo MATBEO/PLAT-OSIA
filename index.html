@@ -8,27 +8,11 @@ header:
 <!-- CSS pour l'effet gris/couleur, la disposition responsive et le contrôle de la taille des images -->
 <style>
   :root {
-    /* Modifiez ces variables pour ajuster la taille des images */
-    --discover-img-diameter: 250px;
+    /* Variable pour ajuster le diamètre (taille) des images circulaires */
+    --discover-img-diameter: 300px;
   }
 
-  /* Appliquer le filtre grayscale et la transition sur toutes les images */
-  .discover-images img {
-    width: var(--discover-img-width);
-    max-width: var(--discover-img-max-width);
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Centre l'image dans son conteneur */
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-  }
-
-  /* Au survol, retirer le filtre pour afficher l'image en couleur */
-  .discover-images img:hover {
-    filter: grayscale(0%);
-  }
-
-  /* Organisation en grille responsive pour les conteneurs d'images */
+  /* Conteneur global pour la grille d'images */
   .discover-images {
     display: flex;
     flex-wrap: wrap;
@@ -36,23 +20,17 @@ header:
     gap: 20px;  /* Espace entre les images */
   }
 
+  /* Chaque lien/image est un conteneur positionné relativement */
   .discover-images a {
-    flex: 1 1 calc(25% - 20px);  /* Trois images par ligne sur grand écran */
-    max-width: calc(25% - 20px);
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1 1 calc(33.33% - 20px);  /* Trois images par ligne sur grand écran */
+    max-width: calc(33.33% - 20px);
   }
 
-  /* Pour les écrans de taille moyenne */
-  @media (max-width: 1080px) {
-      .discover-images a {
-        flex: 1 1 calc(33.33% - 20px);  /* Deux images par ligne */
-        max-width: calc(33.33% - 20px);
-      }
-    }
-
-  /* Pour les écrans de taille moyenne */
+  /* Pour les écrans moyens */
   @media (max-width: 768px) {
     .discover-images a {
       flex: 1 1 calc(50% - 20px);  /* Deux images par ligne */
@@ -67,24 +45,43 @@ header:
       max-width: 100%;
     }
   }
-  /* Style de l'overlay de texte (caché par défaut) */
+
+  /* Style pour les images circulaires */
+  .discover-images img {
+    width: var(--discover-img-diameter);
+    height: var(--discover-img-diameter);
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    border-radius: 50%;       /* Rend l'image circulaire */
+    object-fit: cover;        /* Pour recadrer l'image au besoin */
+  }
+
+  /* Au survol, l'image reprend ses couleurs */
+  .discover-images img:hover {
+    filter: grayscale(0%);
+  }
+
+  /* Style de l'overlay de texte positionné juste au-dessus de l'image */
   .overlay-text {
-    position: absolute;      /* Absolu par rapport à son conteneur parent */
-    bottom: 50%;            /* Place l'overlay juste au-dessus du conteneur */
+    position: absolute;
+    bottom: 100%;            /* Positionné juste au-dessus du conteneur */
     left: 50%;               /* Centre horizontalement */
-    transform: translateX(-50%);  /* Ajuste le centrage */
+    transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
     padding: 10px 15px;
     border-radius: 5px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
     text-align: center;
-}
+  }
 
-  /* L'overlay apparaît lorsque le conteneur est survolé */
+  /* Affichage de l'overlay au survol */
   .discover-images a:hover .overlay-text {
     opacity: 1;
+    visibility: visible;
   }
 </style>
 
