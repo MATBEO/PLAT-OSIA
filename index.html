@@ -27,10 +27,17 @@ header:
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 1 calc(33.33% - 20px);  /* Trois images par ligne sur grand écran */
-    max-width: calc(33.33% - 20px);
+    flex: 1 1 calc(25% - 20px);  /* Trois images par ligne sur grand écran */
+    max-width: calc(25% - 20px);
   }
 
+  /* Pour les écrans moyens */
+  @media (max-width: 1080px) {
+    .discover-images a {
+      flex: 1 1 calc(33.33% - 20px);  /* Deux images par ligne */
+      max-width: calc(33.33% - 20px);
+    }
+  }
   /* Pour les écrans moyens */
   @media (max-width: 768px) {
     .discover-images a {
