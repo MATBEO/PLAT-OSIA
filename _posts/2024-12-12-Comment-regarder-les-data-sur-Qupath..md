@@ -10,6 +10,7 @@ tags:
   - Geojson
 layout: single
 toc: true
+toc_label: "Table des Matieres"
 classes: wide
 ---
 

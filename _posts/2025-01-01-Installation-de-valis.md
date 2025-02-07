@@ -8,7 +8,7 @@ tags:
   - Python
   - Geojson
 toc: true
-toc_label: "Table of Contents"
+toc_label: "Table des Matieres"
 toc_sticky : true
 layout: single
 ---
