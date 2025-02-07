@@ -120,5 +120,8 @@ Bonne exploration et analyse avec CytoMAP !
 
 ---
 
+{% include video id="jud_PSzBWUw" provider="youtube" %}
+
+
 *Sources :*  
 Guide d’installation sur GitLab ( [oai_citation_attribution:2‡gitlab.com](https://gitlab.com/gernerlab/cytomap/-/wikis/Installation-Guide))
