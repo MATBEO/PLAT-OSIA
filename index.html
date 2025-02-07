@@ -41,4 +41,72 @@ feature_row:
     btn_label: "Découvrir"
     btn_class: "btn--primary"
 ---
-{% include feature_row %}
+<!-- {% include feature_row %} -->
+
+<!-- CSS pour l'effet gris/couleur et la disposition responsive -->
+<style>
+  /* Appliquer le filtre grayscale et la transition sur toutes les images */
+  .discover-images img {
+    width: 100%;         /* Pour occuper toute la largeur du conteneur */
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+
+  /* Au survol, retirer le filtre pour afficher l'image en couleur */
+  .discover-images img:hover {
+    filter: grayscale(0%);
+  }
+
+  /* Organisation en grille responsive */
+  .discover-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;  /* Espace entre les images */
+  }
+
+  .discover-images a {
+    flex: 1 1 calc(33.33% - 20px);  /* Trois images par ligne sur grand écran */
+    max-width: calc(33.33% - 20px);
+    display: block;
+  }
+
+  /* Pour les écrans de taille moyenne */
+  @media (max-width: 768px) {
+    .discover-images a {
+      flex: 1 1 calc(50% - 20px);  /* Deux images par ligne */
+      max-width: calc(50% - 20px);
+    }
+  }
+
+  /* Pour les petits écrans */
+  @media (max-width: 480px) {
+    .discover-images a {
+      flex: 1 1 100%;  /* Une image par ligne */
+      max-width: 100%;
+    }
+  }
+</style>
+
+<!-- Section des images "Découvrir" -->
+<div class="discover-images">
+  <a href="/cell/">
+    <img src="{{ site.baseurl }}/assets/images/align.svg" width="50">
+  </a>
+  <a href=/cell/>
+    <img src="{{ site.baseurl }}/assets/images/align.svg" width="50">
+  </a>
+  <a href="lien3.html">
+    <img src="{{ site.baseurl }}/assets/images/align.svg" width="50">
+  </a>
+  <a href="lien4.html">
+    <img src="{{ site.baseurl }}/assets/images/align.svg" width="50">
+  </a>
+  <a href="lien5.html">
+    <img src="{{ site.baseurl }}/assets/images/align.svg" width="50">
+  </a>
+  <a href="lien6.html">
+    <img src="{{ site.baseurl }}/assets/images/align.svg" width="50">
+  </a>
+</div>
