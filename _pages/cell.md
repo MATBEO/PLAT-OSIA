@@ -1,5 +1,4 @@
 ---
-title: cell
 layout: collection
 permalink: /cell/
 collection: cell

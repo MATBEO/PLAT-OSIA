@@ -1,5 +1,4 @@
 ---
-title: visualisation
 layout: collection
 permalink: /visualisation/
 collection: visualisation

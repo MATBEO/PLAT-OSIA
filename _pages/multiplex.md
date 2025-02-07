@@ -1,5 +1,4 @@
 ---
-title: multiplex
 layout: collection
 permalink: /multiplex/
 collection: multiplex

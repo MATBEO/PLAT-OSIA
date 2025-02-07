@@ -1,5 +1,4 @@
 ---
-title: align
 layout: collection
 permalink: /align/
 collection: align

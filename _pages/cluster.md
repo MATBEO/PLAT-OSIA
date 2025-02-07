@@ -1,5 +1,4 @@
 ---
-title: cluster
 layout: collection
 permalink: /cluster/
 collection: cluster
