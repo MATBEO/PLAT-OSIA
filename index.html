@@ -67,6 +67,24 @@ header:
       flex: 1 1 100%;  /* Une image par ligne */
       max-width: 100%;
     }
+  /* Style de l'overlay de texte (caché par défaut) */
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+  }
+
+  /* L'overlay apparaît lorsque le conteneur est survolé */
+  .discover-images a:hover .overlay-text {
+    opacity: 1;
   }
 </style>
 
@@ -74,20 +92,26 @@ header:
 <div class="discover-images">
   <a href="/PLAT-OSIA/align/">
     <img src="{{ site.baseurl }}/assets/images/align.svg" width="12">
+    <div class="overlay-text">Alignement</div>
   </a>
   <a href="/PLAT-OSIA/cell/">
     <img src="{{ site.baseurl }}/assets/images/cell.svg" width="12">
+    <div class="overlay-text">Cellularité</div>
   </a>
   <a href="/PLAT-OSIA/cluster/">
     <img src="{{ site.baseurl }}/assets/images/cluster.svg" width="12">
+    <div class="overlay-text">Cluster</div>
   </a>
   <a href="/PLAT-OSIA/multiplex/">
     <img src="{{ site.baseurl }}/assets/images/multiplex.svg" width="12">
+    <div class="overlay-text">Multiplex</div>
   </a>
   <a href="/PLAT-OSIA/pattern/">
     <img src="{{ site.baseurl }}/assets/images/pattern.svg" width="12">
+    <div class="overlay-text">Détection et classification de Pattern</div>
   </a>
   <a href="/PLAT-OSIA/visualisation/">
     <img src="{{ site.baseurl }}/assets/images/visualisation.svg" width="12">
+    <div class="overlay-text">Visualisation</div>
   </a>
 </div>
