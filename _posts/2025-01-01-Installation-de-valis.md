@@ -10,7 +10,6 @@ tags:
 toc: true
 toc_label: "Table des Matieres"
 toc_sticky : true
-layout: single
 ---
 
 # Tutoriel d'installation de VALIS
