@@ -38,7 +38,7 @@ Dans un premier temps, vous devez vérifier si vous avez bien la version 0.6.0 d
   - Cliquez sur **Run** pour lancer la segmentation. 
 
     Le processus lancera le modèle sur les régions sélectionnées et créera des détections (noyaux et/ou cellules) dans QuPath. [pour plus d'info sur InstanSeg]({{'/cell/InstaSeg/' | relative_url }})
-    {: .notice --info}
+    {: .notice--info}
 
 
 5. Allez dans **Classify → Object Classification → Set cell intensity classifications**
