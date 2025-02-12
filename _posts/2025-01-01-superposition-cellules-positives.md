@@ -2,7 +2,7 @@
 title: "superposition cellules positives de lames sériées"
 date: 2025-01-01T00:00:00-01:00
 categories:
-  - cell
+  - Cell
 tags:
   - Qupath
   - Groovy
