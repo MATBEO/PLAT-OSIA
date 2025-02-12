@@ -35,7 +35,9 @@ Dans un premier temps, vous devez vérifier si vous avez bien la version 0.6.0 d
 2. Grâce à un outil d'annotation, sélectionnez la zone sur laquelle vous voulez détecter les cellules. 
 3. Allez dans **Extensions → InstanSeg → Run InstanSeg**
 4. Dans la boîte de dialogue, sélectionnez une ou plusieurs annotations sur lesquelles appliquer InstanSeg.
-   - Cliquez sur **Run** pour lancer la segmentation. **Info :** Le processus lancera le modèle sur les régions sélectionnées et créera des détections (noyaux et/ou cellules) dans QuPath.
+   - Cliquez sur **Run** pour lancer la segmentation. 
+   **Info :** Le processus lancera le modèle sur les régions sélectionnées et créera des détections (noyaux et/ou cellules) dans QuPath.
+   [pour plus d'info sur InstanSeg]({{'/cell/InstaSeg/' | relative_url }}) {: .notice--info}
 
 5. Allez dans **Classify → Object Classification → Set cell intensity classifications**
     - dans le champs **Measurement** selectionné **DAB : mean**
@@ -50,4 +52,3 @@ Dans un premier temps, vous devez vérifier si vous avez bien la version 0.6.0 d
 
 3. Allez dans **File → Export objects as GeoJSON**
 
-[pour plus d'info sur InstanSeg]({{'/cell/InstaSeg/' | relative_url }})
