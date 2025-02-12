@@ -93,12 +93,23 @@ header:
     visibility: visible;
   }
 
-  /* Ensures figcaption is centered and bold */
-.discover-images figcaption {
-    display: block; /* Ensures it is treated as a block element */
-    text-align: center; /* Centers the text */
-    font-weight: bold; /* Makes the text bold */
-    margin-top: 8px; /* Adds space between the image and the caption */
+ /* Conteneur pour la légende et le texte explicatif */
+.caption-container {
+    text-align: center;
+    margin-top: 8px; /* Espacement entre l’image et le texte */
+}
+
+/* Met en gras et centre la légende */
+.caption-container figcaption {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Style du texte explicatif sous l’image */
+.caption-container p {
+    font-size: 0.9em;
+    color: #555; /* Couleur légèrement grisée pour le différencier */
+    margin-top: 4px;
 }
 </style>
 
@@ -106,7 +117,10 @@ header:
 <div class="discover-images">
   <a href="/PLAT-OSIA/align/"style="position: relative;">
     <img src="{{ site.baseurl }}/assets/images/align.svg" width="12">
-    <figcaption>Alignement</figcaption>
+    <div class="caption-container">
+      <figcaption>Alignement</figcaption>
+      <p>Ce concept permet d'assurer un bon positionnement.</p>
+    </div>
     <div class="overlay-text">Alignement</div>
   </a>
   <a href="/PLAT-OSIA/cell/"style="position: relative;">
