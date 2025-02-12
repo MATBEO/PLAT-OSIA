@@ -10,7 +10,7 @@ collection: align
 <ul>
   {% for post in cell_posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ site.baseurl }}">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>
