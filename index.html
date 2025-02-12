@@ -71,13 +71,13 @@ header:
     filter: grayscale(0%);
   }
 
-  /* Style de l'overlay de texte positionné juste au-dessus de l'image */
-  .overlay-text {
+/* Positionne l'overlay au-dessus de toutes les images */
+.overlay-text {
     position: absolute;
-    bottom: 100%;            /* Positionné juste au-dessus du conteneur */
-    left: 50%;               /* Centre horizontalement */
+    top: -40px; /* Déplace le texte vers le haut */
+    left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 10px 15px;
     border-radius: 5px;
@@ -85,21 +85,25 @@ header:
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     text-align: center;
-  }
+    width: max-content;
+    max-width: 250px; /* Ajuste la largeur pour éviter trop d'étalement */
+    z-index: 10; /* Assure que l'overlay est au-dessus des autres éléments */
+}
 
-  /* Affichage de l'overlay au survol */
-  .discover-images a:hover .overlay-text {
+/* Affichage du texte overlay au survol */
+.discover-images a:hover .overlay-text {
     opacity: 1;
     visibility: visible;
-  }
+}
 
-/* Assure que chaque image et son texte restent en colonne */
+/* Ajuste la position du lien pour inclure l'overlay */
 .discover-images a {
     position: relative;
     display: flex;
-    flex-direction: column; /* Force le texte à apparaître sous l'image */
-    align-items: center; /* Centre tout le contenu horizontalement */
-    text-decoration: none; /* Supprime le soulignement du lien */
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding-top: 40px; /* Ajoute un espace au-dessus pour éviter que l'overlay soit caché */
 }
 
 /* Conteneur pour la légende et le texte explicatif */
