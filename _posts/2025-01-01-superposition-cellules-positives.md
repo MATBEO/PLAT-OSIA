@@ -37,9 +37,10 @@ Dans un premier temps, vous devez vérifier si vous avez bien la version 0.6.0 d
 4. Dans la boîte de dialogue, sélectionnez une ou plusieurs annotations sur lesquelles appliquer InstanSeg.
    - Cliquez sur **Run** pour lancer la segmentation. 
 
->**Info :** Le processus lancera le modèle sur les régions sélectionnées et créera des détections (noyaux et/ou cellules) dans QuPath.[pour plus d'info sur InstanSeg]({{'/cell/InstaSeg/' | relative_url }})
+  > [!NOTE]
+  > Le processus lancera le modèle sur les régions sélectionnées et créera des détections (noyaux et/ou cellules) dans QuPath.[pour plus d'info sur InstanSeg]({{'/cell/InstaSeg/' | relative_url }})
 
-5. Allez dans **Classify → Object Classification → Set cell intensity classifications**
+5. Allez dans ```**Classify → Object Classification → Set cell intensity classifications**```
     - dans le champs **Measurement** selectionné **DAB : mean**
     - cliquez sur apply quand vous serez content du seuil de positivé
 
