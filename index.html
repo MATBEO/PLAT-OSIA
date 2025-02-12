@@ -90,14 +90,19 @@ header:
 .overlay-banner {
     width: 100%;
     text-align: center;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
+    background: #d3d3d3; /* Gris clair */
+    color: black; /* Texte en noir */
     padding: 15px;
     font-size: 1.1em;
-    font-weight: bold;
+    font-weight: normal; /* Suppression du bold */
     border-radius: 8px;
     margin-bottom: 20px; /* Espacement entre le bandeau et les images */
+    height: 50px; /* Hauteur fixe */
+    display: flex;
+    align-items: center; /* Centre le texte verticalement */
+    justify-content: center; /* Centre le texte horizontalement */
     transition: opacity 0.3s ease;
+    box-sizing: border-box; /* Empêche le padding d'augmenter la hauteur */
 }
 
 /* Conteneur des images */
