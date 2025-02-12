@@ -49,3 +49,5 @@ Dans un premier temps, vous devez vérifier si vous avez bien la version 0.6.0 d
 2. Allez dans **Objects → Delete... → Delete selected objects**
 
 3. Allez dans **File → Export objects as GeoJSON**
+
+[pour plus d'info sur InstanSeg]({{'/cell/InstaSeg/' | relative_url }})
