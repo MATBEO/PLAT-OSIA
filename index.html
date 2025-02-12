@@ -114,13 +114,6 @@ header:
     font-size: 1.1em;
 }
 
-/* Style du texte explicatif sous l’image */
-.caption-container p {
-    font-size: 0.9em;
-    color: #555; /* Couleur légèrement grisée */
-    margin-top: 4px;
-    max-width: 80%; /* Pour éviter que le texte soit trop large */
-}
 </style>
 
 <!-- Section des images "Découvrir" -->
@@ -129,33 +122,42 @@ header:
     <img src="{{ site.baseurl }}/assets/images/align.svg" width="12">
     <div class="caption-container">
       <figcaption>Alignement</figcaption>
-      <p>Ce concept permet d'assurer un bon positionnement.</p>
     </div>
     <div class="overlay-text">Alignement</div>
   </a>
   <a href="/PLAT-OSIA/cell/"style="position: relative;">
     <img src="{{ site.baseurl }}/assets/images/cell.svg" width="12">
-    <figcaption>Cellularité</figcaption>
+    <div class="caption-container">
+      <figcaption>Cellularité</figcaption>
+    </div>
     <div class="overlay-text">Cellularité</div>
   </a>
   <a href="/PLAT-OSIA/cluster/"style="position: relative;">
     <img src="{{ site.baseurl }}/assets/images/cluster.svg" width="12">
-    <figcaption>Cluster</figcaption>
+    <div class="caption-container">
+      <figcaption>Cluster</figcaption>
+    </div>
     <div class="overlay-text">Cluster</div>
   </a>
   <a href="/PLAT-OSIA/multiplex/"style="position: relative;">
     <img src="{{ site.baseurl }}/assets/images/multiplex.svg" width="12">
-    <figcaption>Multiplex</figcaption>
+    <div class="caption-container">
+      <figcaption>Multiplex</figcaption>
+    </div>
     <div class="overlay-text">Multiplex</div>
   </a>
   <a href="/PLAT-OSIA/pattern/"style="position: relative;">
     <img src="{{ site.baseurl }}/assets/images/pattern.svg" width="12">
-    <figcaption>Pattern</figcaption>
+    <div class="caption-container">
+      <figcaption>Pattern</figcaption>
+    </div>
     <div class="overlay-text">détection et classification de Pattern</div>
   </a>
   <a href="/PLAT-OSIA/visualisation/"style="position: relative;">
     <img src="{{ site.baseurl }}/assets/images/visualisation.svg" width="12">
-    <figcaption>Visualisation</figcaption>
+    <div class="caption-container">
+      <figcaption>Visualisation</figcaption>
+    </div>
     <div class="overlay-text">Visualisation</div>
   </a>
 </div>
