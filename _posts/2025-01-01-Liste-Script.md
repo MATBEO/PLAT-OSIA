@@ -16,7 +16,7 @@ classes: wide
 
 # geojson extraction
 
-```groovy
+```
 // Define output where to save annotations
 def pathOutput = buildFilePath('PATH', 'Annotations')
 print pathOutput
@@ -46,8 +46,8 @@ exportObjectsToGeoJson(annotations,tt, "FEATURE_COLLECTION")
 print("done")
 ```
 
-# annotation to detection
-    ```groovy   
+# detection to annotation
+    ```   
     def detections = getDetectionObjects()
     def newAnnotations = detections.collect {
     return PathObjects.createAnnotationObject(it.getROI(), it.getPathClass())
@@ -57,7 +57,7 @@ print("done")
     ```
 
 # tissu detection and tiles extraction
-    ```python
+    ```
     import timm
     import os
     import torch
