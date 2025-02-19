@@ -156,3 +156,9 @@ Assurez-vous de respecter scrupuleusement les étapes des prérequis pour évite
 ---
 
 Ce fichier est prêt à être intégré dans votre wiki GitHub. Il vous suffit de l’ajouter à votre dépôt ou de copier son contenu dans la page de votre choix.
+
+
+###
+```
+$ docker run --memory=20g  -v "$HOME:$HOME" cdgatenbee/valis-wsi python3 full/path/to/register.py -src_dir full/path/to/images_to_align -dst_dir full/path/to/where_to_save_results
+```
