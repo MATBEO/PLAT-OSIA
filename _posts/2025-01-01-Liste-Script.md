@@ -56,6 +56,16 @@ removeObjects(detections, true)
 addObjects(newAnnotations)
 ```
 
+# annotation to detection
+```   
+def annotations = getAnnotationObjects()
+def newDetections = annotations.collect{
+    return PathObjects.createDetectionObject(it.getROI(), it.getPathClass())
+}
+// removeObjects(annotations, true) // uncomment to remove original annotations
+addObjects(newDetections)
+```
+
 # tissu detection and tiles extraction
 ```python
 import timm
