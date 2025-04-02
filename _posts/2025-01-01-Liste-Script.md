@@ -66,6 +66,13 @@ def newDetections = annotations.collect{
 addObjects(newDetections)
 ```
 
+# préciser de facon automatique l'échelle 
+```
+setImageType('BRIGHTFIELD_H_E');
+setColorDeconvolutionStains('{"Name" : "H&E default", "Stain 1" : "Hematoxylin", "Values 1" : "0.65111 0.70119 0.29049", "Stain 2" : "Eosin", "Values 2" : "0.2159 0.8012 0.5581", "Background" : " 255 255 255"}');
+setPixelSizeMicrons(0.262100, 0.262100)
+```
+
 # tissu detection and tiles extraction
 ```python
 import timm
