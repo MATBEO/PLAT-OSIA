@@ -13,7 +13,7 @@ layout: single
 
 # Tutoriel CUDA : Installation et Configuration sur PC
 
-Ce tutoriel vous guide pas à pas pour installer le **CUDA Toolkit** de NVIDIA sur un PC Windows et configurer correctement votre environnement pour développer des applications CUDA.
+Ce tutoriel vous guide pas à pas pour installer le **CUDA Toolkit** de NVIDIA sur un PC Windows et configurer correctement votre environnement CUDA.
 
 ---
 
