@@ -25,32 +25,36 @@ Déplacer les cores si nécessaire
 # lancer le script en groovy
 
 ```
-import json
+import qupath.lib.objects.PathObjects
+import qupath.lib.objects.classes.PathClassFactory
 
-#modifier les chemins
-in_path = "file_input.geojson"   # fichier en entrée 
-out_path = "file_output.geojson"  # fichier transformé
+// Récupérer tous les TMA cores
+def tmaCores = getTMACoreList()
 
-with open(in_path, "r", encoding="utf-8") as f:
-    data = json.load(f)
+def newAnnotations = []
 
-for feat in data.get("features", []):
-    props = feat.get("properties", {})
-    
-    # Remplacer objectType
-    props["objectType"] = "annotation"
-    
-    # Ajouter champ Missing core (ici par défaut False)
-    props["classification"] = "Tumor"
-    if props["isMissing"] ==True :
-        props["classification"] = "no Tumor"
-    feat["properties"] = props
+tmaCores.each { core ->
+    def roi = core.getROI()
+    def cls
 
-# Sauvegarde
-with open(out_path, "w", encoding="utf-8") as f:
-    json.dump(data, f, ensure_ascii=False, indent=2)
+    // Si le core est marqué comme manquant
+    if (core.isMissing()) {
+        cls = PathClassFactory.getPathClass("no Tumor")
+    } else {
+        cls = PathClassFactory.getPathClass("Tumor")
+    }
 
-print(f"Fichier exporté : {out_path}")
+    def ann = PathObjects.createAnnotationObject(roi, cls)
+    newAnnotations << ann
+}
+
+// Supprimer les TMA cores originaux
+removeTMAGrid()
+
+// Ajouter les nouvelles annotations
+addObjects(newAnnotations)
+
+print "Transformé ${tmaCores.size()} TMA cores en annotations avec classification Tumor / no Tumor."
 ```
 
 # sauver le geojson
