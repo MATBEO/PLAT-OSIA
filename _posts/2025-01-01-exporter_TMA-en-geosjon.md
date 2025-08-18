@@ -22,13 +22,7 @@ Préciser le nombre de lignes et colonnes et la tailles des cores
 
 Déplacer les cores si nécessaire
 
-# sauver le geojson
-
-Sauver votre objet geojson 
-Allez dans **File → Export objects as GeoJson**
-selectionner : "All objects"
-
-# lancer le script
+# lancer le script en groovy
 
 ```
 import json
@@ -58,4 +52,10 @@ with open(out_path, "w", encoding="utf-8") as f:
 
 print(f"Fichier exporté : {out_path}")
 ```
+
+# sauver le geojson
+
+Sauver votre objet geojson 
+Allez dans **File → Export objects as GeoJson**
+selectionner : "All objects"
 
