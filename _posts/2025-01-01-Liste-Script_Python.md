@@ -148,3 +148,96 @@ tt=extract_tiles_with_tissue(slide_path,
                              low_mag=10, 
                              extract_features=False)`
 ```
+
+# corriger un geojson corrompu
+```python
+from pathlib import Path
+import json
+
+from shapely.geometry import shape, mapping
+from shapely.validation import make_valid
+
+def fix_geometry(geom):
+    """
+    Répare une géométrie invalide.
+    - priorité à make_valid (Shapely >= 2.0)
+    - fallback buffer(0)
+    """
+    try:
+        if geom.is_valid:
+            return geom
+        fixed = make_valid(geom)
+        if fixed.is_valid:
+            return fixed
+    except Exception:
+        pass
+
+    # Fallback robuste
+    try:
+        fixed = geom.buffer(0)
+        if fixed.is_valid:
+            return fixed
+    except Exception:
+        pass
+
+    return None
+
+
+def fix_geojson_file(in_path: Path, out_path: Path):
+    with open(in_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    features_out = []
+    n_invalid = 0
+    n_dropped = 0
+
+    for feat in data.get("features", []):
+        geom_json = feat.get("geometry")
+        if geom_json is None:
+            continue
+
+        geom = shape(geom_json)
+
+        if not geom.is_valid:
+            n_invalid += 1
+            geom = fix_geometry(geom)
+
+        if geom is None or geom.is_empty:
+            n_dropped += 1
+            continue
+
+        feat["geometry"] = mapping(geom)
+        features_out.append(feat)
+
+    data["features"] = features_out
+
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+    return n_invalid, n_dropped
+
+
+def fix_all_geojsons(
+    input_dir: str,
+    suffix: str = "_fixed"
+):
+    input_dir = Path(input_dir)
+
+    for geojson_path in input_dir.glob("*.geojson"):
+        out_path = geojson_path.with_name(
+            geojson_path.stem + suffix + geojson_path.suffix
+        )
+
+        n_invalid, n_dropped = fix_geojson_file(geojson_path, out_path)
+
+        print(
+            f"{geojson_path.name} → {out_path.name} | "
+            f"invalid fixed: {n_invalid}, dropped: {n_dropped}"
+        )
+
+
+if __name__ == "__main__":
+    fix_all_geojsons(
+        input_dir="chemin/vers/ton/dossier_geojson"
+    )
+```
