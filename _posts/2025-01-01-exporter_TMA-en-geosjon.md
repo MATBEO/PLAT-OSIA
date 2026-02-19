@@ -1,28 +1,28 @@
 ---
-title: "exporter des TMA de Qupath en GeoJson puis pouvoir les réimporter"
+title: "Exporter des TMA de QuPath en GeoJSON puis les réimporter"
 date: 2025-01-01T00:00:00-01:00
 categories:
   - Visualisation
 tags:
-  - Qupath
+  - QuPath
   - Python
-  - Geojson
+  - GeoJSON
   - TMA
 toc: true
 toc_sticky : true
 layout: single
 ---
 
-# définir la zone d'interet sur qupath
+# Définir la zone d'intérêt sur QuPath
 
-Ouvrir Qupath et creer les TMAs
-pour cela, 
+Ouvrez QuPath et créez les TMA.
+Pour cela :
 Allez dans **TMA → TMA dearray**
-Préciser le nombre de lignes et colonnes et la tailles des cores
+Précisez le nombre de lignes et de colonnes, ainsi que la taille des cores.
 
-Déplacer les cores si nécessaire
+Déplacez les cores si nécessaire.
 
-# lancer le script en groovy
+# Lancer le script en Groovy
 
 ```
 import qupath.lib.objects.PathObjects
@@ -57,9 +57,8 @@ addObjects(newAnnotations)
 print "Transformé ${tmaCores.size()} TMA cores en annotations avec classification Tumor / no Tumor."
 ```
 
-# sauver le geojson
+# Sauvegarder le GeoJSON
 
-Sauver votre objet geojson 
-Allez dans **File → Export objects as GeoJson**
-selectionner : "All objects"
-
+Sauvegardez votre objet GeoJSON.
+Allez dans **File → Export objects as GeoJSON**
+Sélectionnez : "All objects"

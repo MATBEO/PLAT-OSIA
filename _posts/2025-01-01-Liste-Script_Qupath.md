@@ -1,19 +1,19 @@
 ---
-title: "Script Qupath."
+title: "Scripts QuPath"
 date: 2025-01-01T00:00:00-01:00
 categories:
   - Visualisation
 tags:
-  - Qupath
+  - QuPath
   - Groovy
-  - Geojson
+  - GeoJSON
 layout: single
 toc: true
-toc_label: "Table des Matieres"
+toc_label: "Table des matières"
 classes: wide
 ---
 
-# geojson extraction
+# Extraction GeoJSON
 
 ```
 // Define output where to save annotations
@@ -45,7 +45,7 @@ exportObjectsToGeoJson(annotations,tt, "FEATURE_COLLECTION")
 print("done")
 ```
 
-# detection to annotation
+# Détection vers annotation
 ```   
 def detections = getDetectionObjects()
 def newAnnotations = detections.collect {
@@ -55,7 +55,7 @@ removeObjects(detections, true)
 addObjects(newAnnotations)
 ```
 
-# annotation to detection
+# Annotation vers détection
 ```   
 def annotations = getAnnotationObjects()
 def newDetections = annotations.collect{
@@ -99,7 +99,7 @@ addObjects(newAnnotations)
 print "Transformé ${tmaCores.size()} TMA cores en annotations avec classification Tumor / no Tumor."
 ```
 
-# préciser de facon automatique l'échelle 
+# Préciser automatiquement l'échelle
 ```
 setImageType('BRIGHTFIELD_H_E');
 setColorDeconvolutionStains('{"Name" : "H&E default", "Stain 1" : "Hematoxylin", "Values 1" : "0.65111 0.70119 0.29049", "Stain 2" : "Eosin", "Values 2" : "0.2159 0.8012 0.5581", "Background" : " 255 255 255"}');

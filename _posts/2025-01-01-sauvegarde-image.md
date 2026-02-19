@@ -4,26 +4,26 @@ date: 2025-01-01T00:00:00-01:00
 categories:
   - Visualisation
 tags:
-  - Qupath
+  - QuPath
   - Groovy
   - Python
-  - Geojson
+  - GeoJSON
 toc: true
-toc_label: "Table des Matieres"
+toc_label: "Table des matières"
 toc_sticky : true
 layout: single
 ---
 
-# définir la zone d'interet sur qupath
+# Définir la zone d'intérêt sur QuPath
 
-Ouvrir Qupath et selectionnez votre zone d'interet
+Ouvrez QuPath et sélectionnez votre zone d'intérêt.
 
 
-# sauver le geojson
+# Sauvegarder le GeoJSON
 
-Sauver votre objet geojson dans le meme dossier que votre lame et avec le meme nom
+Sauvegardez votre objet GeoJSON dans le même dossier que votre lame, avec le même nom.
 
-# lancer le script
+# Lancer le script
 
 ```
 import cv2
@@ -36,7 +36,7 @@ from PIL import Image
 from skimage import transform,util
 import os
 
-def extract_and_plot_lowest_mag_roi_svs(fpath: str, rotation=False)
+def extract_and_plot_lowest_mag_roi_svs(fpath: str, rotation=False):
     print(fpath)
     """
     Extrait une région définie par un GeoJSON d'un fichier SVS au niveau de grandissement le plus faible,
@@ -62,7 +62,7 @@ def extract_and_plot_lowest_mag_roi_svs(fpath: str, rotation=False)
         i=i+1
         output_path=fpath+"."+str(i)+".jpg"
         polygon_coords = feature["geometry"]["coordinates"][0]
-        #  mettre le polygone à l'echelle
+        # Mettre le polygone à l'échelle
         polygon_coords= [(int(xi ), int(yi )) for xi, yi in polygon_coords]
         # Convertir en tableau NumPy pour utiliser min et max
         polygon_coords_np = np.array(polygon_coords)

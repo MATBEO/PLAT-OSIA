@@ -7,7 +7,7 @@ tags:
   - Installation
   - CytoMAP
 toc: true
-toc_label: "Table des Matieres"
+toc_label: "Table des matières"
 toc_sticky : true
 layout: single
 ---
@@ -25,7 +25,7 @@ Ce tutoriel vous guide à travers l’installation de **CytoMAP** en utilisant l
 - Identifier et phénotyper des populations cellulaires via des algorithmes de clustering,
 - Analyser la composition des microenvironnements et la distribution spatiale des cellules.
 
-Pour en savoir plus sur les fonctionnalités et le guide d’installation complet, consultez le [Guide d’installation sur GitLab]( [oai_citation_attribution:0‡gitlab.com](https://gitlab.com/gernerlab/cytomap/-/wikis/Installation-Guide)).
+Pour en savoir plus sur les fonctionnalités et le guide d’installation complet, consultez le [Guide d’installation sur GitLab](https://gitlab.com/gernerlab/cytomap/-/wikis/Installation-Guide).
 
 ---
 
@@ -45,7 +45,7 @@ Pour en savoir plus sur les fonctionnalités et le guide d’installation comple
    - Suivez les instructions à l’écran pour installer CytoMAP sur votre système.
 
 > **Remarque :**  
-> La version autonome offre une interface simplifiée et ne nécessite pas l’installation de MATLAB ni de ses toolboxes associés.
+> La version autonome offre une interface simplifiée et ne nécessite pas l’installation de MATLAB ni de ses toolboxes associées.
 
 ### 2.3. Lancement de CytoMAP
 
@@ -102,7 +102,7 @@ Après avoir installé CytoMAP via l’exécutable, voici les étapes essentiell
 ## 4. Ressources et Support
 
 - **Documentation complète :**  
-  Pour plus de détails sur toutes les fonctionnalités de CytoMAP, consultez le [Wiki officiel sur GitLab](https://gitlab.com/gernerlab/cytomap/-/wikis/Installation-Guide) ( [oai_citation_attribution:1‡gitlab.com](https://gitlab.com/gernerlab/cytomap/-/wikis/Installation-Guide)).
+  Pour plus de détails sur toutes les fonctionnalités de CytoMAP, consultez le [Wiki officiel sur GitLab](https://gitlab.com/gernerlab/cytomap/-/wikis/Installation-Guide).
 
 - **Support communautaire :**  
   En cas de questions ou de problèmes, rendez-vous sur le forum [image.sc](https://forum.image.sc) et postez votre requête en utilisant le tag *cytomap*.
@@ -124,4 +124,4 @@ Bonne exploration et analyse avec CytoMAP !
 
 
 *Sources :*  
-Guide d’installation sur GitLab ( [gernerlab](https://gitlab.com/gernerlab/cytomap/-/wikis/Installation-Guide))
+[Guide d’installation sur GitLab](https://gitlab.com/gernerlab/cytomap/-/wikis/Installation-Guide)

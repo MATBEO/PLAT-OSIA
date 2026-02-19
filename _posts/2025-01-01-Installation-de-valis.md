@@ -6,9 +6,9 @@ categories:
 tags:
   - Installation
   - Python
-  - Geojson
+  - GeoJSON
 toc: true
-toc_label: "Table des Matieres"
+toc_label: "Table des matières"
 toc_sticky : true
 ---
 
@@ -154,11 +154,3 @@ Vous disposez de plusieurs méthodes pour installer VALIS :
 Assurez-vous de respecter scrupuleusement les étapes des prérequis pour éviter tout problème lié aux dépendances. Pour plus de détails et les mises à jour, consultez la [documentation officielle](https://valis.readthedocs.io/en/latest/installation.html).
 
 ---
-
-Ce fichier est prêt à être intégré dans votre wiki GitHub. Il vous suffit de l’ajouter à votre dépôt ou de copier son contenu dans la page de votre choix.
-
-
-###
-```
-$ docker run --memory=20g  -v "$HOME:$HOME" cdgatenbee/valis-wsi python3 full/path/to/register.py -src_dir full/path/to/images_to_align -dst_dir full/path/to/where_to_save_results
-```

@@ -5,14 +5,14 @@ categories:
   - Visualisation
 tags:
   - Python
-  - Geojson
+  - GeoJSON
 layout: single
 toc: true
-toc_label: "Table des Matieres"
+toc_label: "Table des matières"
 classes: wide
 ---
 
-# tissu detection and tiles extraction
+# Tissue detection and tile extraction
 ```python
 import timm
 import os
@@ -146,10 +146,10 @@ tt=extract_tiles_with_tissue(slide_path,
                              magnification=20, 
                              tile_size=224, 
                              low_mag=10, 
-                             extract_features=False)`
+                             extract_features=False)
 ```
 
-# corriger un geojson corrompu
+# Corriger un GeoJSON corrompu
 ```python
 from pathlib import Path
 import json
