@@ -77,8 +77,8 @@ Checklist figure finale
 - Documentation technique: [Guide publication figures (Nature)](https://www.nature.com/nature/for-authors/formatting-guide)
 
 ## Voir aussi
-- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
-- [Publication : figure QuPath nette et lisible]({% post_url 2026-02-19-publication-figure-qupath %})
-- [Publication : légendes cohérentes et utiles]({% post_url 2026-02-19-publication-legendes-coherentes %})
-- [Publication : couleurs accessibles et contrastes]({% post_url 2026-02-19-publication-couleurs-accessibles %})
-- [QuPath : exporter les mesures au format CSV]({% post_url 2026-02-19-qupath-mesures-export-csv %})
+- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
+- [Publication : figure QuPath nette et lisible]({{ site.baseurl }}{% post_url 2026-02-19-publication-figure-qupath %})
+- [Publication : légendes cohérentes et utiles]({{ site.baseurl }}{% post_url 2026-02-19-publication-legendes-coherentes %})
+- [Publication : couleurs accessibles et contrastes]({{ site.baseurl }}{% post_url 2026-02-19-publication-couleurs-accessibles %})
+- [QuPath : exporter les mesures au format CSV]({{ site.baseurl }}{% post_url 2026-02-19-qupath-mesures-export-csv %})

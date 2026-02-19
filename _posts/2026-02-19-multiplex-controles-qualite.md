@@ -75,9 +75,9 @@ T_CD8 = DAPI+ AND CD3+ AND CD8+ AND NOT CD20+
 - Documentation technique: [Documentation QuPath (Multiplex)](https://qupath.readthedocs.io/en/latest/)
 
 ## Voir aussi
-- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
-- [Multiplex : préparer un projet QuPath propre]({% post_url 2026-02-19-multiplex-preparation-projet %})
-- [Multiplex : importer et nommer les canaux]({% post_url 2026-02-19-multiplex-import-canaux %})
-- [Multiplex : segmentation cellulaire adaptée]({% post_url 2026-02-19-multiplex-segmentation-cellulaire %})
-- [Multiplex : définir les seuils de marqueurs]({% post_url 2026-02-19-multiplex-seuils-marqueurs %})
-- [Multiplex : construire des phénotypes cellulaires]({% post_url 2026-02-19-multiplex-phenotypes-cellulaires %})
+- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
+- [Multiplex : préparer un projet QuPath propre]({{ site.baseurl }}{% post_url 2026-02-19-multiplex-preparation-projet %})
+- [Multiplex : importer et nommer les canaux]({{ site.baseurl }}{% post_url 2026-02-19-multiplex-import-canaux %})
+- [Multiplex : segmentation cellulaire adaptée]({{ site.baseurl }}{% post_url 2026-02-19-multiplex-segmentation-cellulaire %})
+- [Multiplex : définir les seuils de marqueurs]({{ site.baseurl }}{% post_url 2026-02-19-multiplex-seuils-marqueurs %})
+- [Multiplex : construire des phénotypes cellulaires]({{ site.baseurl }}{% post_url 2026-02-19-multiplex-phenotypes-cellulaires %})

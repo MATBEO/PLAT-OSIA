@@ -78,8 +78,8 @@ Runbook minimal
 - Documentation technique: [Workflow best practices](https://www.nature.com/articles/s41592-021-01199-w)
 
 ## Voir aussi
-- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
-- [Classification objet dans QuPath : bonnes pratiques]({% post_url 2026-02-19-pattern-classification-objet %})
-- [Évaluer un modèle de classification dans QuPath]({% post_url 2026-02-19-pattern-evaluer-modele %})
-- [QuPath : organiser les classes d'objets]({% post_url 2026-02-19-qupath-classes-objet %})
-- [QC : détecter les erreurs de segmentation]({% post_url 2026-02-19-qc-detection-erreurs-segmentation %})
+- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
+- [Classification objet dans QuPath : bonnes pratiques]({{ site.baseurl }}{% post_url 2026-02-19-pattern-classification-objet %})
+- [Évaluer un modèle de classification dans QuPath]({{ site.baseurl }}{% post_url 2026-02-19-pattern-evaluer-modele %})
+- [QuPath : organiser les classes d'objets]({{ site.baseurl }}{% post_url 2026-02-19-qupath-classes-objet %})
+- [QC : détecter les erreurs de segmentation]({{ site.baseurl }}{% post_url 2026-02-19-qc-detection-erreurs-segmentation %})

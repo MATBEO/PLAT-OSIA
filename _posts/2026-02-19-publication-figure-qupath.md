@@ -77,8 +77,8 @@ println "Annotations: " + getAnnotationObjects().size()
 - Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
 
 ## Voir aussi
-- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
-- [Publication : export haute résolution]({% post_url 2026-02-19-publication-export-haute-resolution %})
-- [Publication : légendes cohérentes et utiles]({% post_url 2026-02-19-publication-legendes-coherentes %})
-- [Publication : couleurs accessibles et contrastes]({% post_url 2026-02-19-publication-couleurs-accessibles %})
-- [QuPath : exporter les mesures au format CSV]({% post_url 2026-02-19-qupath-mesures-export-csv %})
+- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
+- [Publication : export haute résolution]({{ site.baseurl }}{% post_url 2026-02-19-publication-export-haute-resolution %})
+- [Publication : légendes cohérentes et utiles]({{ site.baseurl }}{% post_url 2026-02-19-publication-legendes-coherentes %})
+- [Publication : couleurs accessibles et contrastes]({{ site.baseurl }}{% post_url 2026-02-19-publication-couleurs-accessibles %})
+- [QuPath : exporter les mesures au format CSV]({{ site.baseurl }}{% post_url 2026-02-19-qupath-mesures-export-csv %})

@@ -76,8 +76,8 @@ python -m cProfile -o profile.out run_pipeline.py
 - Documentation technique: [Profiling Python](https://docs.python.org/3/library/profile.html)
 
 ## Voir aussi
-- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
-- [Performance : installer CUDA proprement]({% post_url 2026-02-19-perf-cuda-installation %})
-- [Performance : vérifier CUDA côté système]({% post_url 2026-02-19-perf-cuda-verification %})
-- [Performance : choisir CPU/GPU selon la tâche]({% post_url 2026-02-19-perf-qupath-gpu-choix %})
-- [InstanSeg : comparaison CPU, GPU et MPS]({% post_url 2026-02-19-instanseg-gpu-cpu-mps %})
+- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
+- [Performance : installer CUDA proprement]({{ site.baseurl }}{% post_url 2026-02-19-perf-cuda-installation %})
+- [Performance : vérifier CUDA côté système]({{ site.baseurl }}{% post_url 2026-02-19-perf-cuda-verification %})
+- [Performance : choisir CPU/GPU selon la tâche]({{ site.baseurl }}{% post_url 2026-02-19-perf-qupath-gpu-choix %})
+- [InstanSeg : comparaison CPU, GPU et MPS]({{ site.baseurl }}{% post_url 2026-02-19-instanseg-gpu-cpu-mps %})

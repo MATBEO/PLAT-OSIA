@@ -76,8 +76,8 @@ date,article,status,artifact_rate,comment
 - Documentation technique: [Quality control principles](https://www.iso.org/standard/62085.html)
 
 ## Voir aussi
-- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
-- [QC : check-list avant lancement d'analyse]({% post_url 2026-02-19-qc-checklist-avant-analyse %})
-- [QC : détecter les erreurs de segmentation]({% post_url 2026-02-19-qc-detection-erreurs-segmentation %})
-- [InstanSeg : contrôle qualité des segmentations]({% post_url 2026-02-19-instanseg-qc-segmentation %})
-- [Multiplex : check-list de contrôle qualité]({% post_url 2026-02-19-multiplex-controles-qualite %})
+- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
+- [QC : check-list avant lancement d'analyse]({{ site.baseurl }}{% post_url 2026-02-19-qc-checklist-avant-analyse %})
+- [QC : détecter les erreurs de segmentation]({{ site.baseurl }}{% post_url 2026-02-19-qc-detection-erreurs-segmentation %})
+- [InstanSeg : contrôle qualité des segmentations]({{ site.baseurl }}{% post_url 2026-02-19-instanseg-qc-segmentation %})
+- [Multiplex : check-list de contrôle qualité]({{ site.baseurl }}{% post_url 2026-02-19-multiplex-controles-qualite %})

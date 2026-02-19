@@ -78,8 +78,8 @@ Runbook minimal
 - Documentation technique: [Object classification in QuPath](https://qupath.readthedocs.io/en/latest/docs/tutorials/cell_classification.html)
 
 ## Voir aussi
-- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
-- [Évaluer un modèle de classification dans QuPath]({% post_url 2026-02-19-pattern-evaluer-modele %})
-- [Construire un workflow reproductible de pattern]({% post_url 2026-02-19-pattern-workflow-reproductible %})
-- [QuPath : organiser les classes d'objets]({% post_url 2026-02-19-qupath-classes-objet %})
-- [QC : détecter les erreurs de segmentation]({% post_url 2026-02-19-qc-detection-erreurs-segmentation %})
+- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
+- [Évaluer un modèle de classification dans QuPath]({{ site.baseurl }}{% post_url 2026-02-19-pattern-evaluer-modele %})
+- [Construire un workflow reproductible de pattern]({{ site.baseurl }}{% post_url 2026-02-19-pattern-workflow-reproductible %})
+- [QuPath : organiser les classes d'objets]({{ site.baseurl }}{% post_url 2026-02-19-qupath-classes-objet %})
+- [QC : détecter les erreurs de segmentation]({{ site.baseurl }}{% post_url 2026-02-19-qc-detection-erreurs-segmentation %})
