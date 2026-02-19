@@ -80,3 +80,11 @@ registrar.warp_and_save_slides()
 - Vidéo: [From Zero to QuPath Hero](https://www.youtube.com/watch?v=MBrAVUsUdio)
 - Image: [Wikimedia Commons - Tissue Microarray 12X10](https://commons.wikimedia.org/wiki/File:Tissue_Microarray_12X10.JPG)
 - Documentation technique: [Documentation VALIS](https://valis.readthedocs.io/en/latest/)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Warpy : installation et test rapide]({% post_url 2026-02-19-alignement-warpy-installation %})
+- [Warpy : projeter des annotations interlames]({% post_url 2026-02-19-alignement-warpy-projeter-annotations %})
+- [VALIS : installation pas à pas]({% post_url 2026-02-19-alignement-valis-installation %})
+- [VALIS : lancer un alignement en script Python]({% post_url 2026-02-19-alignement-valis-lancement %})
+- [Python : lire et écrire un GeoJSON]({% post_url 2026-02-19-python-geojson-lire-ecrire %})

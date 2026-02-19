@@ -75,3 +75,10 @@ Checklist figure finale
 - Vidéo: [QuPath Tutorial Introduction](https://www.youtube.com/watch?v=J-47tzXAFdE)
 - Image: [Wikimedia Commons - Microscope image](https://commons.wikimedia.org/wiki/File:Microscope_image.jpg)
 - Documentation technique: [Guide publication figures (Nature)](https://www.nature.com/nature/for-authors/formatting-guide)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Publication : figure QuPath nette et lisible]({% post_url 2026-02-19-publication-figure-qupath %})
+- [Publication : export haute résolution]({% post_url 2026-02-19-publication-export-haute-resolution %})
+- [Publication : couleurs accessibles et contrastes]({% post_url 2026-02-19-publication-couleurs-accessibles %})
+- [QuPath : exporter les mesures au format CSV]({% post_url 2026-02-19-qupath-mesures-export-csv %})

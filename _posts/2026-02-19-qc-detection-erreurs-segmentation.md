@@ -76,3 +76,10 @@ Runbook minimal
 - Vidéo: [Install NVIDIA CUDA Toolkit on Windows](https://www.youtube.com/watch?v=4wPUtUtSp-o)
 - Image: [QuPath - tutoriels YouTube](https://qupath.github.io/)
 - Documentation technique: [Segmentation workflows in QuPath](https://qupath.readthedocs.io/en/latest/docs/tutorials/index.html)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [QC : check-list avant lancement d'analyse]({% post_url 2026-02-19-qc-checklist-avant-analyse %})
+- [QC : qualité d'image à l'entrée du pipeline]({% post_url 2026-02-19-qc-qualite-image-entree %})
+- [InstanSeg : contrôle qualité des segmentations]({% post_url 2026-02-19-instanseg-qc-segmentation %})
+- [Multiplex : check-list de contrôle qualité]({% post_url 2026-02-19-multiplex-controles-qualite %})

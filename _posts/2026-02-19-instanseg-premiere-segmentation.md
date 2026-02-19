@@ -76,3 +76,11 @@ println "InstanSeg sur ${rois.size()} ROI"
 - Vidéo: [StarDist Cell Segmentation in QuPath](https://www.youtube.com/watch?v=rQdVhCI3FbU)
 - Image: [Wikimedia Commons - Red Fluorescence Microscopy](https://commons.wikimedia.org/wiki/File:Red_Fluorescence_Microscopy.jpg)
 - Documentation technique: [Documentation InstanSeg (QuPath)](https://github.com/qupath/qupath-extension-instanseg)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [QuPath : importer des lames entières (WSI) correctement]({% post_url 2026-02-19-qupath-importer-wsi %})
+- [InstanSeg : paramètres clés à connaître]({% post_url 2026-02-19-instanseg-parametres-cles %})
+- [InstanSeg : contrôle qualité des segmentations]({% post_url 2026-02-19-instanseg-qc-segmentation %})
+- [StarDist : installer l'extension dans QuPath]({% post_url 2026-02-19-stardist-install-extension %})
+- [StarDist vs InstanSeg : quand utiliser quoi]({% post_url 2026-02-19-stardist-vs-instanseg %})

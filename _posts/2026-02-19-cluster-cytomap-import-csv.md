@@ -75,3 +75,11 @@ c002,110.7,92.6,0,sample_01,0.61,0.12,0.41
 - Vidéo: [Installing CUDA Toolkit on Windows (NVIDIA Developer)](https://www.youtube.com/watch?v=cL05xtTocmY)
 - Image: [Wikimedia Commons - Green Fluorescence Microscopy](https://commons.wikimedia.org/wiki/File:Green_Fluorescence_Microscopy.jpg)
 - Documentation technique: [Wiki CytoMAP](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [CytoMAP : installation et démarrage]({% post_url 2026-02-19-cluster-cytomap-installation %})
+- [CytoMAP : phénotypage cellulaire de base]({% post_url 2026-02-19-cluster-cytomap-phenotypage %})
+- [CytoMAP : définir les neighborhoods]({% post_url 2026-02-19-cluster-cytomap-neighborhoods %})
+- [CytoMAP : clustering des régions tissulaires]({% post_url 2026-02-19-cluster-cytomap-region-clustering %})
+- [CytoMAP : workflow complet de A à Z]({% post_url 2026-02-19-cluster-cytomap-workflow-complet %})

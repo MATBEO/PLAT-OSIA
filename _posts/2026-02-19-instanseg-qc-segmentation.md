@@ -76,3 +76,11 @@ println "InstanSeg sur ${rois.size()} ROI"
 - Vidéo: [From Zero to QuPath Hero](https://www.youtube.com/watch?v=MBrAVUsUdio)
 - Image: [QuPath - illustration](https://qupath.github.io/)
 - Documentation technique: [Documentation InstanSeg (QuPath)](https://github.com/qupath/qupath-extension-instanseg)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [QuPath : importer des lames entières (WSI) correctement]({% post_url 2026-02-19-qupath-importer-wsi %})
+- [InstanSeg : première segmentation cellule + noyau]({% post_url 2026-02-19-instanseg-premiere-segmentation %})
+- [InstanSeg : paramètres clés à connaître]({% post_url 2026-02-19-instanseg-parametres-cles %})
+- [StarDist : installer l'extension dans QuPath]({% post_url 2026-02-19-stardist-install-extension %})
+- [StarDist vs InstanSeg : quand utiliser quoi]({% post_url 2026-02-19-stardist-vs-instanseg %})

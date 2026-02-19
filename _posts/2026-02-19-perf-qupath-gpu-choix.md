@@ -75,3 +75,10 @@ nvidia-smi --query-gpu=utilization.gpu,memory.used --format=csv
 - Vidéo: [How to Install QuPath](https://www.youtube.com/watch?v=75J9nxhviV8)
 - Image: [Wikimedia Commons - Fluorescence microscope 2](https://commons.wikimedia.org/wiki/File:Fluorescence.microscope2.jpg)
 - Documentation technique: [Documentation NVIDIA SMI](https://developer.nvidia.com/system-management-interface)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Performance : installer CUDA proprement]({% post_url 2026-02-19-perf-cuda-installation %})
+- [Performance : vérifier CUDA côté système]({% post_url 2026-02-19-perf-cuda-verification %})
+- [Performance : benchmark d'un pipeline complet]({% post_url 2026-02-19-perf-benchmark-pipeline %})
+- [InstanSeg : comparaison CPU, GPU et MPS]({% post_url 2026-02-19-instanseg-gpu-cpu-mps %})

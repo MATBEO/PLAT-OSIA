@@ -76,3 +76,10 @@ Runbook minimal
 - Vidéo: [CIF Tutorial QuPath Installation](https://www.youtube.com/watch?v=_ytJbpCA_cA)
 - Image: [Wikimedia Commons - Tissue Microarray 12X10](https://commons.wikimedia.org/wiki/File:Tissue_Microarray_12X10.JPG)
 - Documentation technique: [Object classification in QuPath](https://qupath.readthedocs.io/en/latest/docs/tutorials/cell_classification.html)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Évaluer un modèle de classification dans QuPath]({% post_url 2026-02-19-pattern-evaluer-modele %})
+- [Construire un workflow reproductible de pattern]({% post_url 2026-02-19-pattern-workflow-reproductible %})
+- [QuPath : organiser les classes d'objets]({% post_url 2026-02-19-qupath-classes-objet %})
+- [QC : détecter les erreurs de segmentation]({% post_url 2026-02-19-qc-detection-erreurs-segmentation %})

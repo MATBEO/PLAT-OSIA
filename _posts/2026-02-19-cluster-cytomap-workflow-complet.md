@@ -75,3 +75,11 @@ c002,110.7,92.6,0,sample_01,0.61,0.12,0.41
 - Vidéo: [CIF Tutorial QuPath Installation](https://www.youtube.com/watch?v=_ytJbpCA_cA)
 - Image: [QuPath - getting started](https://qupath.github.io/)
 - Documentation technique: [Wiki CytoMAP](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [CytoMAP : installation et démarrage]({% post_url 2026-02-19-cluster-cytomap-installation %})
+- [CytoMAP : importer un CSV cellulaire propre]({% post_url 2026-02-19-cluster-cytomap-import-csv %})
+- [CytoMAP : phénotypage cellulaire de base]({% post_url 2026-02-19-cluster-cytomap-phenotypage %})
+- [CytoMAP : définir les neighborhoods]({% post_url 2026-02-19-cluster-cytomap-neighborhoods %})
+- [CytoMAP : clustering des régions tissulaires]({% post_url 2026-02-19-cluster-cytomap-region-clustering %})

@@ -75,3 +75,11 @@ println "Annotations: " + getAnnotationObjects().size()
 - Vidéo: [Install NVIDIA CUDA Toolkit on Windows](https://www.youtube.com/watch?v=4wPUtUtSp-o)
 - Image: [Wikimedia Commons - Tissue Microarray 12X10](https://commons.wikimedia.org/wiki/File:Tissue_Microarray_12X10.JPG)
 - Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [QuPath : créer un projet standard reproductible]({% post_url 2026-02-19-qupath-creer-projet-standard %})
+- [QuPath : importer des lames entières (WSI) correctement]({% post_url 2026-02-19-qupath-importer-wsi %})
+- [QuPath : fondamentaux des annotations]({% post_url 2026-02-19-qupath-annotations-fondamentaux %})
+- [QuPath : exporter les mesures au format CSV]({% post_url 2026-02-19-qupath-mesures-export-csv %})
+- [InstanSeg : première segmentation cellule + noyau]({% post_url 2026-02-19-instanseg-premiere-segmentation %})

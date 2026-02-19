@@ -80,3 +80,11 @@ for fp in sorted(inp.glob('*')):
 - Vidéo: [Install NVIDIA CUDA Toolkit on Windows](https://www.youtube.com/watch?v=4wPUtUtSp-o)
 - Image: [Wikimedia Commons - Fluorescence microscope 3](https://commons.wikimedia.org/wiki/File:Fluorescence.microscope3.jpg)
 - Documentation technique: [Documentation OpenSlide Python](https://openslide.org/api/python/)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Python + OpenSlide : premiers pas]({% post_url 2026-02-19-python-openslide-premiers-pas %})
+- [Python : filtrer les tuiles sans tissu]({% post_url 2026-02-19-python-filtre-tiles-vide %})
+- [Python : lire et écrire un GeoJSON]({% post_url 2026-02-19-python-geojson-lire-ecrire %})
+- [Python : réparer des géométries GeoJSON invalides]({% post_url 2026-02-19-python-geojson-reparer %})
+- [QuPath : exporter les mesures au format CSV]({% post_url 2026-02-19-qupath-mesures-export-csv %})

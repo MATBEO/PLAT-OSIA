@@ -75,3 +75,10 @@ Checklist figure finale
 - Vidéo: [From Zero to QuPath Hero](https://www.youtube.com/watch?v=MBrAVUsUdio)
 - Image: [Wikimedia Commons - Tissue MicroArray Slide](https://commons.wikimedia.org/wiki/File:Tissue_MicroArray_Slide.jpg)
 - Documentation technique: [Guide publication figures (Nature)](https://www.nature.com/nature/for-authors/formatting-guide)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Publication : figure QuPath nette et lisible]({% post_url 2026-02-19-publication-figure-qupath %})
+- [Publication : export haute résolution]({% post_url 2026-02-19-publication-export-haute-resolution %})
+- [Publication : légendes cohérentes et utiles]({% post_url 2026-02-19-publication-legendes-coherentes %})
+- [QuPath : exporter les mesures au format CSV]({% post_url 2026-02-19-qupath-mesures-export-csv %})

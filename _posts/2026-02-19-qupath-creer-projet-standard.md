@@ -75,3 +75,11 @@ println "Annotations: " + getAnnotationObjects().size()
 - Vidéo: [How to Install QuPath](https://www.youtube.com/watch?v=75J9nxhviV8)
 - Image: [QuPath - getting started](https://qupath.github.io/)
 - Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [QuPath : importer des lames entières (WSI) correctement]({% post_url 2026-02-19-qupath-importer-wsi %})
+- [QuPath : fondamentaux des annotations]({% post_url 2026-02-19-qupath-annotations-fondamentaux %})
+- [QuPath : organiser les classes d'objets]({% post_url 2026-02-19-qupath-classes-objet %})
+- [QuPath : exporter les mesures au format CSV]({% post_url 2026-02-19-qupath-mesures-export-csv %})
+- [InstanSeg : première segmentation cellule + noyau]({% post_url 2026-02-19-instanseg-premiere-segmentation %})

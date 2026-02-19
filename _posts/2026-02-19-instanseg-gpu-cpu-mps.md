@@ -76,3 +76,11 @@ println "InstanSeg sur ${rois.size()} ROI"
 - Vidéo: [Installing CUDA Toolkit on Windows (NVIDIA Developer)](https://www.youtube.com/watch?v=cL05xtTocmY)
 - Image: [Wikimedia Commons - Fluorescence microscope 3](https://commons.wikimedia.org/wiki/File:Fluorescence.microscope3.jpg)
 - Documentation technique: [Documentation InstanSeg (QuPath)](https://github.com/qupath/qupath-extension-instanseg)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [QuPath : importer des lames entières (WSI) correctement]({% post_url 2026-02-19-qupath-importer-wsi %})
+- [InstanSeg : première segmentation cellule + noyau]({% post_url 2026-02-19-instanseg-premiere-segmentation %})
+- [InstanSeg : paramètres clés à connaître]({% post_url 2026-02-19-instanseg-parametres-cles %})
+- [InstanSeg : contrôle qualité des segmentations]({% post_url 2026-02-19-instanseg-qc-segmentation %})
+- [StarDist : installer l'extension dans QuPath]({% post_url 2026-02-19-stardist-install-extension %})

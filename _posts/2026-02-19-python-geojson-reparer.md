@@ -80,3 +80,11 @@ for fp in sorted(inp.glob('*')):
 - Vidéo: [How to Install QuPath](https://www.youtube.com/watch?v=75J9nxhviV8)
 - Image: [QuPath - illustration](https://qupath.github.io/)
 - Documentation technique: [Documentation OpenSlide Python](https://openslide.org/api/python/)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Python + OpenSlide : premiers pas]({% post_url 2026-02-19-python-openslide-premiers-pas %})
+- [Python : extraction de tuiles depuis WSI]({% post_url 2026-02-19-python-extraction-tiles %})
+- [Python : filtrer les tuiles sans tissu]({% post_url 2026-02-19-python-filtre-tiles-vide %})
+- [Python : lire et écrire un GeoJSON]({% post_url 2026-02-19-python-geojson-lire-ecrire %})
+- [QuPath : exporter les mesures au format CSV]({% post_url 2026-02-19-qupath-mesures-export-csv %})

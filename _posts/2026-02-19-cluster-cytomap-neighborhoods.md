@@ -75,3 +75,11 @@ c002,110.7,92.6,0,sample_01,0.61,0.12,0.41
 - Vidéo: [From Zero to QuPath Hero](https://www.youtube.com/watch?v=MBrAVUsUdio)
 - Image: [Wikimedia Commons - Fluorescence microscope 2](https://commons.wikimedia.org/wiki/File:Fluorescence.microscope2.jpg)
 - Documentation technique: [Wiki CytoMAP](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [CytoMAP : installation et démarrage]({% post_url 2026-02-19-cluster-cytomap-installation %})
+- [CytoMAP : importer un CSV cellulaire propre]({% post_url 2026-02-19-cluster-cytomap-import-csv %})
+- [CytoMAP : phénotypage cellulaire de base]({% post_url 2026-02-19-cluster-cytomap-phenotypage %})
+- [CytoMAP : clustering des régions tissulaires]({% post_url 2026-02-19-cluster-cytomap-region-clustering %})
+- [CytoMAP : workflow complet de A à Z]({% post_url 2026-02-19-cluster-cytomap-workflow-complet %})

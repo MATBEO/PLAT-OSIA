@@ -75,3 +75,10 @@ println "Annotations: " + getAnnotationObjects().size()
 - Vidéo: [How to Install QuPath](https://www.youtube.com/watch?v=75J9nxhviV8)
 - Image: [Wikimedia Commons - Tissue Microarray 12X10](https://commons.wikimedia.org/wiki/File:Tissue_Microarray_12X10.JPG)
 - Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Publication : export haute résolution]({% post_url 2026-02-19-publication-export-haute-resolution %})
+- [Publication : légendes cohérentes et utiles]({% post_url 2026-02-19-publication-legendes-coherentes %})
+- [Publication : couleurs accessibles et contrastes]({% post_url 2026-02-19-publication-couleurs-accessibles %})
+- [QuPath : exporter les mesures au format CSV]({% post_url 2026-02-19-qupath-mesures-export-csv %})

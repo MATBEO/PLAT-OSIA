@@ -76,3 +76,10 @@ Runbook minimal
 - Vidéo: [Install NVIDIA CUDA Toolkit on Windows](https://www.youtube.com/watch?v=4wPUtUtSp-o)
 - Image: [Wikimedia Commons - Red Fluorescence Microscopy](https://commons.wikimedia.org/wiki/File:Red_Fluorescence_Microscopy.jpg)
 - Documentation technique: [Workflow best practices](https://www.nature.com/articles/s41592-021-01199-w)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Classification objet dans QuPath : bonnes pratiques]({% post_url 2026-02-19-pattern-classification-objet %})
+- [Évaluer un modèle de classification dans QuPath]({% post_url 2026-02-19-pattern-evaluer-modele %})
+- [QuPath : organiser les classes d'objets]({% post_url 2026-02-19-qupath-classes-objet %})
+- [QC : détecter les erreurs de segmentation]({% post_url 2026-02-19-qc-detection-erreurs-segmentation %})

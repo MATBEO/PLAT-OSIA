@@ -76,3 +76,10 @@ echo $PATH | tr ':' '
 - Vidéo: [Installing CUDA Toolkit on Windows (NVIDIA Developer)](https://www.youtube.com/watch?v=cL05xtTocmY)
 - Image: [Wikimedia Commons - Red Fluorescence Microscopy](https://commons.wikimedia.org/wiki/File:Red_Fluorescence_Microscopy.jpg)
 - Documentation technique: [Documentation CUDA](https://docs.nvidia.com/cuda/)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Performance : vérifier CUDA côté système]({% post_url 2026-02-19-perf-cuda-verification %})
+- [Performance : choisir CPU/GPU selon la tâche]({% post_url 2026-02-19-perf-qupath-gpu-choix %})
+- [Performance : benchmark d'un pipeline complet]({% post_url 2026-02-19-perf-benchmark-pipeline %})
+- [InstanSeg : comparaison CPU, GPU et MPS]({% post_url 2026-02-19-instanseg-gpu-cpu-mps %})

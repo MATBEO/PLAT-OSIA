@@ -75,3 +75,11 @@ Points de contrôle recommandés
 - Vidéo: [QuPath Tutorial Introduction](https://www.youtube.com/watch?v=J-47tzXAFdE)
 - Image: [Wikimedia Commons - Tissue MicroArray Block](https://commons.wikimedia.org/wiki/File:Tissue_MicroArray_Block.jpg)
 - Documentation technique: [Image registration concepts](https://scikit-image.org/docs/stable/auto_examples/registration/plot_register_translation.html)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Warpy : installation et test rapide]({% post_url 2026-02-19-alignement-warpy-installation %})
+- [Warpy : projeter des annotations interlames]({% post_url 2026-02-19-alignement-warpy-projeter-annotations %})
+- [VALIS : installation pas à pas]({% post_url 2026-02-19-alignement-valis-installation %})
+- [VALIS : lancer un alignement en script Python]({% post_url 2026-02-19-alignement-valis-lancement %})
+- [Warpy vs VALIS : comparatif pratique]({% post_url 2026-02-19-alignement-warpy-vs-valis %})

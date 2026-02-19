@@ -74,3 +74,10 @@ date,article,status,artifact_rate,comment
 - Vidéo: [StarDist Cell Segmentation in QuPath](https://www.youtube.com/watch?v=rQdVhCI3FbU)
 - Image: [QuPath - illustration](https://qupath.github.io/)
 - Documentation technique: [Quality control principles](https://www.iso.org/standard/62085.html)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [QC : check-list avant lancement d'analyse]({% post_url 2026-02-19-qc-checklist-avant-analyse %})
+- [QC : détecter les erreurs de segmentation]({% post_url 2026-02-19-qc-detection-erreurs-segmentation %})
+- [InstanSeg : contrôle qualité des segmentations]({% post_url 2026-02-19-instanseg-qc-segmentation %})
+- [Multiplex : check-list de contrôle qualité]({% post_url 2026-02-19-multiplex-controles-qualite %})

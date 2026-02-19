@@ -80,3 +80,11 @@ registrar.warp_and_save_slides()
 - Vidéo: [Installing CUDA Toolkit on Windows (NVIDIA Developer)](https://www.youtube.com/watch?v=cL05xtTocmY)
 - Image: [QuPath - tutoriels YouTube](https://qupath.github.io/)
 - Documentation technique: [Documentation VALIS](https://valis.readthedocs.io/en/latest/)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Warpy : installation et test rapide]({% post_url 2026-02-19-alignement-warpy-installation %})
+- [Warpy : projeter des annotations interlames]({% post_url 2026-02-19-alignement-warpy-projeter-annotations %})
+- [VALIS : lancer un alignement en script Python]({% post_url 2026-02-19-alignement-valis-lancement %})
+- [Warpy vs VALIS : comparatif pratique]({% post_url 2026-02-19-alignement-warpy-vs-valis %})
+- [Python : lire et écrire un GeoJSON]({% post_url 2026-02-19-python-geojson-lire-ecrire %})

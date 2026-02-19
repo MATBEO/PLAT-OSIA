@@ -73,3 +73,11 @@ T_CD8 = DAPI+ AND CD3+ AND CD8+ AND NOT CD20+
 - Vidéo: [StarDist Cell Segmentation in QuPath](https://www.youtube.com/watch?v=rQdVhCI3FbU)
 - Image: [Wikimedia Commons - Histology (1)](https://commons.wikimedia.org/wiki/File:Histology_(1).jpg)
 - Documentation technique: [Documentation QuPath (Multiplex)](https://qupath.readthedocs.io/en/latest/)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Multiplex : préparer un projet QuPath propre]({% post_url 2026-02-19-multiplex-preparation-projet %})
+- [Multiplex : importer et nommer les canaux]({% post_url 2026-02-19-multiplex-import-canaux %})
+- [Multiplex : définir les seuils de marqueurs]({% post_url 2026-02-19-multiplex-seuils-marqueurs %})
+- [Multiplex : construire des phénotypes cellulaires]({% post_url 2026-02-19-multiplex-phenotypes-cellulaires %})
+- [Multiplex : check-list de contrôle qualité]({% post_url 2026-02-19-multiplex-controles-qualite %})

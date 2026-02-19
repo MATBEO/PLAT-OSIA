@@ -74,3 +74,10 @@ date,article,status,artifact_rate,comment
 - Vidéo: [QuPath Tutorial Introduction](https://www.youtube.com/watch?v=J-47tzXAFdE)
 - Image: [QuPath - getting started](https://qupath.github.io/)
 - Documentation technique: [Quality control principles](https://www.iso.org/standard/62085.html)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [QC : détecter les erreurs de segmentation]({% post_url 2026-02-19-qc-detection-erreurs-segmentation %})
+- [QC : qualité d'image à l'entrée du pipeline]({% post_url 2026-02-19-qc-qualite-image-entree %})
+- [InstanSeg : contrôle qualité des segmentations]({% post_url 2026-02-19-instanseg-qc-segmentation %})
+- [Multiplex : check-list de contrôle qualité]({% post_url 2026-02-19-multiplex-controles-qualite %})

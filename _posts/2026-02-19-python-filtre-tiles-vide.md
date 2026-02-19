@@ -80,3 +80,11 @@ for fp in sorted(inp.glob('*')):
 - Vidéo: [Installing CUDA Toolkit on Windows (NVIDIA Developer)](https://www.youtube.com/watch?v=cL05xtTocmY)
 - Image: [Wikimedia Commons - Dividing Cell Fluorescence](https://commons.wikimedia.org/wiki/File:Dividing_Cell_Fluorescence.jpg)
 - Documentation technique: [Documentation OpenSlide Python](https://openslide.org/api/python/)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Python + OpenSlide : premiers pas]({% post_url 2026-02-19-python-openslide-premiers-pas %})
+- [Python : extraction de tuiles depuis WSI]({% post_url 2026-02-19-python-extraction-tiles %})
+- [Python : lire et écrire un GeoJSON]({% post_url 2026-02-19-python-geojson-lire-ecrire %})
+- [Python : réparer des géométries GeoJSON invalides]({% post_url 2026-02-19-python-geojson-reparer %})
+- [QuPath : exporter les mesures au format CSV]({% post_url 2026-02-19-qupath-mesures-export-csv %})

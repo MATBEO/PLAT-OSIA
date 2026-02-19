@@ -75,3 +75,10 @@ Checklist figure finale
 - Vidéo: [StarDist Cell Segmentation in QuPath](https://www.youtube.com/watch?v=rQdVhCI3FbU)
 - Image: [Wikimedia Commons - Tissue MicroArray Block](https://commons.wikimedia.org/wiki/File:Tissue_MicroArray_Block.jpg)
 - Documentation technique: [Guide publication figures (Nature)](https://www.nature.com/nature/for-authors/formatting-guide)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Publication : figure QuPath nette et lisible]({% post_url 2026-02-19-publication-figure-qupath %})
+- [Publication : légendes cohérentes et utiles]({% post_url 2026-02-19-publication-legendes-coherentes %})
+- [Publication : couleurs accessibles et contrastes]({% post_url 2026-02-19-publication-couleurs-accessibles %})
+- [QuPath : exporter les mesures au format CSV]({% post_url 2026-02-19-qupath-mesures-export-csv %})

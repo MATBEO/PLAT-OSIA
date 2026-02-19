@@ -76,3 +76,10 @@ Runbook minimal
 - Vidéo: [StarDist Cell Segmentation in QuPath](https://www.youtube.com/watch?v=rQdVhCI3FbU)
 - Image: [Wikimedia Commons - Microscope image](https://commons.wikimedia.org/wiki/File:Microscope_image.jpg)
 - Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Classification objet dans QuPath : bonnes pratiques]({% post_url 2026-02-19-pattern-classification-objet %})
+- [Construire un workflow reproductible de pattern]({% post_url 2026-02-19-pattern-workflow-reproductible %})
+- [QuPath : organiser les classes d'objets]({% post_url 2026-02-19-qupath-classes-objet %})
+- [QC : détecter les erreurs de segmentation]({% post_url 2026-02-19-qc-detection-erreurs-segmentation %})

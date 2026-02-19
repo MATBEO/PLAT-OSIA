@@ -74,3 +74,11 @@ println "N annotations: " + getAnnotationObjects().size()
 - Vidéo: [From Zero to QuPath Hero](https://www.youtube.com/watch?v=MBrAVUsUdio)
 - Image: [Wikimedia Commons - Dividing Cell Fluorescence](https://commons.wikimedia.org/wiki/File:Dividing_Cell_Fluorescence.jpg)
 - Documentation technique: [Documentation Warpy](https://github.com/BIOP/qupath-extension-warpy)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [Warpy : projeter des annotations interlames]({% post_url 2026-02-19-alignement-warpy-projeter-annotations %})
+- [VALIS : installation pas à pas]({% post_url 2026-02-19-alignement-valis-installation %})
+- [VALIS : lancer un alignement en script Python]({% post_url 2026-02-19-alignement-valis-lancement %})
+- [Warpy vs VALIS : comparatif pratique]({% post_url 2026-02-19-alignement-warpy-vs-valis %})
+- [Python : lire et écrire un GeoJSON]({% post_url 2026-02-19-python-geojson-lire-ecrire %})

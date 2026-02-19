@@ -74,3 +74,11 @@ println "Pixel size (µm): " + getCurrentServer().getPixelCalibration().getAvera
 - Vidéo: [QuPath Tutorial Introduction](https://www.youtube.com/watch?v=J-47tzXAFdE)
 - Image: [QuPath - tutoriels YouTube](https://qupath.github.io/)
 - Documentation technique: [Documentation StarDist (QuPath)](https://github.com/qupath/qupath-extension-stardist)
+
+## Voir aussi
+- [QuPath : installation propre et vérification initiale]({% post_url 2026-02-19-qupath-installation-propre %})
+- [QuPath : importer des lames entières (WSI) correctement]({% post_url 2026-02-19-qupath-importer-wsi %})
+- [InstanSeg : première segmentation cellule + noyau]({% post_url 2026-02-19-instanseg-premiere-segmentation %})
+- [InstanSeg : paramètres clés à connaître]({% post_url 2026-02-19-instanseg-parametres-cles %})
+- [InstanSeg : contrôle qualité des segmentations]({% post_url 2026-02-19-instanseg-qc-segmentation %})
+- [StarDist : installer l'extension dans QuPath]({% post_url 2026-02-19-stardist-install-extension %})
