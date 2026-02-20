@@ -4,8 +4,7 @@ date: 2025-01-01T00:00:00-01:00
 categories:
   - Cluster
 tags:
-  - Installation
-  - CytoMAP
+  - Cluster
 toc: true
 toc_label: "Table des matières"
 toc_sticky : true

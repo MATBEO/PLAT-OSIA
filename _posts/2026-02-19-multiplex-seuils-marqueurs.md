@@ -5,8 +5,6 @@ categories:
   - Multiplex
 tags:
   - Multiplex
-  - Seuils
-  - QC
 toc: true
 toc_label: "Table des matières"
 toc_sticky : true

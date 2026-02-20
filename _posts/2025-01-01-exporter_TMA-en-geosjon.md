@@ -5,9 +5,6 @@ categories:
   - Visualisation
 tags:
   - QuPath
-  - Python
-  - GeoJSON
-  - TMA
 toc: true
 toc_sticky : true
 layout: single

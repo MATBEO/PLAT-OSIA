@@ -5,8 +5,6 @@ categories:
   - Visualisation
 tags:
   - Python
-  - OpenSlide
-  - WSI
 toc: true
 toc_label: "Table des matières"
 toc_sticky : true

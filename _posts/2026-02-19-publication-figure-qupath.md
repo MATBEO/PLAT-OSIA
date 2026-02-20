@@ -5,8 +5,6 @@ categories:
   - Visualisation
 tags:
   - Publication
-  - QuPath
-  - Figure
 toc: true
 toc_label: "Table des matières"
 toc_sticky : true

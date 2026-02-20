@@ -4,9 +4,7 @@ date: 2025-01-01T00:00:00-01:00
 categories:
   - Cell
 tags:
-  - QuPath
-  - Groovy
-  - GeoJSON
+  - Segmentation
 layout: single
 toc: true
 toc_label: "Table des matières"

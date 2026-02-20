@@ -5,8 +5,6 @@ categories:
   - Multiplex
 tags:
   - Multiplex
-  - Cell
-  - Segmentation
 toc: true
 toc_label: "Table des matières"
 toc_sticky : true

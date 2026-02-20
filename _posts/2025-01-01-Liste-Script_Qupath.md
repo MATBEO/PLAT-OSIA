@@ -5,8 +5,6 @@ categories:
   - Visualisation
 tags:
   - QuPath
-  - Groovy
-  - GeoJSON
 layout: single
 toc: true
 toc_label: "Table des matières"

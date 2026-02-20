@@ -5,7 +5,6 @@ categories:
   - Visualisation
 tags:
   - Python
-  - GeoJSON
 layout: single
 toc: true
 toc_label: "Table des matières"

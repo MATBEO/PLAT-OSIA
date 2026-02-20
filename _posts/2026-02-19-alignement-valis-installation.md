@@ -4,9 +4,7 @@ date: 2026-02-19T00:00:00-01:00
 categories:
   - Alignement
 tags:
-  - VALIS
-  - Python
-  - Installation
+  - Alignement
 toc: true
 toc_label: "Table des matières"
 toc_sticky : true

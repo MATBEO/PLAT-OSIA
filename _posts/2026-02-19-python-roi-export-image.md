@@ -5,8 +5,6 @@ categories:
   - Visualisation
 tags:
   - Python
-  - ROI
-  - Export
 toc: true
 toc_label: "Table des matières"
 toc_sticky : true
