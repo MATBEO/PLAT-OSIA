@@ -9,8 +9,8 @@ header:
 <style>
   :root {
     /* Variables pour ajuster la taille des images */
-    --discover-img-width: 80%;
-    --discover-img-max-width: 150px;
+    --discover-card-width: 180px;
+    --discover-img-size: 130px;
   }
 
   /* Chaque image et son texte */
@@ -20,6 +20,8 @@ header:
       flex-direction: column;
       align-items: center;
       text-decoration: none;
+      width: var(--discover-card-width);
+      flex: 0 0 var(--discover-card-width);
 }
   /* Pour les écrans moyens */
   @media (max-width: 1080px) {
@@ -46,9 +48,8 @@ header:
 
   /* Style pour les images circulaires */
   .discover-images img {
-    width: var(--discover-img-width);
-    max-width: var(--discover-img-max-width);
-    height: auto;
+    width: var(--discover-img-size);
+    height: var(--discover-img-size);
     display: block;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
@@ -116,9 +117,8 @@ header:
 
 /* Images en gris par défaut */
 .discover-images img {
-    width: 80%;
-    max-width: 150px;
-    height: auto;
+    width: var(--discover-img-size);
+    height: var(--discover-img-size);
     display: block;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
@@ -154,32 +154,32 @@ header:
 <!-- Section des images "Découvrir" -->
 <div class="discover-images">
   <a href="{{ site.baseurl }}/align/" data-text="Outils d'alignement entre plusieurs lames sériées et projection d'annotations interlames">
-    <img src="{{ site.baseurl }}/assets/images/align.svg" width="12">
+    <img src="{{ site.baseurl }}/assets/images/align.svg">
     <div class="caption-container"><figcaption>Alignement</figcaption></div>
   </a>
   
   <a href="{{ site.baseurl }}/cell/" data-text="Outils afin de détecter des cellules et mesurer des variables d'intérêt">
-    <img src="{{ site.baseurl }}/assets/images/cell.svg" width="12">
+    <img src="{{ site.baseurl }}/assets/images/cell.svg">
     <div class="caption-container"><figcaption>Cellularité</figcaption></div>
   </a>
   
   <a href="{{ site.baseurl }}/cluster/" data-text="Outils de clusterisation de tissus ou de cellules">
-    <img src="{{ site.baseurl }}/assets/images/cluster.svg" width="12">
+    <img src="{{ site.baseurl }}/assets/images/cluster.svg">
     <div class="caption-container"><figcaption>Cluster</figcaption></div>
   </a>
   
   <a href="{{ site.baseurl }}/multiplex/" data-text="Outils pour analyser des lames de multiplex">
-    <img src="{{ site.baseurl }}/assets/images/multiplex.svg" width="12">
+    <img src="{{ site.baseurl }}/assets/images/multiplex.svg">
     <div class="caption-container"><figcaption>Multiplex</figcaption></div>
   </a>
   
   <a href="{{ site.baseurl }}/pattern/" data-text="Détection et classification de patterns cellulaires ou tissulaires">
-    <img src="{{ site.baseurl }}/assets/images/pattern.svg" width="12">
+    <img src="{{ site.baseurl }}/assets/images/pattern.svg">
     <div class="caption-container"><figcaption>Pattern</figcaption></div>
   </a>
   
   <a href="{{ site.baseurl }}/visualisation/" data-text="Outils pour la visualisation">
-    <img src="{{ site.baseurl }}/assets/images/visualisation.svg" width="12">
+    <img src="{{ site.baseurl }}/assets/images/visualisation.svg">
     <div class="caption-container"><figcaption>Visualisation</figcaption></div>
   </a>
 </div>
