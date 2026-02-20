@@ -13,34 +13,14 @@ layout: single
 
 # InstanSeg : contrôle qualité des segmentations
 
-## Portée précise
-- Référence article: `instanseg-qc-segmentation`
-- Périmètre: la segmentation cellulaire et la quantification d'objets.
-- Axe technique dominant: **instanseg** (focus complémentaire: qc, segmentation).
-- Stack cible: QuPath 0.6+ avec extension InstanSeg.
-- Entrées attendues: WSI calibrée + ROI d'analyse.
-- Sorties attendues: objets segmentés + table de mesures.
-
-## Préparation
-- Créer un lot pilote (3 à 5 lames/échantillons) avant exécution complète.
-- Noter version outil, date, opérateur et paramètres dans un journal de run.
-- Verrouiller le dossier de sortie (`results/<date>/<article_slug>/`).
-- Définir la règle de décision QC (OK/KO) avant lancement.
-
-## Paramètres conseillés
-- `device`: `gpu` (si CUDA dispo), sinon `cpu`/`mps`.
-- `tile size`: 512 ou 1024 selon la mémoire.
-- `interTilePadding`: 16 à 32 pour limiter les effets de bord.
-- sortie: noyaux, cellules ou noyaux+cellules selon le besoin.
-
-## Procédure opératoire
+## Étapes
 1. Définir 3 ROI tests (faible, moyenne, forte densité cellulaire).
 2. Lancer InstanSeg sur ces ROI avec paramètres constants.
 3. Comparer visuellement le contour cellule/noyau sur chaque ROI.
 4. Ajuster `tile size` et padding si artefacts de bord.
 5. Appliquer au lot complet et exporter les mesures.
 
-## Snippet prêt à adapter
+## Exemple
 ```groovy
 // QuPath - exemple minimal InstanSeg (adapter selon votre installation)
 def rois = getAnnotationObjects()
@@ -49,36 +29,13 @@ println "InstanSeg sur ${rois.size()} ROI"
 // Lancer ensuite via Extensions > InstanSeg > Run InstanSeg avec paramètres notés
 ```
 
-## Validation rapide
-- KPI: densité d'objets plausible biologiquement.
-- KPI: faible taux de fusion/sur-segmentation.
-- KPI: temps d'inférence stable par lame.
-- Cible qualité recommandée: Écart inter-opérateur limité via protocole écrit.
-
-## Erreurs fréquentes et correctifs
-- Risque: modèle inadapté au type de marquage. Correctif: documenter le paramètre et rejouer sur lot pilote.
-- Risque: ROI avec artefacts non filtrés. Correctif: documenter le paramètre et rejouer sur lot pilote.
-- Risque: run lot sans validation locale préalable. Correctif: documenter le paramètre et rejouer sur lot pilote.
-
-## Livrables à archiver
-- Paramètres du run (fichier texte/JSON) + version des outils.
-- Exports principaux (annotations, mesures, figures) avec nommage stable.
-- Note QC courte: décisions prises, limites observées, actions suivantes.
-
-## Média
-{% include video id="MBrAVUsUdio" provider="youtube" %}
-
-![Illustration - InstanSeg : contrôle qualité des segmentations](https://qupath.github.io/assets/images/slideshow/qupath-jobs.png)
-
-## Sources
-- Vidéo: [From Zero to QuPath Hero](https://www.youtube.com/watch?v=MBrAVUsUdio)
-- Image: [QuPath - illustration](https://qupath.github.io/)
+## Documentation
 - Documentation technique: [Documentation InstanSeg (QuPath)](https://github.com/qupath/qupath-extension-instanseg)
 
-## Voir aussi
+## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
 - [QuPath : importer des lames entières (WSI) correctement]({{ site.baseurl }}{% post_url 2026-02-19-qupath-importer-wsi %})
 - [InstanSeg : première segmentation cellule + noyau]({{ site.baseurl }}{% post_url 2026-02-19-instanseg-premiere-segmentation %})
-- [InstanSeg : paramètres clés à connaître]({{ site.baseurl }}{% post_url 2026-02-19-instanseg-parametres-cles %})
-- [StarDist : installer l'extension dans QuPath]({{ site.baseurl }}{% post_url 2026-02-19-stardist-install-extension %})
-- [StarDist vs InstanSeg : quand utiliser quoi]({{ site.baseurl }}{% post_url 2026-02-19-stardist-vs-instanseg %})
+- [Parcours recommandé]({{ site.baseurl }}/parcours-recommande/)
+- [Médias utiles]({{ site.baseurl }}/medias-utiles/)
+- [Page thématique : Cell]({{ site.baseurl }}/cell/)

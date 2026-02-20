@@ -13,34 +13,14 @@ layout: single
 
 # CytoMAP : installation et démarrage
 
-## Portée précise
-- Référence article: `cluster-cytomap-installation`
-- Périmètre: le clustering et l'analyse spatiale de populations.
-- Axe technique dominant: **cytomap** (focus complémentaire: cluster, installation).
-- Stack cible: CytoMAP + table cellulaire CSV.
-- Entrées attendues: CSV cellule (x,y,z + marqueurs).
-- Sorties attendues: clusters, neighborhoods, figures.
-
-## Préparation
-- Créer un lot pilote (3 à 5 lames/échantillons) avant exécution complète.
-- Noter version outil, date, opérateur et paramètres dans un journal de run.
-- Verrouiller le dossier de sortie (`results/<date>/<article_slug>/`).
-- Définir la règle de décision QC (OK/KO) avant lancement.
-
-## Paramètres conseillés
-- colonnes coordonnées explicites: `X`, `Y`, `Z`.
-- normalisation cohérente des marqueurs.
-- nombre de clusters testé sur plage restreinte.
-- graine aléatoire fixée quand possible.
-
-## Procédure opératoire
+## Étapes
 1. Vérifier le schéma CSV avant import.
 2. Importer un échantillon pilote et valider types de colonnes.
 3. Lancer un clustering initial puis ajuster les paramètres.
 4. Construire les neighborhoods et comparer entre échantillons.
 5. Exporter les figures et tableaux de synthèse.
 
-## Snippet prêt à adapter
+## Exemple
 ```text
 CSV minimal recommandé
 CellID,X,Y,Z,Sample,MarkerA,MarkerB,MarkerC
@@ -48,36 +28,13 @@ c001,102.4,88.1,0,sample_01,0.72,0.05,0.33
 c002,110.7,92.6,0,sample_01,0.61,0.12,0.41
 ```
 
-## Validation rapide
-- KPI: clusters biologiquement interprétables.
-- KPI: stabilité inter-run.
-- KPI: faible proportion de cellules non assignées.
-- Cible qualité recommandée: Taux d'échec de run < 5% sur lot homogène.
-
-## Erreurs fréquentes et correctifs
-- Risque: colonnes mal typées (texte au lieu de numérique). Correctif: documenter le paramètre et rejouer sur lot pilote.
-- Risque: comparaison de lots sans normalisation. Correctif: documenter le paramètre et rejouer sur lot pilote.
-- Risque: interprétation sans contrôle de stabilité. Correctif: documenter le paramètre et rejouer sur lot pilote.
-
-## Livrables à archiver
-- Paramètres du run (fichier texte/JSON) + version des outils.
-- Exports principaux (annotations, mesures, figures) avec nommage stable.
-- Note QC courte: décisions prises, limites observées, actions suivantes.
-
-## Média
-{% include video id="4wPUtUtSp-o" provider="youtube" %}
-
-![Illustration - CytoMAP : installation et démarrage](https://commons.wikimedia.org/wiki/Special:FilePath/Microscope%20image.jpg)
-
-## Sources
-- Vidéo: [Install NVIDIA CUDA Toolkit on Windows](https://www.youtube.com/watch?v=4wPUtUtSp-o)
-- Image: [Wikimedia Commons - Microscope image](https://commons.wikimedia.org/wiki/File:Microscope_image.jpg)
+## Documentation
 - Documentation technique: [Wiki CytoMAP](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
 
-## Voir aussi
+## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
 - [CytoMAP : importer un CSV cellulaire propre]({{ site.baseurl }}{% post_url 2026-02-19-cluster-cytomap-import-csv %})
 - [CytoMAP : phénotypage cellulaire de base]({{ site.baseurl }}{% post_url 2026-02-19-cluster-cytomap-phenotypage %})
-- [CytoMAP : définir les neighborhoods]({{ site.baseurl }}{% post_url 2026-02-19-cluster-cytomap-neighborhoods %})
-- [CytoMAP : clustering des régions tissulaires]({{ site.baseurl }}{% post_url 2026-02-19-cluster-cytomap-region-clustering %})
-- [CytoMAP : workflow complet de A à Z]({{ site.baseurl }}{% post_url 2026-02-19-cluster-cytomap-workflow-complet %})
+- [Parcours recommandé]({{ site.baseurl }}/parcours-recommande/)
+- [Médias utiles]({{ site.baseurl }}/medias-utiles/)
+- [Page thématique : Cluster]({{ site.baseurl }}/cluster/)

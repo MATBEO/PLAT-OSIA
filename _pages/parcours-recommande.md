@@ -10,6 +10,8 @@ toc_sticky: true
 Ce parcours est organisé du plus fondamental au plus avancé.  
 L'idée est de suivre les modules dans l'ordre pour construire un pipeline complet, reproductible et publication-ready.
 
+Ressources externes centralisées : [Médias utiles]({{ site.baseurl }}/medias-utiles/)
+
 ## 1. Démarrage et environnement
 
 1. [Performance : installer CUDA proprement]({{ site.baseurl }}{% post_url 2026-02-19-perf-cuda-installation %})
