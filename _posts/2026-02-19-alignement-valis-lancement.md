@@ -14,27 +14,27 @@ layout: single
 # VALIS : lancer un alignement en script Python
 
 ## Étapes
-1. Créer un environnement virtuel propre dédié à VALIS.
-2. Tester l'alignement sur un petit sous-ensemble de lames.
-3. Contrôler les superpositions sur zones anatomiques stables.
-4. Exécuter le lot complet avec logs conservés.
-5. Archiver paramètres et version VALIS utilisée.
+1. Placer les lames source dans un dossier unique.
+2. Définir un dossier de sortie vide pour les résultats.
+3. Lancer le script VALIS avec paramètres par défaut d'abord.
+4. Vérifier visuellement les overlays générés.
+5. Relancer avec réglages fins si nécessaire.
 
 ## Exemple
 ```python
-# Exemple VALIS (adapter chemins et options)
 from valis import registration
 
 registrar = registration.Valis(
-    src_dir="/path/to/src_slides",
-    dst_dir="/path/to/output"
+    src_dir='slides_in',
+    dst_dir='valis_out'
 )
 registrar.register()
 registrar.warp_and_save_slides()
 ```
 
 ## Documentation
-- Documentation technique: [Documentation VALIS](https://valis.readthedocs.io/en/latest/)
+- [VALIS quick start](https://valis.readthedocs.io/en/latest/)
+- [OpenSlide Python](https://openslide.org/api/python/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

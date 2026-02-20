@@ -14,20 +14,26 @@ layout: single
 # Multiplex : construire des phénotypes cellulaires
 
 ## Étapes
-1. Contrôler l'alignement et l'intensité de chaque canal.
-2. Segmenter les cellules avec un preset versionné.
-3. Définir les règles de phénotypes (gates).
-4. Appliquer la classification et vérifier les cas limites.
-5. Exporter populations et cartes de distribution.
+1. Définir des règles explicites de phénotypes (logique booléenne).
+2. Appliquer les règles de manière identique à tout le lot.
+3. Mesurer la proportion des classes rares.
+4. Revoir les classes incohérentes avec un expert.
+5. Exporter la table finale par cellule.
 
 ## Exemple
-```text
-Exemple de règle de phénotype
-T_CD8 = DAPI+ AND CD3+ AND CD8+ AND NOT CD20+
+```python
+import pandas as pd
+
+df = pd.read_csv('cells_multiplex.csv')
+df['phenotype'] = 'Other'
+df.loc[(df['CD3_mean']>200) & (df['CD8_mean']>180), 'phenotype'] = 'T_CD8'
+df.loc[(df['CD3_mean']>200) & (df['CD4_mean']>180), 'phenotype'] = 'T_CD4'
+print(df['phenotype'].value_counts())
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath (Multiplex)](https://qupath.readthedocs.io/en/latest/)
+- [QuPath docs](https://qupath.readthedocs.io/en/latest/)
+- [Pandas guide](https://pandas.pydata.org/docs/user_guide/index.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

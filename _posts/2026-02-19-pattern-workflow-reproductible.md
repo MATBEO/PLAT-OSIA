@@ -14,23 +14,24 @@ layout: single
 # Construire un workflow reproductible de pattern
 
 ## Étapes
-1. Préparer les entrées et vérifier leur qualité.
-2. Exécuter la méthode cible sur un sous-ensemble pilote.
-3. Ajuster les paramètres puis lancer le lot.
-4. Réaliser un QC visuel + quantitatif.
-5. Exporter et documenter le run.
+1. Versionner données, scripts et paramètres ensemble.
+2. Utiliser un fichier de configuration unique (`config.yaml`).
+3. Séparer entraînement, validation et inférence.
+4. Conserver un journal d'exécution avec hash git.
+5. Produire un rapport automatique par run.
 
 ## Exemple
-```text
-Runbook minimal
-- version outils
-- paramètres clés
-- résultats QC
-- lien vers exports
+```yaml
+project: pattern_workflow
+train_csv: data/train.csv
+valid_csv: data/valid.csv
+model_out: models/model_v1.pkl
+seed: 42
 ```
 
 ## Documentation
-- Documentation technique: [Workflow best practices](https://www.nature.com/articles/s41592-021-01199-w)
+- [Nature Methods reproducibility recommendations](https://www.nature.com/articles/s41592-021-01199-w)
+- [ML reproducibility checklist](https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist.pdf)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

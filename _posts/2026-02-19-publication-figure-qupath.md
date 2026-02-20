@@ -14,22 +14,24 @@ layout: single
 # Publication : figure QuPath nette et lisible
 
 ## Étapes
-1. Créer/ouvrir le projet avec arborescence standard.
-2. Importer les images puis vérifier calibration.
-3. Appliquer la procédure cible (détection/classification/export).
-4. Effectuer une revue QC sur zones sentinelles.
-5. Exporter et documenter les paramètres utilisés.
+1. Fixer la zone d'intérêt exacte avant export.
+2. Activer barre d'échelle et annotations utiles uniquement.
+3. Exporter en PNG/TIFF sans compression destructive.
+4. Conserver une version avec et sans labels.
+5. Archiver paramètres d'export (magnification, taille, format).
 
 ## Exemple
-```groovy
-// Vérification de contexte projet QuPath
-println "Project: " + (getProject() == null ? 'none' : getProject().toString())
-println "Image: " + getCurrentImageName()
-println "Annotations: " + getAnnotationObjects().size()
+```text
+Paramètres recommandés:
+- format: PNG ou TIFF
+- largeur: >= 2000 px
+- barre d'échelle: visible
+- pas de zoom numérique post-export
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+- [QuPath docs](https://qupath.readthedocs.io/en/latest/)
+- [Nature figure guide](https://www.nature.com/nature/for-authors/formatting-guide)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

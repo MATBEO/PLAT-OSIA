@@ -14,22 +14,22 @@ layout: single
 # QuPath : fondamentaux des annotations
 
 ## Étapes
-1. Créer/ouvrir le projet avec arborescence standard.
-2. Importer les images puis vérifier calibration.
-3. Appliquer la procédure cible (détection/classification/export).
-4. Effectuer une revue QC sur zones sentinelles.
-5. Exporter et documenter les paramètres utilisés.
+1. Créer des annotations uniquement sur des zones nettes et représentatives.
+2. Nommer les annotations avec une classe explicite (`Tumor`, `Stroma`, `Artefact`).
+3. Ne jamais mélanger classes biologiques et classes techniques.
+4. Sauvegarder le projet après chaque lot d'annotations.
+5. Exporter un GeoJSON de contrôle pour audit inter-opérateur.
 
 ## Exemple
 ```groovy
-// Vérification de contexte projet QuPath
-println "Project: " + (getProject() == null ? 'none' : getProject().toString())
-println "Image: " + getCurrentImageName()
-println "Annotations: " + getAnnotationObjects().size()
+def ann = getAnnotationObjects()
+println "Annotations totales: " + ann.size()
+println "Classes: " + ann.collect{it.getPathClass()}.unique()
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+- [QuPath Annotations](https://qupath.readthedocs.io/en/latest/docs/starting/annotating.html)
+- [QuPath Classification](https://qupath.readthedocs.io/en/latest/docs/starting/classification.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

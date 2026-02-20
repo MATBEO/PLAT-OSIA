@@ -14,21 +14,24 @@ layout: single
 # StarDist : utiliser un modèle H&E pré-entraîné
 
 ## Étapes
-1. Installer/activer l'extension StarDist dans QuPath.
-2. Tester 2 à 3 paramètres de seuil sur une ROI de référence.
-3. Valider la morphologie des noyaux détectés.
-4. Exécuter le lot avec le même preset.
-5. Exporter les mesures pour audit QC.
+1. Charger une lame H&E correctement calibrée.
+2. Sélectionner un modèle StarDist entraîné pour H&E.
+3. Lancer sur petite ROI pour ajuster les paramètres.
+4. Étendre au lot si le résultat visuel est acceptable.
+5. Exporter les objets et mesures pour revue.
 
 ## Exemple
-```groovy
-// Contrôle simple avant StarDist
-println "Image: " + getCurrentImageName()
-println "Pixel size (µm): " + getCurrentServer().getPixelCalibration().getAveragedPixelSizeMicrons()
+```yaml
+model: he_pretrained
+probability_threshold: 0.5
+nms_threshold: 0.4
+pixel_size_um: 0.5
+output: nuclei
 ```
 
 ## Documentation
-- Documentation technique: [Documentation StarDist (QuPath)](https://github.com/qupath/qupath-extension-stardist)
+- [StarDist extension QuPath](https://github.com/qupath/qupath-extension-stardist)
+- [QuPath tutorials](https://qupath.readthedocs.io/en/latest/docs/tutorials/index.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

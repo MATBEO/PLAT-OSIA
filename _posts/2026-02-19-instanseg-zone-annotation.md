@@ -14,23 +14,22 @@ layout: single
 # InstanSeg : segmentation sur zones annotées
 
 ## Étapes
-1. Définir 3 ROI tests (faible, moyenne, forte densité cellulaire).
-2. Lancer InstanSeg sur ces ROI avec paramètres constants.
-3. Comparer visuellement le contour cellule/noyau sur chaque ROI.
-4. Ajuster `tile size` et padding si artefacts de bord.
-5. Appliquer au lot complet et exporter les mesures.
+1. Créer les annotations ROI avant la segmentation.
+2. Ne sélectionner que les annotations cibles (éviter `Whole slide`).
+3. Lancer InstanSeg en mode `selected annotations only`.
+4. Vérifier le nombre de cellules détectées par ROI.
+5. Exporter les mesures par annotation.
 
 ## Exemple
 ```groovy
-// QuPath - exemple minimal InstanSeg (adapter selon votre installation)
-def rois = getAnnotationObjects()
-if (rois.isEmpty()) throw new Exception('Aucune ROI sélectionnée')
-println "InstanSeg sur ${rois.size()} ROI"
-// Lancer ensuite via Extensions > InstanSeg > Run InstanSeg avec paramètres notés
+def rois = getAnnotationObjects().findAll { it.getPathClass() != null }
+selectObjects(rois)
+println 'ROI sélectionnées: ' + rois.size()
 ```
 
 ## Documentation
-- Documentation technique: [Documentation InstanSeg (QuPath)](https://github.com/qupath/qupath-extension-instanseg)
+- [Annotations in QuPath](https://qupath.readthedocs.io/en/latest/docs/starting/annotating.html)
+- [InstanSeg extension](https://github.com/qupath/qupath-extension-instanseg)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

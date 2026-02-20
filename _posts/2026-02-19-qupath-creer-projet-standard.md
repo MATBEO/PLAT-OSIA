@@ -14,22 +14,24 @@ layout: single
 # QuPath : créer un projet standard reproductible
 
 ## Étapes
-1. Créer/ouvrir le projet avec arborescence standard.
-2. Importer les images puis vérifier calibration.
-3. Appliquer la procédure cible (détection/classification/export).
-4. Effectuer une revue QC sur zones sentinelles.
-5. Exporter et documenter les paramètres utilisés.
+1. Créer un dossier projet avec sous-dossiers `raw/`, `project/`, `exports/`, `logs/`.
+2. Dans QuPath: `File > Project > Create project...` puis sélectionner `project/`.
+3. Définir une convention de nommage unique (`cohorte_patient_lame`).
+4. Sauvegarder une liste de classes standard avant toute annotation.
+5. Tester l'export CSV et GeoJSON sur une image pilote.
 
 ## Exemple
-```groovy
-// Vérification de contexte projet QuPath
-println "Project: " + (getProject() == null ? 'none' : getProject().toString())
-println "Image: " + getCurrentImageName()
-println "Annotations: " + getAnnotationObjects().size()
+```text
+raw/
+project/
+exports/
+logs/
+README_pipeline.md
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+- [QuPath Projects](https://qupath.readthedocs.io/en/latest/docs/starting/projects.html)
+- [QuPath Data Export](https://qupath.readthedocs.io/en/latest/docs/advanced/exporting_results.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

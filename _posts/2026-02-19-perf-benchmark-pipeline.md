@@ -14,21 +14,22 @@ layout: single
 # Performance : benchmark d'un pipeline complet
 
 ## Étapes
-1. Mesurer baseline avec paramètres actuels.
-2. Modifier un paramètre à la fois.
-3. Mesurer impact temps/mémoire/qualité.
-4. Conserver uniquement optimisations robustes.
-5. Rédiger le rapport de synthèse.
+1. Définir un sous-ensemble fixe de lames pour benchmark.
+2. Mesurer chaque étape séparément (import, segmentation, export).
+3. Exécuter 3 runs et prendre médiane.
+4. Comparer CPU vs GPU avec mêmes paramètres.
+5. Publier un tableau de résultats versionné.
 
 ## Exemple
 ```bash
-# Exemple de profilage rapide
-/usr/bin/time -l python run_pipeline.py --config config.yaml
-python -m cProfile -o profile.out run_pipeline.py
+# Exemple benchmark d'un script Python
+/usr/bin/time -v python run_pipeline.py --input data/test_set --output out_cpu --device cpu
+/usr/bin/time -v python run_pipeline.py --input data/test_set --output out_gpu --device gpu
 ```
 
 ## Documentation
-- Documentation technique: [Profiling Python](https://docs.python.org/3/library/profile.html)
+- [GNU time manual](https://www.gnu.org/software/time/)
+- [Python profiling](https://docs.python.org/3/library/profile.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

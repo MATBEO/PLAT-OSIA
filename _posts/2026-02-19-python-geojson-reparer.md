@@ -14,27 +14,39 @@ layout: single
 # Python : réparer des géométries GeoJSON invalides
 
 ## Étapes
-1. Créer l'environnement et installer les dépendances.
-2. Valider les formats de fichiers d'entrée.
-3. Exécuter un run pilote et inspecter les sorties.
-4. Lancer le lot complet avec journal d'exécution.
-5. Vérifier les métriques finales et archiver.
+1. Installer `shapely` compatible avec ton environnement.
+2. Lire chaque géométrie du GeoJSON.
+3. Appliquer `make_valid` (ou `buffer(0)` fallback).
+4. Rejeter les géométries vides/invalides persistantes.
+5. Exporter un GeoJSON nettoyé.
 
 ## Exemple
 ```python
-from pathlib import Path
+import json
+from shapely.geometry import shape, mapping
+from shapely.validation import make_valid
 
-inp = Path('/path/to/input')
-out = Path('/path/to/output')
-out.mkdir(parents=True, exist_ok=True)
+with open('input.geojson', 'r', encoding='utf-8') as f:
+    gj = json.load(f)
 
-for fp in sorted(inp.glob('*')):
-    # TODO: adapter le traitement
-    print(f"processing: {fp.name}")
+fixed = []
+for ft in gj['features']:
+    geom = shape(ft['geometry'])
+    geom = make_valid(geom)
+    if not geom.is_valid:
+        geom = geom.buffer(0)
+    if geom.is_empty:
+        continue
+    ft['geometry'] = mapping(geom)
+    fixed.append(ft)
+
+with open('fixed.geojson', 'w', encoding='utf-8') as f:
+    json.dump({'type': 'FeatureCollection', 'features': fixed}, f)
 ```
 
 ## Documentation
-- Documentation technique: [Documentation OpenSlide Python](https://openslide.org/api/python/)
+- [Shapely docs](https://shapely.readthedocs.io/en/stable/)
+- [RFC GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

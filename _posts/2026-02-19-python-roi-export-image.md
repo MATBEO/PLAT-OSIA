@@ -14,27 +14,37 @@ layout: single
 # Python : exporter des ROI en images publication
 
 ## Étapes
-1. Créer l'environnement et installer les dépendances.
-2. Valider les formats de fichiers d'entrée.
-3. Exécuter un run pilote et inspecter les sorties.
-4. Lancer le lot complet avec journal d'exécution.
-5. Vérifier les métriques finales et archiver.
+1. Lire la ROI (polygone) depuis un GeoJSON.
+2. Extraire la bounding box dans la lame WSI.
+3. Appliquer un masque polygone pour ne garder que la ROI.
+4. Exporter en PNG/TIFF haute qualité.
+5. Conserver nommage incluant ID ROI.
 
 ## Exemple
 ```python
-from pathlib import Path
+import json
+import openslide
+import numpy as np
+from PIL import Image, ImageDraw
 
-inp = Path('/path/to/input')
-out = Path('/path/to/output')
-out.mkdir(parents=True, exist_ok=True)
+slide = openslide.OpenSlide('sample.svs')
+with open('roi.geojson', 'r', encoding='utf-8') as f:
+    poly = json.load(f)['features'][0]['geometry']['coordinates'][0]
 
-for fp in sorted(inp.glob('*')):
-    # TODO: adapter le traitement
-    print(f"processing: {fp.name}")
+xs = [p[0] for p in poly]; ys = [p[1] for p in poly]
+minx, miny, maxx, maxy = map(int, (min(xs), min(ys), max(xs), max(ys)))
+img = slide.read_region((minx, miny), 0, (maxx-minx, maxy-miny)).convert('RGB')
+mask = Image.new('L', img.size, 0)
+pts = [(x-minx, y-miny) for x, y in poly]
+ImageDraw.Draw(mask).polygon(pts, fill=255)
+out = Image.new('RGB', img.size)
+out.paste(img, mask=mask)
+out.save('roi_export.png')
 ```
 
 ## Documentation
-- Documentation technique: [Documentation OpenSlide Python](https://openslide.org/api/python/)
+- [OpenSlide Python API](https://openslide.org/api/python/)
+- [Pillow ImageDraw](https://pillow.readthedocs.io/en/stable/reference/ImageDraw.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

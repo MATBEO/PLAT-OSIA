@@ -14,20 +14,24 @@ layout: single
 # Multiplex : segmentation cellulaire adaptée
 
 ## Étapes
-1. Contrôler l'alignement et l'intensité de chaque canal.
-2. Segmenter les cellules avec un preset versionné.
-3. Définir les règles de phénotypes (gates).
-4. Appliquer la classification et vérifier les cas limites.
-5. Exporter populations et cartes de distribution.
+1. Sélectionner une méthode de segmentation compatible fluorescence.
+2. Tester les paramètres sur 2 zones contrastées.
+3. Ajuster `cell expansion` et taille minimale des objets.
+4. Vérifier qu'il n'y a pas de sur-segmentation massive.
+5. Geler les paramètres pour le lot complet.
 
 ## Exemple
-```text
-Exemple de règle de phénotype
-T_CD8 = DAPI+ AND CD3+ AND CD8+ AND NOT CD20+
+```yaml
+nucleus_detection:
+  sigma: 1.5
+  min_area_um2: 20
+cell_expansion_um: 5
+watershed_postprocess: true
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath (Multiplex)](https://qupath.readthedocs.io/en/latest/)
+- [QuPath cell detection tutorials](https://qupath.readthedocs.io/en/latest/docs/tutorials/cell_detection.html)
+- [QuPath docs](https://qupath.readthedocs.io/en/latest/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

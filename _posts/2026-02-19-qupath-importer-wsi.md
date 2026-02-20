@@ -14,22 +14,23 @@ layout: single
 # QuPath : importer des lames entières (WSI) correctement
 
 ## Étapes
-1. Créer/ouvrir le projet avec arborescence standard.
-2. Importer les images puis vérifier calibration.
-3. Appliquer la procédure cible (détection/classification/export).
-4. Effectuer une revue QC sur zones sentinelles.
-5. Exporter et documenter les paramètres utilisés.
+1. Vérifier que la lame est bien pyramidale (`.svs`, `.ndpi`, `.mrxs`, `.tif` pyramidal).
+2. Importer via `Project > Add images...` et ne pas dupliquer les fichiers.
+3. Contrôler la calibration pixel (`Image > Properties`).
+4. Vérifier orientation/couches de la lame avant annotation.
+5. Bloquer toute analyse si `pixel size` est absent ou incohérent.
 
 ## Exemple
 ```groovy
-// Vérification de contexte projet QuPath
-println "Project: " + (getProject() == null ? 'none' : getProject().toString())
-println "Image: " + getCurrentImageName()
-println "Annotations: " + getAnnotationObjects().size()
+def md = getCurrentServer().getMetadata()
+println "Width x Height: ${md.getWidth()} x ${md.getHeight()}"
+println "Pixel size (um): " + md.getPixelCalibration().getAveragedPixelSizeMicrons()
+println "Magnification: " + md.getMagnification()
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+- [Formats supportés par QuPath](https://qupath.readthedocs.io/en/latest/docs/intro/formats.html)
+- [OpenSlide (formats WSI)](https://openslide.org/formats/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

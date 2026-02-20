@@ -14,21 +14,23 @@ layout: single
 # Warpy : installation et test rapide
 
 ## Étapes
-1. Choisir une lame pivot (référence) par série.
-2. Poser des repères distribués (centre + périphérie).
-3. Calculer la transformation et inspecter les zones denses.
-4. Projeter les annotations uniquement après QC local.
-5. Exporter les annotations projetées en GeoJSON.
+1. Installer l'extension Warpy depuis son dépôt officiel.
+2. Vérifier la compatibilité avec la version QuPath.
+3. Redémarrer QuPath puis vérifier la présence du menu Warpy.
+4. Tester un alignement sur 2 lames pilotes.
+5. Conserver la version Warpy utilisée dans les notes projet.
 
 ## Exemple
-```groovy
-// Contrôle avant projection
-println "Reference image: " + getCurrentImageName()
-println "N annotations: " + getAnnotationObjects().size()
+```text
+Validation minimale:
+- Menu Warpy présent
+- Exécution sans erreur sur un test 2 lames
+- Fichier de transformation généré
 ```
 
 ## Documentation
-- Documentation technique: [Documentation Warpy](https://github.com/BIOP/qupath-extension-warpy)
+- [Warpy extension GitHub](https://github.com/BIOP/qupath-extension-warpy)
+- [QuPath extensions](https://qupath.readthedocs.io/en/latest/docs/intro/extensions.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

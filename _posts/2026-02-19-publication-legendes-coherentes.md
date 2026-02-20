@@ -14,22 +14,23 @@ layout: single
 # Publication : légendes cohérentes et utiles
 
 ## Étapes
-1. Exporter une version brute haute résolution.
-2. Vérifier lisibilité des annotations et textes.
-3. Uniformiser couleurs, tailles de police et légendes.
-4. Contrôler la figure à 100% et 50% de zoom.
-5. Archiver la version finale + source.
+1. Utiliser une structure de légende identique pour toutes les figures.
+2. Inclure: tissu, marqueurs, méthode, n, unité, test statistique.
+3. Éviter les abréviations non définies.
+4. Vérifier cohérence des couleurs avec le texte.
+5. Faire relire la légende par un second lecteur.
 
 ## Exemple
 ```text
-Checklist figure finale
-- Résolution >= 300 dpi
-- Barre d'échelle visible
-- Légende complète (marqueurs, classes, unité)
+Template légende:
+(A) Type d'échantillon et condition.
+(B) Méthode d'analyse (outil + paramètres clés).
+(C) Résultat principal (n, unité, test statistique).
 ```
 
 ## Documentation
-- Documentation technique: [Guide publication figures (Nature)](https://www.nature.com/nature/for-authors/formatting-guide)
+- [Nature formatting guide](https://www.nature.com/nature/for-authors/formatting-guide)
+- [Equator reporting guidelines](https://www.equator-network.org/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

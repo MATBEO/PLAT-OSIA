@@ -14,22 +14,23 @@ layout: single
 # CytoMAP : définir les neighborhoods
 
 ## Étapes
-1. Vérifier le schéma CSV avant import.
-2. Importer un échantillon pilote et valider types de colonnes.
-3. Lancer un clustering initial puis ajuster les paramètres.
-4. Construire les neighborhoods et comparer entre échantillons.
-5. Exporter les figures et tableaux de synthèse.
+1. Choisir un rayon de neighborhood cohérent avec la biologie tissulaire.
+2. Tester 2-3 rayons (ex: 30, 50, 75 µm).
+3. Comparer la stabilité des regroupements par rayon.
+4. Retenir le rayon qui maximise interprétabilité + robustesse.
+5. Documenter le rayon retenu et son rational.
 
 ## Exemple
 ```text
-CSV minimal recommandé
-CellID,X,Y,Z,Sample,MarkerA,MarkerB,MarkerC
-c001,102.4,88.1,0,sample_01,0.72,0.05,0.33
-c002,110.7,92.6,0,sample_01,0.61,0.12,0.41
+Règle pratique:
+- Trop petit: bruit élevé
+- Trop grand: perte d'information locale
+- Commencer à 50 µm puis ajuster
 ```
 
 ## Documentation
-- Documentation technique: [Wiki CytoMAP](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
+- [CytoMAP wiki](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
+- [Spatial analysis overview](https://www.nature.com/articles/s41592-021-01322-9)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

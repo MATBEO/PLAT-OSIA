@@ -14,22 +14,23 @@ layout: single
 # CytoMAP : installation et démarrage
 
 ## Étapes
-1. Vérifier le schéma CSV avant import.
-2. Importer un échantillon pilote et valider types de colonnes.
-3. Lancer un clustering initial puis ajuster les paramètres.
-4. Construire les neighborhoods et comparer entre échantillons.
-5. Exporter les figures et tableaux de synthèse.
+1. Installer MATLAB version supportée par CytoMAP.
+2. Télécharger CytoMAP depuis le wiki officiel.
+3. Ajouter le dossier CytoMAP au `path` MATLAB.
+4. Sauvegarder le `path` pour les prochaines sessions.
+5. Lancer un dataset test pour confirmer l'installation.
 
 ## Exemple
-```text
-CSV minimal recommandé
-CellID,X,Y,Z,Sample,MarkerA,MarkerB,MarkerC
-c001,102.4,88.1,0,sample_01,0.72,0.05,0.33
-c002,110.7,92.6,0,sample_01,0.61,0.12,0.41
+```matlab
+addpath(genpath('/path/to/CytoMAP'))
+savepath
+which CytoMAP
+disp('CytoMAP prêt')
 ```
 
 ## Documentation
-- Documentation technique: [Wiki CytoMAP](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
+- [CytoMAP wiki](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
+- [MATLAB documentation](https://www.mathworks.com/help/matlab/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

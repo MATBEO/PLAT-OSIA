@@ -14,21 +14,23 @@ layout: single
 # Warpy : projeter des annotations interlames
 
 ## Étapes
-1. Choisir une lame pivot (référence) par série.
-2. Poser des repères distribués (centre + périphérie).
-3. Calculer la transformation et inspecter les zones denses.
-4. Projeter les annotations uniquement après QC local.
-5. Exporter les annotations projetées en GeoJSON.
+1. Définir une lame de référence et une lame cible.
+2. Calculer l'alignement interlames dans Warpy.
+3. Projeter les annotations de la référence vers la cible.
+4. Contrôler la projection sur des repères anatomiques fixes.
+5. Corriger manuellement les ROI problématiques.
 
 ## Exemple
-```groovy
-// Contrôle avant projection
-println "Reference image: " + getCurrentImageName()
-println "N annotations: " + getAnnotationObjects().size()
+```text
+Checklist projection:
+- mêmes zones anatomiques couvertes
+- pas de décalage systématique en bordure
+- ROI projetées exploitables pour segmentation
 ```
 
 ## Documentation
-- Documentation technique: [Documentation Warpy](https://github.com/BIOP/qupath-extension-warpy)
+- [Warpy extension](https://github.com/BIOP/qupath-extension-warpy)
+- [Image registration concepts (scikit-image)](https://scikit-image.org/docs/stable/auto_examples/registration/plot_register_translation.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

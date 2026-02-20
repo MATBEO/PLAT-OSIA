@@ -14,23 +14,26 @@ layout: single
 # InstanSeg : comparaison CPU, GPU et MPS
 
 ## Étapes
-1. Définir 3 ROI tests (faible, moyenne, forte densité cellulaire).
-2. Lancer InstanSeg sur ces ROI avec paramètres constants.
-3. Comparer visuellement le contour cellule/noyau sur chaque ROI.
-4. Ajuster `tile size` et padding si artefacts de bord.
-5. Appliquer au lot complet et exporter les mesures.
+1. Tester d'abord le pipeline en CPU (robustesse).
+2. Activer GPU NVIDIA si disponible pour la production.
+3. Sur Apple Silicon, utiliser MPS si l'extension le supporte.
+4. Comparer le temps sur la même image et mêmes paramètres.
+5. Conserver le mode le plus stable, pas seulement le plus rapide.
 
 ## Exemple
-```groovy
-// QuPath - exemple minimal InstanSeg (adapter selon votre installation)
-def rois = getAnnotationObjects()
-if (rois.isEmpty()) throw new Exception('Aucune ROI sélectionnée')
-println "InstanSeg sur ${rois.size()} ROI"
-// Lancer ensuite via Extensions > InstanSeg > Run InstanSeg avec paramètres notés
+```bash
+# Linux/Windows (NVIDIA)
+nvidia-smi
+nvcc --version
+
+# macOS Apple Silicon
+system_profiler SPHardwareDataType | grep 'Chip' 
 ```
 
 ## Documentation
-- Documentation technique: [Documentation InstanSeg (QuPath)](https://github.com/qupath/qupath-extension-instanseg)
+- [CUDA downloads](https://developer.nvidia.com/cuda-downloads)
+- [PyTorch MPS backend](https://pytorch.org/docs/stable/notes/mps.html)
+- [InstanSeg extension](https://github.com/qupath/qupath-extension-instanseg)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

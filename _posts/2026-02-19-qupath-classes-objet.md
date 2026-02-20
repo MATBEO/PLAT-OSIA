@@ -14,22 +14,24 @@ layout: single
 # QuPath : organiser les classes d'objets
 
 ## Étapes
-1. Créer/ouvrir le projet avec arborescence standard.
-2. Importer les images puis vérifier calibration.
-3. Appliquer la procédure cible (détection/classification/export).
-4. Effectuer une revue QC sur zones sentinelles.
-5. Exporter et documenter les paramètres utilisés.
+1. Définir une arborescence de classes avant la détection (`Cell`, `Tumor`, `Immune`, etc.).
+2. Associer une couleur fixe par classe (éviter les changements en cours de projet).
+3. Éviter les classes redondantes (`Tumeur` et `Tumor`).
+4. Valider les classes sur 3 lames avant lot complet.
+5. Versionner la nomenclature dans un fichier `classes.md`.
 
 ## Exemple
 ```groovy
-// Vérification de contexte projet QuPath
-println "Project: " + (getProject() == null ? 'none' : getProject().toString())
-println "Image: " + getCurrentImageName()
-println "Annotations: " + getAnnotationObjects().size()
+def classes = ['Tumor', 'Stroma', 'Immune', 'Artefact']
+classes.each { name ->
+    def pc = getPathClass(name)
+    println "Classe OK: " + pc
+}
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+- [PathClass dans QuPath](https://qupath.readthedocs.io/en/latest/docs/scripting/overview.html)
+- [Bonnes pratiques de classification](https://qupath.readthedocs.io/en/latest/docs/starting/classification.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

@@ -14,23 +14,26 @@ layout: single
 # QC : détecter les erreurs de segmentation
 
 ## Étapes
-1. Préparer les entrées et vérifier leur qualité.
-2. Exécuter la méthode cible sur un sous-ensemble pilote.
-3. Ajuster les paramètres puis lancer le lot.
-4. Réaliser un QC visuel + quantitatif.
-5. Exporter et documenter le run.
+1. Exporter les mesures d'objets segmentés.
+2. Détecter les outliers de taille et circularité.
+3. Revenir sur image pour confirmer les erreurs.
+4. Ajuster paramètres et relancer uniquement les lames touchées.
+5. Comparer avant/après avec métriques.
 
 ## Exemple
-```text
-Runbook minimal
-- version outils
-- paramètres clés
-- résultats QC
-- lien vers exports
+```python
+import pandas as pd
+
+df = pd.read_csv('detections.csv')
+a = df['Cell: Area']
+lo, hi = a.quantile([0.01, 0.99])
+outliers = df[(a < lo) | (a > hi)]
+print('outliers:', len(outliers), '/', len(df))
 ```
 
 ## Documentation
-- Documentation technique: [Segmentation workflows in QuPath](https://qupath.readthedocs.io/en/latest/docs/tutorials/index.html)
+- [QuPath tutorials](https://qupath.readthedocs.io/en/latest/docs/tutorials/index.html)
+- [Pandas quantile](https://pandas.pydata.org/docs/reference/api/pandas.Series.quantile.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

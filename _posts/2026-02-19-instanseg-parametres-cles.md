@@ -14,23 +14,25 @@ layout: single
 # InstanSeg : paramètres clés à connaître
 
 ## Étapes
-1. Définir 3 ROI tests (faible, moyenne, forte densité cellulaire).
-2. Lancer InstanSeg sur ces ROI avec paramètres constants.
-3. Comparer visuellement le contour cellule/noyau sur chaque ROI.
-4. Ajuster `tile size` et padding si artefacts de bord.
-5. Appliquer au lot complet et exporter les mesures.
+1. Fixer `tile_size` selon la RAM GPU (512, 1024, 1536).
+2. Augmenter `tile_padding` si les objets sont coupés en bordure.
+3. Adapter le device (`cpu`, `gpu`, `mps`) selon la machine.
+4. Conserver les mêmes paramètres sur toute la cohorte.
+5. Journaliser les paramètres dans un fichier `run_params.yaml`.
 
 ## Exemple
-```groovy
-// QuPath - exemple minimal InstanSeg (adapter selon votre installation)
-def rois = getAnnotationObjects()
-if (rois.isEmpty()) throw new Exception('Aucune ROI sélectionnée')
-println "InstanSeg sur ${rois.size()} ROI"
-// Lancer ensuite via Extensions > InstanSeg > Run InstanSeg avec paramètres notés
+```yaml
+device: gpu
+tile_size: 1024
+tile_padding: 64
+batch_size: 1
+save_measurements: true
+model: instanseg_general
 ```
 
 ## Documentation
-- Documentation technique: [Documentation InstanSeg (QuPath)](https://github.com/qupath/qupath-extension-instanseg)
+- [InstanSeg README](https://github.com/qupath/qupath-extension-instanseg)
+- [CUDA compatibility guide](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

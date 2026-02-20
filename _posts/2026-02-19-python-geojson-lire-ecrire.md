@@ -14,27 +14,29 @@ layout: single
 # Python : lire et écrire un GeoJSON
 
 ## Étapes
-1. Créer l'environnement et installer les dépendances.
-2. Valider les formats de fichiers d'entrée.
-3. Exécuter un run pilote et inspecter les sorties.
-4. Lancer le lot complet avec journal d'exécution.
-5. Vérifier les métriques finales et archiver.
+1. Charger le GeoJSON et vérifier la structure `FeatureCollection`.
+2. Valider que chaque feature contient une géométrie.
+3. Modifier ou filtrer les features nécessaires.
+4. Écrire un nouveau fichier GeoJSON UTF-8.
+5. Contrôler l'ouverture dans QuPath/QGIS.
 
 ## Exemple
 ```python
-from pathlib import Path
+import json
 
-inp = Path('/path/to/input')
-out = Path('/path/to/output')
-out.mkdir(parents=True, exist_ok=True)
+with open('input.geojson', 'r', encoding='utf-8') as f:
+    gj = json.load(f)
 
-for fp in sorted(inp.glob('*')):
-    # TODO: adapter le traitement
-    print(f"processing: {fp.name}")
+assert gj['type'] == 'FeatureCollection'
+features = [ft for ft in gj['features'] if ft.get('geometry')]
+
+with open('output.geojson', 'w', encoding='utf-8') as f:
+    json.dump({'type': 'FeatureCollection', 'features': features}, f, ensure_ascii=False)
 ```
 
 ## Documentation
-- Documentation technique: [Documentation OpenSlide Python](https://openslide.org/api/python/)
+- [RFC GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946)
+- [Python json module](https://docs.python.org/3/library/json.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

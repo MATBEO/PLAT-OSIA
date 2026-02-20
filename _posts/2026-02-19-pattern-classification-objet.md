@@ -14,23 +14,23 @@ layout: single
 # Classification objet dans QuPath : bonnes pratiques
 
 ## Étapes
-1. Préparer les entrées et vérifier leur qualité.
-2. Exécuter la méthode cible sur un sous-ensemble pilote.
-3. Ajuster les paramètres puis lancer le lot.
-4. Réaliser un QC visuel + quantitatif.
-5. Exporter et documenter le run.
+1. Définir les classes cibles et annoter des exemples équilibrés.
+2. Extraire des features stables (morphologie + intensité).
+3. Entraîner le classifieur objet dans QuPath.
+4. Évaluer sur des zones non vues pendant l'entraînement.
+5. Sauvegarder le modèle et la version de features.
 
 ## Exemple
 ```text
-Runbook minimal
-- version outils
-- paramètres clés
-- résultats QC
-- lien vers exports
+Bonnes pratiques:
+- classes équilibrées
+- éviter annotations ambiguës
+- figer les features avant comparaison de modèles
 ```
 
 ## Documentation
-- Documentation technique: [Object classification in QuPath](https://qupath.readthedocs.io/en/latest/docs/tutorials/cell_classification.html)
+- [QuPath cell/object classification](https://qupath.readthedocs.io/en/latest/docs/tutorials/cell_classification.html)
+- [QuPath docs](https://qupath.readthedocs.io/en/latest/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

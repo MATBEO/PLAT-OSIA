@@ -14,20 +14,24 @@ layout: single
 # Multiplex : check-list de contrôle qualité
 
 ## Étapes
-1. Contrôler l'alignement et l'intensité de chaque canal.
-2. Segmenter les cellules avec un preset versionné.
-3. Définir les règles de phénotypes (gates).
-4. Appliquer la classification et vérifier les cas limites.
-5. Exporter populations et cartes de distribution.
+1. Vérifier la qualité image par canal (saturation, bruit, fond).
+2. Contrôler la segmentation sur au moins 5 ROI par lame.
+3. Comparer les taux de positivité aux contrôles biologiques.
+4. Tracer les distributions de signal par marqueur.
+5. Bloquer l'analyse si dérive majeure détectée.
 
 ## Exemple
-```text
-Exemple de règle de phénotype
-T_CD8 = DAPI+ AND CD3+ AND CD8+ AND NOT CD20+
+```python
+import pandas as pd
+
+df = pd.read_csv('cells_multiplex.csv')
+for marker in ['CD3_mean', 'CD8_mean', 'PDL1_mean']:
+    print(marker, df[marker].describe()[['mean', 'std', 'min', 'max']].to_dict())
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath (Multiplex)](https://qupath.readthedocs.io/en/latest/)
+- [QuPath docs](https://qupath.readthedocs.io/en/latest/)
+- [Quality control principles](https://www.iso.org/standard/62085.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

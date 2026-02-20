@@ -14,23 +14,23 @@ layout: single
 # StarDist vs InstanSeg : quand utiliser quoi
 
 ## Étapes
-1. Définir 3 ROI tests (faible, moyenne, forte densité cellulaire).
-2. Lancer InstanSeg sur ces ROI avec paramètres constants.
-3. Comparer visuellement le contour cellule/noyau sur chaque ROI.
-4. Ajuster `tile size` et padding si artefacts de bord.
-5. Appliquer au lot complet et exporter les mesures.
+1. Évaluer les deux modèles sur les mêmes ROI.
+2. Mesurer temps de traitement et stabilité des contours.
+3. Comparer faux positifs/faux négatifs sur 3 cas difficiles.
+4. Choisir un modèle unique par cohorte pour éviter les biais.
+5. Documenter le choix final et la raison.
 
 ## Exemple
-```groovy
-// QuPath - exemple minimal InstanSeg (adapter selon votre installation)
-def rois = getAnnotationObjects()
-if (rois.isEmpty()) throw new Exception('Aucune ROI sélectionnée')
-println "InstanSeg sur ${rois.size()} ROI"
-// Lancer ensuite via Extensions > InstanSeg > Run InstanSeg avec paramètres notés
+```text
+Décision rapide:
+- StarDist: souvent plus simple pour noyaux H&E
+- InstanSeg: flexible nuclei+cell, bon en multiplex
+- Choix final: meilleur compromis précision/temps sur ton jeu de données
 ```
 
 ## Documentation
-- Documentation technique: [Documentation InstanSeg (QuPath)](https://github.com/qupath/qupath-extension-instanseg)
+- [StarDist extension](https://github.com/qupath/qupath-extension-stardist)
+- [InstanSeg extension](https://github.com/qupath/qupath-extension-instanseg)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

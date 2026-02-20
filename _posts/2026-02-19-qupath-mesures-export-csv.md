@@ -14,22 +14,23 @@ layout: single
 # QuPath : exporter les mesures au format CSV
 
 ## Étapes
-1. Créer/ouvrir le projet avec arborescence standard.
-2. Importer les images puis vérifier calibration.
-3. Appliquer la procédure cible (détection/classification/export).
-4. Effectuer une revue QC sur zones sentinelles.
-5. Exporter et documenter les paramètres utilisés.
+1. Vérifier que la détection est terminée et gelée (pas de recalcul en parallèle).
+2. Choisir les mesures utiles (aire, circularité, intensité marqueur).
+3. Exporter en CSV avec séparateur standard (virgule) et encodage UTF-8.
+4. Inclure l'identifiant image et ROI dans le fichier exporté.
+5. Contrôler 10 lignes aléatoires dans un tableur avant import aval.
 
 ## Exemple
 ```groovy
-// Vérification de contexte projet QuPath
-println "Project: " + (getProject() == null ? 'none' : getProject().toString())
-println "Image: " + getCurrentImageName()
-println "Annotations: " + getAnnotationObjects().size()
+def out = buildFilePath(PROJECT_BASE_DIR, 'exports', 'detections.csv')
+mkdirs(new File(out).getParent())
+saveDetectionMeasurements(out)
+println 'Export: ' + out
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+- [Exporting results in QuPath](https://qupath.readthedocs.io/en/latest/docs/advanced/exporting_results.html)
+- [QuPath scripting API](https://qupath.readthedocs.io/en/latest/docs/scripting/overview.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

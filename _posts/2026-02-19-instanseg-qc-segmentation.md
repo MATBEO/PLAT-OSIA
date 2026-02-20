@@ -14,23 +14,24 @@ layout: single
 # InstanSeg : contrôle qualité des segmentations
 
 ## Étapes
-1. Définir 3 ROI tests (faible, moyenne, forte densité cellulaire).
-2. Lancer InstanSeg sur ces ROI avec paramètres constants.
-3. Comparer visuellement le contour cellule/noyau sur chaque ROI.
-4. Ajuster `tile size` et padding si artefacts de bord.
-5. Appliquer au lot complet et exporter les mesures.
+1. Vérifier les faux positifs sur zones sans tissu.
+2. Vérifier les faux négatifs dans les zones cellulaires denses.
+3. Contrôler la taille moyenne des objets détectés.
+4. Refaire un run si >10% des objets sont manifestement erronés.
+5. Sauvegarder captures QC avant validation finale.
 
 ## Exemple
-```groovy
-// QuPath - exemple minimal InstanSeg (adapter selon votre installation)
-def rois = getAnnotationObjects()
-if (rois.isEmpty()) throw new Exception('Aucune ROI sélectionnée')
-println "InstanSeg sur ${rois.size()} ROI"
-// Lancer ensuite via Extensions > InstanSeg > Run InstanSeg avec paramètres notés
+```python
+import pandas as pd
+
+df = pd.read_csv('detections.csv')
+print('n_objects:', len(df))
+print('area_q01_q99:', df['Cell: Area'].quantile([0.01, 0.99]).to_dict())
 ```
 
 ## Documentation
-- Documentation technique: [Documentation InstanSeg (QuPath)](https://github.com/qupath/qupath-extension-instanseg)
+- [QuPath tutorials](https://qupath.readthedocs.io/en/latest/docs/tutorials/index.html)
+- [InstanSeg extension](https://github.com/qupath/qupath-extension-instanseg)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

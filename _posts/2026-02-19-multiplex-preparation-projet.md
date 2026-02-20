@@ -14,20 +14,25 @@ layout: single
 # Multiplex : préparer un projet QuPath propre
 
 ## Étapes
-1. Contrôler l'alignement et l'intensité de chaque canal.
-2. Segmenter les cellules avec un preset versionné.
-3. Définir les règles de phénotypes (gates).
-4. Appliquer la classification et vérifier les cas limites.
-5. Exporter populations et cartes de distribution.
+1. Créer un projet QuPath dédié au multiplex (pas mélanger avec H&E).
+2. Lister tous les marqueurs avec canal, clone et seuil attendu.
+3. Ajouter des contrôles positifs/négatifs dans le lot.
+4. Harmoniser le nommage des images et des canaux.
+5. Geler le plan d'analyse avant segmentation.
 
 ## Exemple
 ```text
-Exemple de règle de phénotype
-T_CD8 = DAPI+ AND CD3+ AND CD8+ AND NOT CD20+
+Table minimale à préparer:
+- Marker
+- Canal
+- Contrôle positif
+- Contrôle négatif
+- Seuil initial
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath (Multiplex)](https://qupath.readthedocs.io/en/latest/)
+- [QuPath fluorescence](https://qupath.readthedocs.io/en/latest/docs/intro/images.html)
+- [QuPath docs](https://qupath.readthedocs.io/en/latest/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

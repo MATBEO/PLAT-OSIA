@@ -14,22 +14,24 @@ layout: single
 # Alignement de séries H&E et IHC
 
 ## Étapes
-1. Choisir une lame pivot robuste comme référence.
-2. Définir les repères et calculer la transformation.
-3. Mesurer l'erreur visuelle sur zones critiques.
-4. Projeter les annotations après validation.
-5. Archiver transformation et outputs.
+1. Choisir H&E comme référence morphologique.
+2. Aligner chaque lame IHC individuellement vers H&E.
+3. Vérifier les repères (glandes, vaisseaux, frontières tissulaires).
+4. Projeter ensuite les ROI/masques de la référence vers IHC.
+5. Valider sur au moins 3 zones critiques par lame.
 
 ## Exemple
 ```text
-Points de contrôle recommandés
-- 2 points centre
-- 4 points périphérie
-- 2 points zones riches en structures
+Ordre conseillé:
+1) QC image
+2) Alignement H&E vs IHC
+3) Projection ROI
+4) Segmentation/mesure
 ```
 
 ## Documentation
-- Documentation technique: [Image registration concepts](https://scikit-image.org/docs/stable/auto_examples/registration/plot_register_translation.html)
+- [VALIS documentation](https://valis.readthedocs.io/en/latest/)
+- [Warpy extension](https://github.com/BIOP/qupath-extension-warpy)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

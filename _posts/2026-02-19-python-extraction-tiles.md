@@ -14,27 +14,30 @@ layout: single
 # Python : extraction de tuiles depuis WSI
 
 ## Étapes
-1. Créer l'environnement et installer les dépendances.
-2. Valider les formats de fichiers d'entrée.
-3. Exécuter un run pilote et inspecter les sorties.
-4. Lancer le lot complet avec journal d'exécution.
-5. Vérifier les métriques finales et archiver.
+1. Définir niveau pyramidale, taille de tuile et stride.
+2. Ignorer les tuiles hors tissu ou trop blanches.
+3. Sauvegarder les tuiles avec coordonnées dans le nom.
+4. Conserver un CSV index des tuiles exportées.
+5. Vérifier un échantillon visuel de tuiles.
 
 ## Exemple
 ```python
+import openslide
 from pathlib import Path
 
-inp = Path('/path/to/input')
-out = Path('/path/to/output')
-out.mkdir(parents=True, exist_ok=True)
-
-for fp in sorted(inp.glob('*')):
-    # TODO: adapter le traitement
-    print(f"processing: {fp.name}")
+slide = openslide.OpenSlide('sample.svs')
+out = Path('tiles'); out.mkdir(exist_ok=True)
+size, stride = 512, 512
+W, H = slide.level_dimensions[0]
+for y in range(0, H - size + 1, stride):
+    for x in range(0, W - size + 1, stride):
+        tile = slide.read_region((x, y), 0, (size, size)).convert('RGB')
+        tile.save(out / f'tile_x{x}_y{y}.jpg', quality=90)
 ```
 
 ## Documentation
-- Documentation technique: [Documentation OpenSlide Python](https://openslide.org/api/python/)
+- [OpenSlide Python API](https://openslide.org/api/python/)
+- [Pillow docs](https://pillow.readthedocs.io/en/stable/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

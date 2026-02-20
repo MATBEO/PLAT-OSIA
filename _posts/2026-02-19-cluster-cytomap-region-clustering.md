@@ -14,22 +14,27 @@ layout: single
 # CytoMAP : clustering des régions tissulaires
 
 ## Étapes
-1. Vérifier le schéma CSV avant import.
-2. Importer un échantillon pilote et valider types de colonnes.
-3. Lancer un clustering initial puis ajuster les paramètres.
-4. Construire les neighborhoods et comparer entre échantillons.
-5. Exporter les figures et tableaux de synthèse.
+1. Construire des vecteurs de composition cellulaire par région.
+2. Normaliser les variables avant clustering.
+3. Tester plusieurs `k` et comparer la séparation.
+4. Vérifier la cohérence biologique de chaque cluster.
+5. Exporter l'assignation région -> cluster.
 
 ## Exemple
-```text
-CSV minimal recommandé
-CellID,X,Y,Z,Sample,MarkerA,MarkerB,MarkerC
-c001,102.4,88.1,0,sample_01,0.72,0.05,0.33
-c002,110.7,92.6,0,sample_01,0.61,0.12,0.41
+```python
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+
+X = pd.read_csv('region_features.csv')
+Xs = StandardScaler().fit_transform(X)
+labels = KMeans(n_clusters=4, random_state=0, n_init='auto').fit_predict(Xs)
+print('cluster_counts:', pd.Series(labels).value_counts().to_dict())
 ```
 
 ## Documentation
-- Documentation technique: [Wiki CytoMAP](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
+- [CytoMAP wiki](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
+- [scikit-learn KMeans](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

@@ -13,83 +13,55 @@ layout: single
 
 # Performance : installer CUDA proprement
 
-## Téléchargements
-- Pilotes NVIDIA (officiel): [https://www.nvidia.com/download/index.aspx](https://www.nvidia.com/download/index.aspx)
-- CUDA Toolkit (officiel): [https://developer.nvidia.com/cuda-downloads](https://developer.nvidia.com/cuda-downloads)
-- Archive CUDA (versions): [https://developer.nvidia.com/cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
+## Étapes
+1. Installer le pilote NVIDIA depuis la page officielle des pilotes.
+2. Télécharger CUDA Toolkit depuis la page NVIDIA officielle.
+3. Installer CUDA puis redémarrer la machine.
+4. Vérifier `nvidia-smi` et `nvcc --version`.
+5. Tester l'accès CUDA depuis Python (si pipeline Python).
 
-Version actuelle repérée dans l'archive au 20 février 2026: **CUDA Toolkit 13.1.1 (janvier 2026)**.
-
-## Installation Windows 10/11
-1. Installer le pilote NVIDIA depuis la page officielle.
-2. Aller sur `cuda-downloads`, choisir `Windows` puis télécharger l'installateur `exe (local)`.
-3. Lancer l'installateur CUDA en administrateur.
-4. Redémarrer le PC.
-5. Vérifier dans PowerShell:
-
-```powershell
-nvidia-smi
-nvcc --version
-where nvcc
-```
-
-Si `nvcc` n'est pas trouvé, vérifier ce dossier dans le `PATH`:
-`C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.1\bin`
-
-## Installation Ubuntu 24.04 (APT)
+## Exemple
 ```bash
-# 1) Pilote NVIDIA
-sudo ubuntu-drivers devices
-sudo ubuntu-drivers autoinstall
-sudo reboot
+# Téléchargements officiels
+# Driver: https://www.nvidia.com/download/index.aspx
+# CUDA:   https://developer.nvidia.com/cuda-downloads
+# Archive: https://developer.nvidia.com/cuda-toolkit-archive
 
-# 2) Dépôt CUDA
+# Windows (PowerShell)
+# 1) Télécharger le .exe local depuis cuda-downloads
+# 2) Lancer l'installateur en administrateur
+# 3) Vérifier:
+# nvidia-smi
+# nvcc --version
+# where nvcc
+
+# Ubuntu 24.04 (APT)
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt update
-
-# 3) Toolkit
 sudo apt install -y cuda-toolkit-13-1
 sudo reboot
-```
 
-Liens utiles Ubuntu 24.04:
-- [Index dépôt NVIDIA CUDA Ubuntu 24.04 x86_64](https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/)
-- [Pin de repo](https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-ubuntu2404.pin)
-- [Meta-paquet CUDA 13.1.1](https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-toolkit-13-1_13.1.1-1_amd64.deb)
-
-## Installation Ubuntu 22.04 (APT)
-```bash
-# 1) Pilote NVIDIA
-sudo ubuntu-drivers devices
-sudo ubuntu-drivers autoinstall
-sudo reboot
-
-# 2) Dépôt CUDA
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
-sudo dpkg -i cuda-keyring_1.1-1_all.deb
-sudo apt update
-
-# 3) Toolkit
-sudo apt install -y cuda-toolkit-13-1
-sudo reboot
-```
-
-Liens utiles Ubuntu 22.04:
-- [Index dépôt NVIDIA CUDA Ubuntu 22.04 x86_64](https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/)
-- [Pin de repo](https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin)
-- [Meta-paquet CUDA 13.1.1](https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-toolkit-13-1_13.1.1-1_amd64.deb)
-
-## Vérification rapide
-```bash
+# Vérification
 nvidia-smi
 nvcc --version
+
+# Vérification Python (optionnel)
+python - <<'PY'
+import torch
+print('torch:', torch.__version__)
+print('cuda available:', torch.cuda.is_available())
+if torch.cuda.is_available():
+    print('device:', torch.cuda.get_device_name(0))
+PY
 ```
 
 ## Documentation
-- [Guide d'installation CUDA Linux 13.1](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
-- [Guide d'installation CUDA Windows 13.1](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html)
-- [Documentation CUDA](https://docs.nvidia.com/cuda/)
+- [CUDA downloads](https://developer.nvidia.com/cuda-downloads)
+- [CUDA toolkit archive](https://developer.nvidia.com/cuda-toolkit-archive)
+- [NVIDIA driver downloads](https://www.nvidia.com/download/index.aspx)
+- [Guide installation CUDA Linux](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
+- [Guide installation CUDA Windows](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

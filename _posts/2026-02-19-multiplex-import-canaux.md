@@ -14,20 +14,23 @@ layout: single
 # Multiplex : importer et nommer les canaux
 
 ## Étapes
-1. Contrôler l'alignement et l'intensité de chaque canal.
-2. Segmenter les cellules avec un preset versionné.
-3. Définir les règles de phénotypes (gates).
-4. Appliquer la classification et vérifier les cas limites.
-5. Exporter populations et cartes de distribution.
+1. Importer les images multiplex dans un projet séparé.
+2. Renommer chaque canal avec le nom du marqueur réel.
+3. Vérifier l'ordre des canaux pour éviter les inversions.
+4. Contrôler le bruit de fond par canal.
+5. Sauvegarder la configuration canaux avant suite.
 
 ## Exemple
-```text
-Exemple de règle de phénotype
-T_CD8 = DAPI+ AND CD3+ AND CD8+ AND NOT CD20+
+```groovy
+def channels = getCurrentServer().getMetadata().getChannels()
+channels.eachWithIndex { ch, i ->
+    println "${i}: ${ch.getName()}"
+}
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath (Multiplex)](https://qupath.readthedocs.io/en/latest/)
+- [QuPath channels](https://qupath.readthedocs.io/en/latest/docs/intro/images.html)
+- [QuPath scripting](https://qupath.readthedocs.io/en/latest/docs/scripting/overview.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

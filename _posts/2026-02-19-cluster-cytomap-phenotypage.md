@@ -14,22 +14,26 @@ layout: single
 # CytoMAP : phénotypage cellulaire de base
 
 ## Étapes
-1. Vérifier le schéma CSV avant import.
-2. Importer un échantillon pilote et valider types de colonnes.
-3. Lancer un clustering initial puis ajuster les paramètres.
-4. Construire les neighborhoods et comparer entre échantillons.
-5. Exporter les figures et tableaux de synthèse.
+1. Définir des règles de phénotypage basées sur marqueurs et seuils.
+2. Appliquer les règles sur un sous-ensemble de contrôle.
+3. Comparer avec annotation experte si disponible.
+4. Geler les règles avant l'analyse de cohorte complète.
+5. Exporter la table finale `CellID -> Phenotype`.
 
 ## Exemple
-```text
-CSV minimal recommandé
-CellID,X,Y,Z,Sample,MarkerA,MarkerB,MarkerC
-c001,102.4,88.1,0,sample_01,0.72,0.05,0.33
-c002,110.7,92.6,0,sample_01,0.61,0.12,0.41
+```python
+import pandas as pd
+
+df = pd.read_csv('cells_markers.csv')
+df['Phenotype'] = 'Other'
+df.loc[(df['CD3'] > 200) & (df['CD8'] > 180), 'Phenotype'] = 'T_CD8'
+df.loc[(df['CD20'] > 220), 'Phenotype'] = 'B_cell'
+df.to_csv('cells_phenotyped.csv', index=False)
 ```
 
 ## Documentation
-- Documentation technique: [Wiki CytoMAP](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
+- [CytoMAP wiki](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
+- [Pandas indexing](https://pandas.pydata.org/docs/user_guide/indexing.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

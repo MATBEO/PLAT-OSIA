@@ -14,22 +14,23 @@ layout: single
 # Publication : export haute résolution
 
 ## Étapes
-1. Exporter une version brute haute résolution.
-2. Vérifier lisibilité des annotations et textes.
-3. Uniformiser couleurs, tailles de police et légendes.
-4. Contrôler la figure à 100% et 50% de zoom.
-5. Archiver la version finale + source.
+1. Exporter l'image source en résolution maximale utile.
+2. Préférer TIFF/PNG pour éviter les artefacts JPEG.
+3. Utiliser 300 dpi (print) ou plus si demandé par journal.
+4. Vérifier taille fichier et lisibilité des détails.
+5. Conserver une copie non retouchée.
 
 ## Exemple
-```text
-Checklist figure finale
-- Résolution >= 300 dpi
-- Barre d'échelle visible
-- Légende complète (marqueurs, classes, unité)
+```bash
+# Vérifier dimensions d'une image exportée (ImageMagick)
+identify figure_export.tif
+# Exemple conversion sans perte
+magick figure_export.tif -compress none figure_export_uncompressed.tif
 ```
 
 ## Documentation
-- Documentation technique: [Guide publication figures (Nature)](https://www.nature.com/nature/for-authors/formatting-guide)
+- [ImageMagick identify](https://imagemagick.org/script/identify.php)
+- [Nature formatting guide](https://www.nature.com/nature/for-authors/formatting-guide)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

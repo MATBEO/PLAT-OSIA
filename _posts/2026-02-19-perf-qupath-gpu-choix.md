@@ -14,22 +14,23 @@ layout: single
 # Performance : choisir CPU/GPU selon la tâche
 
 ## Étapes
-1. Mesurer un baseline CPU sur échantillon fixe.
-2. Activer GPU et relancer à paramètres constants.
-3. Comparer temps, mémoire et qualité de sortie.
-4. Ajuster batch/tile size si saturation mémoire.
-5. Conserver le tableau comparatif final.
+1. Mesurer temps CPU et GPU sur la même image test.
+2. Comparer qualité des résultats (pas seulement vitesse).
+3. Conserver le mode le plus stable sur la cohorte.
+4. Documenter matériel exact (GPU, VRAM, driver).
+5. Fixer un mode par pipeline pour reproductibilité.
 
 ## Exemple
-```bash
-# Mesure rapide
-/usr/bin/time -l python run_pipeline.py --device cpu
-/usr/bin/time -l python run_pipeline.py --device gpu
-nvidia-smi --query-gpu=utilization.gpu,memory.used --format=csv
+```text
+Décision pratique:
+- CPU: plus lent mais souvent plus stable
+- GPU: plus rapide sur lot volumineux
+- Choisir GPU si gain > 2x et résultats identiques
 ```
 
 ## Documentation
-- Documentation technique: [Documentation NVIDIA SMI](https://developer.nvidia.com/system-management-interface)
+- [QuPath docs](https://qupath.readthedocs.io/en/latest/)
+- [CUDA docs](https://docs.nvidia.com/cuda/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

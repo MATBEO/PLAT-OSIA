@@ -14,23 +14,26 @@ layout: single
 # Évaluer un modèle de classification dans QuPath
 
 ## Étapes
-1. Préparer les entrées et vérifier leur qualité.
-2. Exécuter la méthode cible sur un sous-ensemble pilote.
-3. Ajuster les paramètres puis lancer le lot.
-4. Réaliser un QC visuel + quantitatif.
-5. Exporter et documenter le run.
+1. Exporter les prédictions et la vérité terrain en CSV.
+2. Calculer matrice de confusion et F1-score par classe.
+3. Identifier les classes avec rappel faible.
+4. Revoir les erreurs typiques sur image.
+5. Valider le modèle avant déploiement cohorte.
 
 ## Exemple
-```text
-Runbook minimal
-- version outils
-- paramètres clés
-- résultats QC
-- lien vers exports
+```python
+import pandas as pd
+from sklearn.metrics import classification_report, confusion_matrix
+
+df = pd.read_csv('pred_vs_gt.csv')
+y_true, y_pred = df['gt'], df['pred']
+print(confusion_matrix(y_true, y_pred))
+print(classification_report(y_true, y_pred, digits=3))
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+- [scikit-learn metrics](https://scikit-learn.org/stable/modules/model_evaluation.html)
+- [QuPath docs](https://qupath.readthedocs.io/en/latest/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

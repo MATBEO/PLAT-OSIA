@@ -14,21 +14,23 @@ layout: single
 # StarDist : installer l'extension dans QuPath
 
 ## Étapes
-1. Installer/activer l'extension StarDist dans QuPath.
-2. Tester 2 à 3 paramètres de seuil sur une ROI de référence.
-3. Valider la morphologie des noyaux détectés.
-4. Exécuter le lot avec le même preset.
-5. Exporter les mesures pour audit QC.
+1. Installer l'extension StarDist compatible QuPath.
+2. Vérifier qu'un moteur deep learning est disponible (CPU/GPU).
+3. Redémarrer QuPath après installation.
+4. Tester l'extension sur une image H&E simple.
+5. Conserver la version extension dans le runbook.
 
 ## Exemple
-```groovy
-// Contrôle simple avant StarDist
-println "Image: " + getCurrentImageName()
-println "Pixel size (µm): " + getCurrentServer().getPixelCalibration().getAveragedPixelSizeMicrons()
+```text
+Contrôles minimum:
+- Menu StarDist visible dans QuPath
+- Aucun message d'erreur au lancement
+- Détections générées sur une ROI test
 ```
 
 ## Documentation
-- Documentation technique: [Documentation StarDist (QuPath)](https://github.com/qupath/qupath-extension-stardist)
+- [StarDist extension QuPath](https://github.com/qupath/qupath-extension-stardist)
+- [QuPath extensions](https://qupath.readthedocs.io/en/latest/docs/intro/extensions.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

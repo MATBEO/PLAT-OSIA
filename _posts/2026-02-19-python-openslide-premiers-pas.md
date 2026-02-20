@@ -14,27 +14,25 @@ layout: single
 # Python + OpenSlide : premiers pas
 
 ## Étapes
-1. Créer l'environnement et installer les dépendances.
-2. Valider les formats de fichiers d'entrée.
-3. Exécuter un run pilote et inspecter les sorties.
-4. Lancer le lot complet avec journal d'exécution.
-5. Vérifier les métriques finales et archiver.
+1. Installer la librairie système OpenSlide.
+2. Créer un environnement Python dédié.
+3. Installer `openslide-python`, `numpy`, `pillow`.
+4. Ouvrir une lame et lire ses métadonnées.
+5. Extraire une petite région test pour valider.
 
 ## Exemple
-```python
-from pathlib import Path
-
-inp = Path('/path/to/input')
-out = Path('/path/to/output')
-out.mkdir(parents=True, exist_ok=True)
-
-for fp in sorted(inp.glob('*')):
-    # TODO: adapter le traitement
-    print(f"processing: {fp.name}")
+```bash
+# Ubuntu
+sudo apt install -y openslide-tools libopenslide0
+python -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install openslide-python numpy pillow
 ```
 
 ## Documentation
-- Documentation technique: [Documentation OpenSlide Python](https://openslide.org/api/python/)
+- [OpenSlide Python API](https://openslide.org/api/python/)
+- [OpenSlide project](https://openslide.org/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

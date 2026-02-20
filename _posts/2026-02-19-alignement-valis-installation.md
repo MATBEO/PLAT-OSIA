@@ -14,27 +14,24 @@ layout: single
 # VALIS : installation pas à pas
 
 ## Étapes
-1. Créer un environnement virtuel propre dédié à VALIS.
-2. Tester l'alignement sur un petit sous-ensemble de lames.
-3. Contrôler les superpositions sur zones anatomiques stables.
-4. Exécuter le lot complet avec logs conservés.
-5. Archiver paramètres et version VALIS utilisée.
+1. Créer un environnement Python dédié à VALIS.
+2. Installer `valis-wsi` et dépendances scientifiques.
+3. Vérifier import Python sans erreur.
+4. Tester un run minimal sur 2 lames.
+5. Sauvegarder `requirements.txt` du projet.
 
 ## Exemple
-```python
-# Exemple VALIS (adapter chemins et options)
-from valis import registration
-
-registrar = registration.Valis(
-    src_dir="/path/to/src_slides",
-    dst_dir="/path/to/output"
-)
-registrar.register()
-registrar.warp_and_save_slides()
+```bash
+python -m venv .venv-valis
+source .venv-valis/bin/activate
+python -m pip install --upgrade pip
+python -m pip install valis-wsi openslide-python
+python -c "from valis import registration; print('VALIS OK')"
 ```
 
 ## Documentation
-- Documentation technique: [Documentation VALIS](https://valis.readthedocs.io/en/latest/)
+- [VALIS documentation](https://valis.readthedocs.io/en/latest/)
+- [VALIS package](https://pypi.org/project/valis-wsi/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

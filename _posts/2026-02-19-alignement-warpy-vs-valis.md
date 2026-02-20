@@ -14,27 +14,23 @@ layout: single
 # Warpy vs VALIS : comparatif pratique
 
 ## Étapes
-1. Créer un environnement virtuel propre dédié à VALIS.
-2. Tester l'alignement sur un petit sous-ensemble de lames.
-3. Contrôler les superpositions sur zones anatomiques stables.
-4. Exécuter le lot complet avec logs conservés.
-5. Archiver paramètres et version VALIS utilisée.
+1. Exécuter Warpy et VALIS sur le même sous-ensemble de lames.
+2. Mesurer temps total et qualité de superposition sur 3 points anatomiques.
+3. Comparer effort d'installation et maintenance.
+4. Choisir un outil principal et définir un fallback.
+5. Documenter le protocole retenu.
 
 ## Exemple
-```python
-# Exemple VALIS (adapter chemins et options)
-from valis import registration
-
-registrar = registration.Valis(
-    src_dir="/path/to/src_slides",
-    dst_dir="/path/to/output"
-)
-registrar.register()
-registrar.warp_and_save_slides()
+```text
+Comparaison pratique:
+- Warpy: intégré QuPath, plus simple côté GUI
+- VALIS: plus flexible en Python, meilleur pour automatisation
+- Choix: dépend du niveau de scripting de l'équipe
 ```
 
 ## Documentation
-- Documentation technique: [Documentation VALIS](https://valis.readthedocs.io/en/latest/)
+- [Warpy extension](https://github.com/BIOP/qupath-extension-warpy)
+- [VALIS documentation](https://valis.readthedocs.io/en/latest/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

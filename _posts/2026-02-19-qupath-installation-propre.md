@@ -14,22 +14,23 @@ layout: single
 # QuPath : installation propre et vérification initiale
 
 ## Étapes
-1. Créer/ouvrir le projet avec arborescence standard.
-2. Importer les images puis vérifier calibration.
-3. Appliquer la procédure cible (détection/classification/export).
-4. Effectuer une revue QC sur zones sentinelles.
-5. Exporter et documenter les paramètres utilisés.
+1. Télécharger QuPath depuis la page Release officielle.
+2. Installer puis ouvrir QuPath une première fois pour créer le dossier de configuration.
+3. Ajuster la mémoire JVM (Preferences > Memory) selon la RAM machine.
+4. Activer seulement les extensions nécessaires pour éviter les conflits.
+5. Valider l'installation sur une lame test (ouverture + annotation + export).
 
 ## Exemple
 ```groovy
-// Vérification de contexte projet QuPath
-println "Project: " + (getProject() == null ? 'none' : getProject().toString())
-println "Image: " + getCurrentImageName()
+println "QuPath version: " + getVersion()
+println "Image ouverte: " + getCurrentImageName()
 println "Annotations: " + getAnnotationObjects().size()
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+- [QuPath Releases](https://github.com/qupath/qupath/releases)
+- [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+- [QuPath Scripting](https://qupath.readthedocs.io/en/latest/docs/scripting/overview.html)
 
 ## Articles liés
 - [QuPath : créer un projet standard reproductible]({{ site.baseurl }}{% post_url 2026-02-19-qupath-creer-projet-standard %})

@@ -14,21 +14,24 @@ layout: single
 # QC : check-list avant lancement d'analyse
 
 ## Étapes
-1. Établir les critères d'acceptation du lot.
-2. Contrôler chaque étape clé sur zones sentinelles.
-3. Quantifier les écarts vs valeurs attendues.
-4. Documenter décision OK/KO et actions correctives.
-5. Archiver la fiche QC avec les exports.
+1. Vérifier intégrité des fichiers (taille non nulle, ouverture OK).
+2. Contrôler calibration pixel et métadonnées.
+3. Valider qualité focus/exposition sur zones clés.
+4. Confirmer classes, seuils et paramètres de run.
+5. Signer la checklist avant exécution complète.
 
 ## Exemple
-```text
-QC_LOG
-date,article,status,artifact_rate,comment
-2026-02-19,<article>,OK,0.03,"validation lot pilote"
+```bash
+# Exemple contrôle rapide dossier WSI
+find data_wsi -type f | wc -l
+find data_wsi -type f -size 0 -print
+# Lister extensions attendues
+find data_wsi -type f | sed 's|.*\.||' | sort | uniq -c
 ```
 
 ## Documentation
-- Documentation technique: [Quality control principles](https://www.iso.org/standard/62085.html)
+- [Quality management principles](https://www.iso.org/standard/62085.html)
+- [QuPath docs](https://qupath.readthedocs.io/en/latest/)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

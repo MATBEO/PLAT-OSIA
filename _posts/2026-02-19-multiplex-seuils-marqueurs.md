@@ -14,20 +14,25 @@ layout: single
 # Multiplex : définir les seuils de marqueurs
 
 ## Étapes
-1. Contrôler l'alignement et l'intensité de chaque canal.
-2. Segmenter les cellules avec un preset versionné.
-3. Définir les règles de phénotypes (gates).
-4. Appliquer la classification et vérifier les cas limites.
-5. Exporter populations et cartes de distribution.
+1. Calculer les seuils à partir des contrôles négatifs.
+2. Vérifier les distributions de signal par marqueur.
+3. Fixer un seuil stable (ex: percentile 99 des négatifs).
+4. Ne pas ajuster les seuils lame par lame sans justification.
+5. Documenter tous les seuils dans un fichier versionné.
 
 ## Exemple
-```text
-Exemple de règle de phénotype
-T_CD8 = DAPI+ AND CD3+ AND CD8+ AND NOT CD20+
+```python
+import pandas as pd
+
+df = pd.read_csv('controls_negative.csv')
+for marker in ['CD3_mean', 'CD8_mean', 'PDL1_mean']:
+    thr = df[marker].quantile(0.99)
+    print(marker, 'threshold=', round(thr, 2))
 ```
 
 ## Documentation
-- Documentation technique: [Documentation QuPath (Multiplex)](https://qupath.readthedocs.io/en/latest/)
+- [Pandas quantile](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.quantile.html)
+- [QuPath classification docs](https://qupath.readthedocs.io/en/latest/docs/starting/classification.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

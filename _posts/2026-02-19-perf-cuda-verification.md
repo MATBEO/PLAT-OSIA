@@ -14,23 +14,35 @@ layout: single
 # Performance : vérifier CUDA côté système
 
 ## Étapes
-1. Installer/mettre à jour le pilote NVIDIA.
-2. Installer CUDA Toolkit correspondant.
-3. Vérifier la version de `nvcc`.
-4. Tester l'utilisation GPU dans l'outil cible.
-5. Archiver versions exactes dans le runbook.
+1. Vérifier pilote GPU visible (`nvidia-smi`).
+2. Vérifier compilateur CUDA (`nvcc --version`).
+3. Vérifier runtime CUDA côté Python.
+4. Tester une opération GPU simple.
+5. Archiver la sortie des commandes dans `logs/gpu_check.txt`.
 
 ## Exemple
 ```bash
+# 1) Pilote et carte
 nvidia-smi
+
+# 2) Toolkit CUDA
 nvcc --version
-# Linux/macOS
-echo $PATH | tr ':' '
-' | grep -i cuda || true
+
+# 3) Vérification Python (PyTorch)
+python - <<'PY'
+import torch
+print('torch:', torch.__version__)
+print('cuda available:', torch.cuda.is_available())
+print('device count:', torch.cuda.device_count())
+if torch.cuda.is_available():
+    print('device 0:', torch.cuda.get_device_name(0))
+PY
 ```
 
 ## Documentation
-- Documentation technique: [Documentation CUDA](https://docs.nvidia.com/cuda/)
+- [CUDA docs](https://docs.nvidia.com/cuda/)
+- [NVIDIA SMI](https://developer.nvidia.com/system-management-interface)
+- [PyTorch CUDA notes](https://pytorch.org/docs/stable/notes/cuda.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})

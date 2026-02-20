@@ -14,21 +14,28 @@ layout: single
 # QC : qualité d'image à l'entrée du pipeline
 
 ## Étapes
-1. Établir les critères d'acceptation du lot.
-2. Contrôler chaque étape clé sur zones sentinelles.
-3. Quantifier les écarts vs valeurs attendues.
-4. Documenter décision OK/KO et actions correctives.
-5. Archiver la fiche QC avec les exports.
+1. Évaluer netteté, saturation et artefacts avant segmentation.
+2. Mesurer automatiquement un score de focus.
+3. Définir un seuil de rejet objectif.
+4. Mettre de côté les lames non conformes.
+5. Documenter les exclusions.
 
 ## Exemple
-```text
-QC_LOG
-date,article,status,artifact_rate,comment
-2026-02-19,<article>,OK,0.03,"validation lot pilote"
+```python
+import cv2
+from pathlib import Path
+
+THRESH_FOCUS = 120.0
+for fp in Path('tiles_qc').glob('*.jpg'):
+    img = cv2.imread(str(fp), cv2.IMREAD_GRAYSCALE)
+    focus = cv2.Laplacian(img, cv2.CV_64F).var()
+    if focus < THRESH_FOCUS:
+        print('REJECT', fp.name, 'focus=', round(focus, 2))
 ```
 
 ## Documentation
-- Documentation technique: [Quality control principles](https://www.iso.org/standard/62085.html)
+- [OpenCV Laplacian](https://docs.opencv.org/4.x/d5/db5/tutorial_laplace_operator.html)
+- [Quality control principles](https://www.iso.org/standard/62085.html)
 
 ## Articles liés
 - [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
