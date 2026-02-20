@@ -13,20 +13,37 @@ layout: single
 
 # CytoMAP : workflow complet de A à Z
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Un CSV cellules propre (X, Y, phénotype).
+- CytoMAP installé.
+- Un échantillon test pour valider le workflow.
+
+## Pas à pas
 1. Exporter les cellules depuis QuPath (coordonnées + phénotypes).
 2. Nettoyer le CSV puis importer dans CytoMAP.
 3. Définir neighborhoods et lancer clustering spatial.
 4. Interpréter les régions et comparer entre échantillons.
 5. Exporter figures + tables pour rapport final.
 
-## Exemple
+## À copier-coller
 ```text
 Pipeline minimal:
 QuPath export -> CSV QC -> CytoMAP import -> Neighborhoods -> Region clustering -> Export résultats
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Le CSV est importé sans erreur.
+- Les neighborhoods/clusters sont calculés.
+- Les résultats exportés sont exploitables.
+
+## En cas de problème
+- Valider les colonnes du CSV avant import.
+- Commencer avec un sous-ensemble de cellules.
+
+## Documentation officielle
 - [CytoMAP wiki](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
 - [QuPath export docs](https://qupath.readthedocs.io/en/latest/docs/advanced/exporting_results.html)
 

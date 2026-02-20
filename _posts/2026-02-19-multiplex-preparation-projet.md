@@ -13,14 +13,22 @@ layout: single
 
 # Multiplex : préparer un projet QuPath propre
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Images multiplex avec canaux identifiés.
+- Liste des marqueurs et contrôles disponible.
+- Projet QuPath dédié au multiplex.
+
+## Pas à pas
 1. Créer un projet QuPath dédié au multiplex (pas mélanger avec H&E).
 2. Lister tous les marqueurs avec canal, clone et seuil attendu.
 3. Ajouter des contrôles positifs/négatifs dans le lot.
 4. Harmoniser le nommage des images et des canaux.
 5. Geler le plan d'analyse avant segmentation.
 
-## Exemple
+## À copier-coller
 ```text
 Table minimale à préparer:
 - Marker
@@ -30,7 +38,16 @@ Table minimale à préparer:
 - Seuil initial
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Les canaux sont correctement nommés.
+- Les seuils/phénotypes produisent des classes cohérentes.
+- Les exports sont complets pour le lot test.
+
+## En cas de problème
+- Vérifier l'ordre des canaux et les seuils de base.
+- Contrôler une lame témoin avant lot complet.
+
+## Documentation officielle
 - [QuPath fluorescence](https://qupath.readthedocs.io/en/latest/docs/intro/images.html)
 - [QuPath docs](https://qupath.readthedocs.io/en/latest/)
 

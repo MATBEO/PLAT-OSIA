@@ -13,14 +13,22 @@ layout: single
 
 # Warpy : projeter des annotations interlames
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Deux lames du même tissu (référence + cible).
+- Outil d'alignement installé (Warpy ou VALIS).
+- Un dossier de sortie dédié pour les transformations.
+
+## Pas à pas
 1. Définir une lame de référence et une lame cible.
 2. Calculer l'alignement interlames dans Warpy.
 3. Projeter les annotations de la référence vers la cible.
 4. Contrôler la projection sur des repères anatomiques fixes.
 5. Corriger manuellement les ROI problématiques.
 
-## Exemple
+## À copier-coller
 ```text
 Checklist projection:
 - mêmes zones anatomiques couvertes
@@ -28,7 +36,16 @@ Checklist projection:
 - ROI projetées exploitables pour segmentation
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Les repères anatomiques se superposent correctement.
+- Le décalage global est faible sur 3 zones de contrôle.
+- Les sorties d'alignement sont bien générées.
+
+## En cas de problème
+- Vérifier que les lames ont des résolutions compatibles.
+- Refaire le test sur une zone anatomique simple.
+
+## Documentation officielle
 - [Warpy extension](https://github.com/BIOP/qupath-extension-warpy)
 - [Image registration concepts (scikit-image)](https://scikit-image.org/docs/stable/auto_examples/registration/plot_register_translation.html)
 

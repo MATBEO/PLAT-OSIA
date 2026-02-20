@@ -13,14 +13,22 @@ layout: single
 
 # QuPath : créer un projet standard reproductible
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- QuPath installé et lancé une première fois.
+- Une image test ouverte dans un projet QuPath.
+- Droits d'écriture sur le dossier de sortie.
+
+## Pas à pas
 1. Créer un dossier projet avec sous-dossiers `raw/`, `project/`, `exports/`, `logs/`.
 2. Dans QuPath: `File > Project > Create project...` puis sélectionner `project/`.
 3. Définir une convention de nommage unique (`cohorte_patient_lame`).
 4. Sauvegarder une liste de classes standard avant toute annotation.
 5. Tester l'export CSV et GeoJSON sur une image pilote.
 
-## Exemple
+## À copier-coller
 ```text
 raw/
 project/
@@ -29,7 +37,16 @@ logs/
 README_pipeline.md
 ```
 
-## Documentation
+## Vérifier que ça marche
+- La manipulation se lance sans erreur dans QuPath.
+- Le résultat attendu est visible sur l'image test.
+- Le projet se sauvegarde correctement.
+
+## En cas de problème
+- Redémarrer QuPath puis relancer sur une image plus petite.
+- Vérifier la version QuPath et l'extension installée.
+
+## Documentation officielle
 - [QuPath Projects](https://qupath.readthedocs.io/en/latest/docs/starting/projects.html)
 - [QuPath Data Export](https://qupath.readthedocs.io/en/latest/docs/advanced/exporting_results.html)
 

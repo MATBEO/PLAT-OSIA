@@ -13,14 +13,22 @@ layout: single
 
 # StarDist vs InstanSeg : quand utiliser quoi
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- QuPath installé.
+- Extension InstanSeg ou StarDist installée selon l'article.
+- Une ROI test pour valider rapidement le résultat.
+
+## Pas à pas
 1. Évaluer les deux modèles sur les mêmes ROI.
 2. Mesurer temps de traitement et stabilité des contours.
 3. Comparer faux positifs/faux négatifs sur 3 cas difficiles.
 4. Choisir un modèle unique par cohorte pour éviter les biais.
 5. Documenter le choix final et la raison.
 
-## Exemple
+## À copier-coller
 ```text
 Décision rapide:
 - StarDist: souvent plus simple pour noyaux H&E
@@ -28,7 +36,16 @@ Décision rapide:
 - Choix final: meilleur compromis précision/temps sur ton jeu de données
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Des objets sont bien détectés dans la ROI test.
+- Pas de sur-segmentation massive en bordure.
+- Les mesures exportées sont non vides.
+
+## En cas de problème
+- Tester d'abord en CPU puis passer en GPU/MPS.
+- Réduire la taille de tuile si erreur mémoire.
+
+## Documentation officielle
 - [StarDist extension](https://github.com/qupath/qupath-extension-stardist)
 - [InstanSeg extension](https://github.com/qupath/qupath-extension-instanseg)
 

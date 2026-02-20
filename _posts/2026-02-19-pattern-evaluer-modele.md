@@ -13,14 +13,22 @@ layout: single
 
 # Évaluer un modèle de classification dans QuPath
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Annotations d'entraînement déjà préparées.
+- Classes cibles définies sans ambiguïté.
+- Jeu de validation séparé.
+
+## Pas à pas
 1. Exporter les prédictions et la vérité terrain en CSV.
 2. Calculer matrice de confusion et F1-score par classe.
 3. Identifier les classes avec rappel faible.
 4. Revoir les erreurs typiques sur image.
 5. Valider le modèle avant déploiement cohorte.
 
-## Exemple
+## À copier-coller
 ```python
 import pandas as pd
 from sklearn.metrics import classification_report, confusion_matrix
@@ -31,7 +39,16 @@ print(confusion_matrix(y_true, y_pred))
 print(classification_report(y_true, y_pred, digits=3))
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Les métriques du modèle sont calculées.
+- Les erreurs majeures sont identifiées.
+- Le modèle final est sauvegardé et traçable.
+
+## En cas de problème
+- Rééquilibrer les classes d'entraînement.
+- Vérifier la qualité des annotations de vérité terrain.
+
+## Documentation officielle
 - [scikit-learn metrics](https://scikit-learn.org/stable/modules/model_evaluation.html)
 - [QuPath docs](https://qupath.readthedocs.io/en/latest/)
 

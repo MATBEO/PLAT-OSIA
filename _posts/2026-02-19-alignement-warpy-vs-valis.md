@@ -13,14 +13,22 @@ layout: single
 
 # Warpy vs VALIS : comparatif pratique
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Deux lames du même tissu (référence + cible).
+- Outil d'alignement installé (Warpy ou VALIS).
+- Un dossier de sortie dédié pour les transformations.
+
+## Pas à pas
 1. Exécuter Warpy et VALIS sur le même sous-ensemble de lames.
 2. Mesurer temps total et qualité de superposition sur 3 points anatomiques.
 3. Comparer effort d'installation et maintenance.
 4. Choisir un outil principal et définir un fallback.
 5. Documenter le protocole retenu.
 
-## Exemple
+## À copier-coller
 ```text
 Comparaison pratique:
 - Warpy: intégré QuPath, plus simple côté GUI
@@ -28,7 +36,16 @@ Comparaison pratique:
 - Choix: dépend du niveau de scripting de l'équipe
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Les repères anatomiques se superposent correctement.
+- Le décalage global est faible sur 3 zones de contrôle.
+- Les sorties d'alignement sont bien générées.
+
+## En cas de problème
+- Vérifier que les lames ont des résolutions compatibles.
+- Refaire le test sur une zone anatomique simple.
+
+## Documentation officielle
 - [Warpy extension](https://github.com/BIOP/qupath-extension-warpy)
 - [VALIS documentation](https://valis.readthedocs.io/en/latest/)
 

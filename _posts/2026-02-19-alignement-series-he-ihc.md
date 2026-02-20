@@ -13,14 +13,22 @@ layout: single
 
 # Alignement de séries H&E et IHC
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Deux lames du même tissu (référence + cible).
+- Outil d'alignement installé (Warpy ou VALIS).
+- Un dossier de sortie dédié pour les transformations.
+
+## Pas à pas
 1. Choisir H&E comme référence morphologique.
 2. Aligner chaque lame IHC individuellement vers H&E.
 3. Vérifier les repères (glandes, vaisseaux, frontières tissulaires).
 4. Projeter ensuite les ROI/masques de la référence vers IHC.
 5. Valider sur au moins 3 zones critiques par lame.
 
-## Exemple
+## À copier-coller
 ```text
 Ordre conseillé:
 1) QC image
@@ -29,7 +37,16 @@ Ordre conseillé:
 4) Segmentation/mesure
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Les repères anatomiques se superposent correctement.
+- Le décalage global est faible sur 3 zones de contrôle.
+- Les sorties d'alignement sont bien générées.
+
+## En cas de problème
+- Vérifier que les lames ont des résolutions compatibles.
+- Refaire le test sur une zone anatomique simple.
+
+## Documentation officielle
 - [VALIS documentation](https://valis.readthedocs.io/en/latest/)
 - [Warpy extension](https://github.com/BIOP/qupath-extension-warpy)
 

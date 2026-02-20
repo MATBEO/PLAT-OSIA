@@ -13,14 +13,22 @@ layout: single
 
 # Performance : choisir CPU/GPU selon la tâche
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Machine compatible avec la procédure.
+- Droits administrateur si installation système.
+- Un cas test pour valider avant production.
+
+## Pas à pas
 1. Mesurer temps CPU et GPU sur la même image test.
 2. Comparer qualité des résultats (pas seulement vitesse).
 3. Conserver le mode le plus stable sur la cohorte.
 4. Documenter matériel exact (GPU, VRAM, driver).
 5. Fixer un mode par pipeline pour reproductibilité.
 
-## Exemple
+## À copier-coller
 ```text
 Décision pratique:
 - CPU: plus lent mais souvent plus stable
@@ -28,7 +36,16 @@ Décision pratique:
 - Choisir GPU si gain > 2x et résultats identiques
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Les commandes de contrôle répondent correctement.
+- Le gain (ou la stabilité) est mesuré sur cas test.
+- Les versions logicielles sont tracées.
+
+## En cas de problème
+- Vérifier compatibilité driver/toolkit.
+- Tester les commandes de diagnostic système.
+
+## Documentation officielle
 - [QuPath docs](https://qupath.readthedocs.io/en/latest/)
 - [CUDA docs](https://docs.nvidia.com/cuda/)
 

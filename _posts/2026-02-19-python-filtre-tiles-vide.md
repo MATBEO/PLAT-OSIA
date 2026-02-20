@@ -13,14 +13,22 @@ layout: single
 
 # Python : filtrer les tuiles sans tissu
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Python 3.10+ et environnement virtuel.
+- Dépendances installées pour le script de l'article.
+- Un dossier entrée/sortie clairement séparé.
+
+## Pas à pas
 1. Charger chaque tuile en niveaux de gris.
 2. Calculer un masque tissu par seuillage Otsu.
 3. Mesurer le pourcentage de tissu.
 4. Supprimer les tuiles sous le seuil (ex: <10%).
 5. Garder un log des tuiles rejetées.
 
-## Exemple
+## À copier-coller
 ```python
 import cv2
 import numpy as np
@@ -34,7 +42,16 @@ for fp in Path('tiles').glob('*.jpg'):
         fp.unlink()
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Le script s'exécute sans exception.
+- Les fichiers de sortie sont bien créés.
+- Le résultat est cohérent sur un petit lot test.
+
+## En cas de problème
+- Relancer dans un environnement virtuel propre.
+- Vérifier chemins d'entrée/sortie et permissions.
+
+## Documentation officielle
 - [OpenCV thresholding](https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html)
 - [NumPy docs](https://numpy.org/doc/stable/)
 

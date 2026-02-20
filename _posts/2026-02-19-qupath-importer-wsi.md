@@ -13,14 +13,22 @@ layout: single
 
 # QuPath : importer des lames entières (WSI) correctement
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- QuPath installé et lancé une première fois.
+- Une image test ouverte dans un projet QuPath.
+- Droits d'écriture sur le dossier de sortie.
+
+## Pas à pas
 1. Vérifier que la lame est bien pyramidale (`.svs`, `.ndpi`, `.mrxs`, `.tif` pyramidal).
 2. Importer via `Project > Add images...` et ne pas dupliquer les fichiers.
 3. Contrôler la calibration pixel (`Image > Properties`).
 4. Vérifier orientation/couches de la lame avant annotation.
 5. Bloquer toute analyse si `pixel size` est absent ou incohérent.
 
-## Exemple
+## À copier-coller
 ```groovy
 def md = getCurrentServer().getMetadata()
 println "Width x Height: ${md.getWidth()} x ${md.getHeight()}"
@@ -28,7 +36,16 @@ println "Pixel size (um): " + md.getPixelCalibration().getAveragedPixelSizeMicro
 println "Magnification: " + md.getMagnification()
 ```
 
-## Documentation
+## Vérifier que ça marche
+- La manipulation se lance sans erreur dans QuPath.
+- Le résultat attendu est visible sur l'image test.
+- Le projet se sauvegarde correctement.
+
+## En cas de problème
+- Redémarrer QuPath puis relancer sur une image plus petite.
+- Vérifier la version QuPath et l'extension installée.
+
+## Documentation officielle
 - [Formats supportés par QuPath](https://qupath.readthedocs.io/en/latest/docs/intro/formats.html)
 - [OpenSlide (formats WSI)](https://openslide.org/formats/)
 

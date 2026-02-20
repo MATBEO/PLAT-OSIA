@@ -13,14 +13,22 @@ layout: single
 
 # StarDist : utiliser un modèle H&E pré-entraîné
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- QuPath installé.
+- Extension InstanSeg ou StarDist installée selon l'article.
+- Une ROI test pour valider rapidement le résultat.
+
+## Pas à pas
 1. Charger une lame H&E correctement calibrée.
 2. Sélectionner un modèle StarDist entraîné pour H&E.
 3. Lancer sur petite ROI pour ajuster les paramètres.
 4. Étendre au lot si le résultat visuel est acceptable.
 5. Exporter les objets et mesures pour revue.
 
-## Exemple
+## À copier-coller
 ```yaml
 model: he_pretrained
 probability_threshold: 0.5
@@ -29,7 +37,16 @@ pixel_size_um: 0.5
 output: nuclei
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Des objets sont bien détectés dans la ROI test.
+- Pas de sur-segmentation massive en bordure.
+- Les mesures exportées sont non vides.
+
+## En cas de problème
+- Tester d'abord en CPU puis passer en GPU/MPS.
+- Réduire la taille de tuile si erreur mémoire.
+
+## Documentation officielle
 - [StarDist extension QuPath](https://github.com/qupath/qupath-extension-stardist)
 - [QuPath tutorials](https://qupath.readthedocs.io/en/latest/docs/tutorials/index.html)
 

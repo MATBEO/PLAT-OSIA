@@ -13,14 +13,22 @@ layout: single
 
 # Performance : installer CUDA proprement
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Machine compatible avec la procédure.
+- Droits administrateur si installation système.
+- Un cas test pour valider avant production.
+
+## Pas à pas
 1. Installer le pilote NVIDIA depuis la page officielle des pilotes.
 2. Télécharger CUDA Toolkit depuis la page NVIDIA officielle.
 3. Installer CUDA puis redémarrer la machine.
 4. Vérifier `nvidia-smi` et `nvcc --version`.
 5. Tester l'accès CUDA depuis Python (si pipeline Python).
 
-## Exemple
+## À copier-coller
 ```bash
 # Téléchargements officiels
 # Driver: https://www.nvidia.com/download/index.aspx
@@ -56,7 +64,16 @@ if torch.cuda.is_available():
 PY
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Les commandes de contrôle répondent correctement.
+- Le gain (ou la stabilité) est mesuré sur cas test.
+- Les versions logicielles sont tracées.
+
+## En cas de problème
+- Vérifier compatibilité driver/toolkit.
+- Tester les commandes de diagnostic système.
+
+## Documentation officielle
 - [CUDA downloads](https://developer.nvidia.com/cuda-downloads)
 - [CUDA toolkit archive](https://developer.nvidia.com/cuda-toolkit-archive)
 - [NVIDIA driver downloads](https://www.nvidia.com/download/index.aspx)

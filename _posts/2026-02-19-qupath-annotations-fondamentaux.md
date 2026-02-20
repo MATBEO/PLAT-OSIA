@@ -13,21 +13,38 @@ layout: single
 
 # QuPath : fondamentaux des annotations
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- QuPath installé et lancé une première fois.
+- Une image test ouverte dans un projet QuPath.
+- Droits d'écriture sur le dossier de sortie.
+
+## Pas à pas
 1. Créer des annotations uniquement sur des zones nettes et représentatives.
 2. Nommer les annotations avec une classe explicite (`Tumor`, `Stroma`, `Artefact`).
 3. Ne jamais mélanger classes biologiques et classes techniques.
 4. Sauvegarder le projet après chaque lot d'annotations.
 5. Exporter un GeoJSON de contrôle pour audit inter-opérateur.
 
-## Exemple
+## À copier-coller
 ```groovy
 def ann = getAnnotationObjects()
 println "Annotations totales: " + ann.size()
 println "Classes: " + ann.collect{it.getPathClass()}.unique()
 ```
 
-## Documentation
+## Vérifier que ça marche
+- La manipulation se lance sans erreur dans QuPath.
+- Le résultat attendu est visible sur l'image test.
+- Le projet se sauvegarde correctement.
+
+## En cas de problème
+- Redémarrer QuPath puis relancer sur une image plus petite.
+- Vérifier la version QuPath et l'extension installée.
+
+## Documentation officielle
 - [QuPath Annotations](https://qupath.readthedocs.io/en/latest/docs/starting/annotating.html)
 - [QuPath Classification](https://qupath.readthedocs.io/en/latest/docs/starting/classification.html)
 

@@ -13,14 +13,22 @@ layout: single
 
 # Classification objet dans QuPath : bonnes pratiques
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Annotations d'entraînement déjà préparées.
+- Classes cibles définies sans ambiguïté.
+- Jeu de validation séparé.
+
+## Pas à pas
 1. Définir les classes cibles et annoter des exemples équilibrés.
 2. Extraire des features stables (morphologie + intensité).
 3. Entraîner le classifieur objet dans QuPath.
 4. Évaluer sur des zones non vues pendant l'entraînement.
 5. Sauvegarder le modèle et la version de features.
 
-## Exemple
+## À copier-coller
 ```text
 Bonnes pratiques:
 - classes équilibrées
@@ -28,7 +36,16 @@ Bonnes pratiques:
 - figer les features avant comparaison de modèles
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Les métriques du modèle sont calculées.
+- Les erreurs majeures sont identifiées.
+- Le modèle final est sauvegardé et traçable.
+
+## En cas de problème
+- Rééquilibrer les classes d'entraînement.
+- Vérifier la qualité des annotations de vérité terrain.
+
+## Documentation officielle
 - [QuPath cell/object classification](https://qupath.readthedocs.io/en/latest/docs/tutorials/cell_classification.html)
 - [QuPath docs](https://qupath.readthedocs.io/en/latest/)
 

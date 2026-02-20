@@ -13,14 +13,22 @@ layout: single
 
 # Python : exporter des ROI en images publication
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Python 3.10+ et environnement virtuel.
+- Dépendances installées pour le script de l'article.
+- Un dossier entrée/sortie clairement séparé.
+
+## Pas à pas
 1. Lire la ROI (polygone) depuis un GeoJSON.
 2. Extraire la bounding box dans la lame WSI.
 3. Appliquer un masque polygone pour ne garder que la ROI.
 4. Exporter en PNG/TIFF haute qualité.
 5. Conserver nommage incluant ID ROI.
 
-## Exemple
+## À copier-coller
 ```python
 import json
 import openslide
@@ -42,7 +50,16 @@ out.paste(img, mask=mask)
 out.save('roi_export.png')
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Le script s'exécute sans exception.
+- Les fichiers de sortie sont bien créés.
+- Le résultat est cohérent sur un petit lot test.
+
+## En cas de problème
+- Relancer dans un environnement virtuel propre.
+- Vérifier chemins d'entrée/sortie et permissions.
+
+## Documentation officielle
 - [OpenSlide Python API](https://openslide.org/api/python/)
 - [Pillow ImageDraw](https://pillow.readthedocs.io/en/stable/reference/ImageDraw.html)
 

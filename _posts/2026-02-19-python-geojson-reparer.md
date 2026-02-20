@@ -13,14 +13,22 @@ layout: single
 
 # Python : réparer des géométries GeoJSON invalides
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Python 3.10+ et environnement virtuel.
+- Dépendances installées pour le script de l'article.
+- Un dossier entrée/sortie clairement séparé.
+
+## Pas à pas
 1. Installer `shapely` compatible avec ton environnement.
 2. Lire chaque géométrie du GeoJSON.
 3. Appliquer `make_valid` (ou `buffer(0)` fallback).
 4. Rejeter les géométries vides/invalides persistantes.
 5. Exporter un GeoJSON nettoyé.
 
-## Exemple
+## À copier-coller
 ```python
 import json
 from shapely.geometry import shape, mapping
@@ -44,7 +52,16 @@ with open('fixed.geojson', 'w', encoding='utf-8') as f:
     json.dump({'type': 'FeatureCollection', 'features': fixed}, f)
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Le script s'exécute sans exception.
+- Les fichiers de sortie sont bien créés.
+- Le résultat est cohérent sur un petit lot test.
+
+## En cas de problème
+- Relancer dans un environnement virtuel propre.
+- Vérifier chemins d'entrée/sortie et permissions.
+
+## Documentation officielle
 - [Shapely docs](https://shapely.readthedocs.io/en/stable/)
 - [RFC GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946)
 

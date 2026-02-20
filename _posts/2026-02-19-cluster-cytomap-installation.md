@@ -13,14 +13,22 @@ layout: single
 
 # CytoMAP : installation et démarrage
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Un CSV cellules propre (X, Y, phénotype).
+- CytoMAP installé.
+- Un échantillon test pour valider le workflow.
+
+## Pas à pas
 1. Installer MATLAB version supportée par CytoMAP.
 2. Télécharger CytoMAP depuis le wiki officiel.
 3. Ajouter le dossier CytoMAP au `path` MATLAB.
 4. Sauvegarder le `path` pour les prochaines sessions.
 5. Lancer un dataset test pour confirmer l'installation.
 
-## Exemple
+## À copier-coller
 ```matlab
 addpath(genpath('/path/to/CytoMAP'))
 savepath
@@ -28,7 +36,16 @@ which CytoMAP
 disp('CytoMAP prêt')
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Le CSV est importé sans erreur.
+- Les neighborhoods/clusters sont calculés.
+- Les résultats exportés sont exploitables.
+
+## En cas de problème
+- Valider les colonnes du CSV avant import.
+- Commencer avec un sous-ensemble de cellules.
+
+## Documentation officielle
 - [CytoMAP wiki](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
 - [MATLAB documentation](https://www.mathworks.com/help/matlab/)
 

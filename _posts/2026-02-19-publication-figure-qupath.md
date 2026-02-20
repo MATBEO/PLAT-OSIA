@@ -13,14 +13,22 @@ layout: single
 
 # Publication : figure QuPath nette et lisible
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Figure source générée dans QuPath.
+- Format cible demandé par le journal.
+- Nommage de fichiers standardisé.
+
+## Pas à pas
 1. Fixer la zone d'intérêt exacte avant export.
 2. Activer barre d'échelle et annotations utiles uniquement.
 3. Exporter en PNG/TIFF sans compression destructive.
 4. Conserver une version avec et sans labels.
 5. Archiver paramètres d'export (magnification, taille, format).
 
-## Exemple
+## À copier-coller
 ```text
 Paramètres recommandés:
 - format: PNG ou TIFF
@@ -29,7 +37,16 @@ Paramètres recommandés:
 - pas de zoom numérique post-export
 ```
 
-## Documentation
+## Vérifier que ça marche
+- La figure est lisible à la taille finale.
+- Le format exporté correspond aux exigences.
+- La version finale est archivée sans perte.
+
+## En cas de problème
+- Exporter une version intermédiaire et vérifier la lisibilité.
+- Comparer avec les consignes officielles du journal.
+
+## Documentation officielle
 - [QuPath docs](https://qupath.readthedocs.io/en/latest/)
 - [Nature figure guide](https://www.nature.com/nature/for-authors/formatting-guide)
 

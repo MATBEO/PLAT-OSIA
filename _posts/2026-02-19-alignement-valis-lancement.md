@@ -13,14 +13,22 @@ layout: single
 
 # VALIS : lancer un alignement en script Python
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Deux lames du même tissu (référence + cible).
+- Outil d'alignement installé (Warpy ou VALIS).
+- Un dossier de sortie dédié pour les transformations.
+
+## Pas à pas
 1. Placer les lames source dans un dossier unique.
 2. Définir un dossier de sortie vide pour les résultats.
 3. Lancer le script VALIS avec paramètres par défaut d'abord.
 4. Vérifier visuellement les overlays générés.
 5. Relancer avec réglages fins si nécessaire.
 
-## Exemple
+## À copier-coller
 ```python
 from valis import registration
 
@@ -32,7 +40,16 @@ registrar.register()
 registrar.warp_and_save_slides()
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Les repères anatomiques se superposent correctement.
+- Le décalage global est faible sur 3 zones de contrôle.
+- Les sorties d'alignement sont bien générées.
+
+## En cas de problème
+- Vérifier que les lames ont des résolutions compatibles.
+- Refaire le test sur une zone anatomique simple.
+
+## Documentation officielle
 - [VALIS quick start](https://valis.readthedocs.io/en/latest/)
 - [OpenSlide Python](https://openslide.org/api/python/)
 

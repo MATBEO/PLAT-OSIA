@@ -13,14 +13,22 @@ layout: single
 
 # Construire un workflow reproductible de pattern
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Annotations d'entraînement déjà préparées.
+- Classes cibles définies sans ambiguïté.
+- Jeu de validation séparé.
+
+## Pas à pas
 1. Versionner données, scripts et paramètres ensemble.
 2. Utiliser un fichier de configuration unique (`config.yaml`).
 3. Séparer entraînement, validation et inférence.
 4. Conserver un journal d'exécution avec hash git.
 5. Produire un rapport automatique par run.
 
-## Exemple
+## À copier-coller
 ```yaml
 project: pattern_workflow
 train_csv: data/train.csv
@@ -29,7 +37,16 @@ model_out: models/model_v1.pkl
 seed: 42
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Les métriques du modèle sont calculées.
+- Les erreurs majeures sont identifiées.
+- Le modèle final est sauvegardé et traçable.
+
+## En cas de problème
+- Rééquilibrer les classes d'entraînement.
+- Vérifier la qualité des annotations de vérité terrain.
+
+## Documentation officielle
 - [Nature Methods reproducibility recommendations](https://www.nature.com/articles/s41592-021-01199-w)
 - [ML reproducibility checklist](https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist.pdf)
 

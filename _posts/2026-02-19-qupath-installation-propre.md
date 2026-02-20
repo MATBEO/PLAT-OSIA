@@ -13,21 +13,38 @@ layout: single
 
 # QuPath : installation propre et vérification initiale
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- QuPath installé et lancé une première fois.
+- Une image test ouverte dans un projet QuPath.
+- Droits d'écriture sur le dossier de sortie.
+
+## Pas à pas
 1. Télécharger QuPath depuis la page Release officielle.
 2. Installer puis ouvrir QuPath une première fois pour créer le dossier de configuration.
 3. Ajuster la mémoire JVM (Preferences > Memory) selon la RAM machine.
 4. Activer seulement les extensions nécessaires pour éviter les conflits.
 5. Valider l'installation sur une lame test (ouverture + annotation + export).
 
-## Exemple
+## À copier-coller
 ```groovy
 println "QuPath version: " + getVersion()
 println "Image ouverte: " + getCurrentImageName()
 println "Annotations: " + getAnnotationObjects().size()
 ```
 
-## Documentation
+## Vérifier que ça marche
+- La manipulation se lance sans erreur dans QuPath.
+- Le résultat attendu est visible sur l'image test.
+- Le projet se sauvegarde correctement.
+
+## En cas de problème
+- Redémarrer QuPath puis relancer sur une image plus petite.
+- Vérifier la version QuPath et l'extension installée.
+
+## Documentation officielle
 - [QuPath Releases](https://github.com/qupath/qupath/releases)
 - [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
 - [QuPath Scripting](https://qupath.readthedocs.io/en/latest/docs/scripting/overview.html)

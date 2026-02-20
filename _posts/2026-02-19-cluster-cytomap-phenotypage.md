@@ -13,14 +13,22 @@ layout: single
 
 # CytoMAP : phénotypage cellulaire de base
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Un CSV cellules propre (X, Y, phénotype).
+- CytoMAP installé.
+- Un échantillon test pour valider le workflow.
+
+## Pas à pas
 1. Définir des règles de phénotypage basées sur marqueurs et seuils.
 2. Appliquer les règles sur un sous-ensemble de contrôle.
 3. Comparer avec annotation experte si disponible.
 4. Geler les règles avant l'analyse de cohorte complète.
 5. Exporter la table finale `CellID -> Phenotype`.
 
-## Exemple
+## À copier-coller
 ```python
 import pandas as pd
 
@@ -31,7 +39,16 @@ df.loc[(df['CD20'] > 220), 'Phenotype'] = 'B_cell'
 df.to_csv('cells_phenotyped.csv', index=False)
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Le CSV est importé sans erreur.
+- Les neighborhoods/clusters sont calculés.
+- Les résultats exportés sont exploitables.
+
+## En cas de problème
+- Valider les colonnes du CSV avant import.
+- Commencer avec un sous-ensemble de cellules.
+
+## Documentation officielle
 - [CytoMAP wiki](https://gitlab.com/gernerlab/cytomap/-/wikis/home)
 - [Pandas indexing](https://pandas.pydata.org/docs/user_guide/indexing.html)
 

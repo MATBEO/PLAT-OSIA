@@ -13,14 +13,22 @@ layout: single
 
 # QC : check-list avant lancement d'analyse
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Résultats intermédiaires déjà exportés.
+- Checklist projet disponible.
+- Critères de validation définis en amont.
+
+## Pas à pas
 1. Vérifier intégrité des fichiers (taille non nulle, ouverture OK).
 2. Contrôler calibration pixel et métadonnées.
 3. Valider qualité focus/exposition sur zones clés.
 4. Confirmer classes, seuils et paramètres de run.
 5. Signer la checklist avant exécution complète.
 
-## Exemple
+## À copier-coller
 ```bash
 # Exemple contrôle rapide dossier WSI
 find data_wsi -type f | wc -l
@@ -29,7 +37,16 @@ find data_wsi -type f -size 0 -print
 find data_wsi -type f | sed 's|.*\.||' | sort | uniq -c
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Chaque point de checklist est renseigné.
+- Les anomalies bloquantes sont isolées.
+- La décision Go/No-Go est explicite.
+
+## En cas de problème
+- Revenir à l'étape précédente avec un lot plus petit.
+- Comparer avec un cas validé de référence.
+
+## Documentation officielle
 - [Quality management principles](https://www.iso.org/standard/62085.html)
 - [QuPath docs](https://qupath.readthedocs.io/en/latest/)
 

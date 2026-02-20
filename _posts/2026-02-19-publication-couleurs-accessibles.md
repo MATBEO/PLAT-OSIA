@@ -13,14 +13,22 @@ layout: single
 
 # Publication : couleurs accessibles et contrastes
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Figure source générée dans QuPath.
+- Format cible demandé par le journal.
+- Nommage de fichiers standardisé.
+
+## Pas à pas
 1. Choisir une palette compatible daltonisme.
 2. Éviter rouge/vert sans différenciation de luminance.
 3. Vérifier contraste texte/fond >= 4.5.
 4. Tester la figure en niveaux de gris.
 5. Conserver la même palette sur tout le manuscrit.
 
-## Exemple
+## À copier-coller
 ```python
 # Contraste WCAG simple
 
@@ -38,7 +46,16 @@ def contrast(a, b):
 print('contrast ratio:', round(contrast((0,0,0), (255,255,255)), 2))
 ```
 
-## Documentation
+## Vérifier que ça marche
+- La figure est lisible à la taille finale.
+- Le format exporté correspond aux exigences.
+- La version finale est archivée sans perte.
+
+## En cas de problème
+- Exporter une version intermédiaire et vérifier la lisibilité.
+- Comparer avec les consignes officielles du journal.
+
+## Documentation officielle
 - [WCAG contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
 - [Nature formatting guide](https://www.nature.com/nature/for-authors/formatting-guide)
 

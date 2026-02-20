@@ -13,14 +13,22 @@ layout: single
 
 # Performance : vérifier CUDA côté système
 
-## Étapes
+## Objectif
+À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+
+## Avant de commencer
+- Machine compatible avec la procédure.
+- Droits administrateur si installation système.
+- Un cas test pour valider avant production.
+
+## Pas à pas
 1. Vérifier pilote GPU visible (`nvidia-smi`).
 2. Vérifier compilateur CUDA (`nvcc --version`).
 3. Vérifier runtime CUDA côté Python.
 4. Tester une opération GPU simple.
 5. Archiver la sortie des commandes dans `logs/gpu_check.txt`.
 
-## Exemple
+## À copier-coller
 ```bash
 # 1) Pilote et carte
 nvidia-smi
@@ -39,7 +47,16 @@ if torch.cuda.is_available():
 PY
 ```
 
-## Documentation
+## Vérifier que ça marche
+- Les commandes de contrôle répondent correctement.
+- Le gain (ou la stabilité) est mesuré sur cas test.
+- Les versions logicielles sont tracées.
+
+## En cas de problème
+- Vérifier compatibilité driver/toolkit.
+- Tester les commandes de diagnostic système.
+
+## Documentation officielle
 - [CUDA docs](https://docs.nvidia.com/cuda/)
 - [NVIDIA SMI](https://developer.nvidia.com/system-management-interface)
 - [PyTorch CUDA notes](https://pytorch.org/docs/stable/notes/cuda.html)
