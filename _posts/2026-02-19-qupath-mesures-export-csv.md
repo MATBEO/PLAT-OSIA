@@ -17,14 +17,15 @@ layout: single
 À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
 
 ## Avant de commencer
-- QuPath installé et lancé une première fois.
+- QuPath 0.7 installé et lancé une première fois.
+- Au 3 mars 2026, la version officielle vérifiée est `v0.7.0-rc1`.
 - Une image test ouverte dans un projet QuPath.
 - Droits d'écriture sur le dossier de sortie.
 
 ## Pas à pas
 1. Vérifier que la détection est terminée et gelée (pas de recalcul en parallèle).
 2. Choisir les mesures utiles (aire, circularité, intensité marqueur).
-3. Exporter en CSV avec séparateur standard (virgule) et encodage UTF-8.
+3. Exporter en CSV depuis la table de mesures ou avec un script Groovy dédié.
 4. Inclure l'identifiant image et ROI dans le fichier exporté.
 5. Contrôler 10 lignes aléatoires dans un tableur avant import aval.
 
@@ -46,6 +47,7 @@ println 'Export: ' + out
 - Vérifier la version QuPath et l'extension installée.
 
 ## Documentation officielle
+- [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
 - [Exporting results in QuPath](https://qupath.readthedocs.io/en/latest/docs/advanced/exporting_results.html)
 - [QuPath scripting API](https://qupath.readthedocs.io/en/latest/docs/scripting/overview.html)
 

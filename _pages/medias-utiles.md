@@ -13,6 +13,7 @@ Les médias ont été retirés des articles pour garder des contenus plus lisibl
 ## Blogs et documentation
 
 - [QuPath - site officiel](https://qupath.github.io/)
+- [QuPath - release 0.7 vérifiée](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
 - [QuPath - documentation](https://qupath.readthedocs.io/en/latest/)
 - [QuPath - tutoriels](https://qupath.readthedocs.io/en/latest/docs/tutorials/index.html)
 - [VALIS - documentation](https://valis.readthedocs.io/en/latest/)
@@ -38,6 +39,6 @@ Les médias ont été retirés des articles pour garder des contenus plus lisibl
 
 ## Conseils d'usage
 
-- Commencer par la documentation officielle (versioning plus fiable).
+- Pour QuPath 0.7, commencer par la release officielle puis lire la documentation stable.
 - Utiliser les readme GitHub pour les commandes d'installation exactes.
 - Vérifier la date des vidéos YouTube avant application des étapes.

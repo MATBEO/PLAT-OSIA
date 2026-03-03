@@ -17,16 +17,17 @@ layout: single
 À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
 
 ## Avant de commencer
-- QuPath installé et lancé une première fois.
+- QuPath 0.7 installé et lancé une première fois.
+- Au 3 mars 2026, la version officielle vérifiée est `v0.7.0-rc1`.
 - Une image test ouverte dans un projet QuPath.
 - Droits d'écriture sur le dossier de sortie.
 
 ## Pas à pas
-1. Créer des annotations uniquement sur des zones nettes et représentatives.
-2. Nommer les annotations avec une classe explicite (`Tumor`, `Stroma`, `Artefact`).
-3. Ne jamais mélanger classes biologiques et classes techniques.
-4. Sauvegarder le projet après chaque lot d'annotations.
-5. Exporter un GeoJSON de contrôle pour audit inter-opérateur.
+1. Ouvrir l'image dans le projet puis dessiner les ROI avec les outils d'annotation (`Rectangle`, `Polygon`, `Brush`).
+2. Créer des annotations uniquement sur des zones nettes et représentatives.
+3. Attribuer une classe claire à chaque annotation (`Tumor`, `Stroma`, `Artefact`).
+4. Ne jamais mélanger classes biologiques et classes techniques.
+5. Sauvegarder le projet après chaque lot puis exporter un GeoJSON de contrôle via `File > Export objects as GeoJSON...`.
 
 ## À copier-coller
 ```groovy
@@ -45,6 +46,7 @@ println "Classes: " + ann.collect{it.getPathClass()}.unique()
 - Vérifier la version QuPath et l'extension installée.
 
 ## Documentation officielle
+- [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
 - [QuPath Annotations](https://qupath.readthedocs.io/en/latest/docs/starting/annotating.html)
 - [QuPath Classification](https://qupath.readthedocs.io/en/latest/docs/starting/classification.html)
 

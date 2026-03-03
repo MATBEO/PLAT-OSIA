@@ -15,6 +15,9 @@ layout: single
 
 # Liste des extensions QuPath
 
+Au **3 mars 2026**, utilisez QuPath **`v0.7.0-rc1`** comme référence officielle.
+Point de méthode : vérifiez la compatibilité de chaque extension dans son README ou sa page Releases avant installation sur QuPath 0.7.
+
 ## Détection d'objets
 
 [SAM](https://github.com/ksugar/qupath-extension-sam)
@@ -28,7 +31,7 @@ layout: single
 
 ## Classification
 
-[WSI Infer](https://github.com/qupath/qupath-extension-wsinfer)
+[WSI Infer](https://github.com/qupath/qupath-extension-wsinfer) : le README officiel mentionne des tests sur QuPath `v0.5.1` et `v0.6.0-rc6`, pas de validation 0.7 au 3 mars 2026.
 
 ## Warpy
 
@@ -60,4 +63,6 @@ layout: single
 [https://andrewjanowczyk.com/](https://andrewjanowczyk.com/)
 [Thierry Pécot](https://github.com/tpecot/WholeSlideImageAnalysisWithQuPath)
 [Pete's blog](https://petebankhead.github.io/)
-[QuPath](https://qupath.readthedocs.io/en/0.5/)
+[QuPath documentation](https://qupath.readthedocs.io/en/latest/)
+[QuPath releases](https://github.com/qupath/qupath/releases)
+[QuPath 0.7 release notes](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)

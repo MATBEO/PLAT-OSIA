@@ -19,6 +19,8 @@ Ouvrez QuPath et sélectionnez votre zone d'intérêt.
 # Sauvegarder le GeoJSON
 
 Sauvegardez votre objet GeoJSON dans le même dossier que votre lame, avec le même nom.
+Dans QuPath 0.7, utilisez **File → Export objects as GeoJSON...**
+Si besoin, vous pouvez aussi sélectionner l'annotation dans la liste des objets puis l'exporter en GeoJSON.
 
 # Lancer le script
 

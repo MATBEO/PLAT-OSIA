@@ -17,12 +17,13 @@ layout: single
 À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
 
 ## Avant de commencer
-- QuPath installé.
+- QuPath 0.7 installé.
+- Au 3 mars 2026, la version officielle QuPath 0.7 que j'ai pu vérifier est `v0.7.0-rc1`.
 - Extension InstanSeg ou StarDist installée selon l'article.
 - Une ROI test pour valider rapidement le résultat.
 
 ## Pas à pas
-1. Installer l'extension StarDist compatible QuPath.
+1. Installer l'extension StarDist compatible avec QuPath 0.7.
 2. Vérifier qu'un moteur deep learning est disponible (CPU/GPU).
 3. Redémarrer QuPath après installation.
 4. Tester l'extension sur une image H&E simple.
@@ -46,6 +47,7 @@ Contrôles minimum:
 - Réduire la taille de tuile si erreur mémoire.
 
 ## Documentation officielle
+- [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
 - [StarDist extension QuPath](https://github.com/qupath/qupath-extension-stardist)
 - [QuPath extensions](https://qupath.readthedocs.io/en/latest/docs/intro/extensions.html)
 

@@ -17,7 +17,8 @@ layout: single
 À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
 
 ## Avant de commencer
-- QuPath installé et lancé une première fois.
+- QuPath 0.7 installé et lancé une première fois.
+- Au 3 mars 2026, la version officielle vérifiée est `v0.7.0-rc1`.
 - Une image test ouverte dans un projet QuPath.
 - Droits d'écriture sur le dossier de sortie.
 
@@ -46,6 +47,7 @@ println "Magnification: " + md.getMagnification()
 - Vérifier la version QuPath et l'extension installée.
 
 ## Documentation officielle
+- [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
 - [Formats supportés par QuPath](https://qupath.readthedocs.io/en/latest/docs/intro/formats.html)
 - [OpenSlide (formats WSI)](https://openslide.org/formats/)
 

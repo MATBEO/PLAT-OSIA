@@ -17,35 +17,43 @@ layout: single
 À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
 
 ## Avant de commencer
-- QuPath installé et lancé une première fois.
+- Télécharger QuPath 0.7 depuis la release officielle.
+- Au 3 mars 2026, la version officielle vérifiée est `v0.7.0-rc1`.
 - Une image test ouverte dans un projet QuPath.
 - Droits d'écriture sur le dossier de sortie.
 
 ## Pas à pas
 1. Télécharger QuPath depuis la page Release officielle.
-2. Installer puis ouvrir QuPath une première fois pour créer le dossier de configuration.
-3. Ajuster la mémoire JVM (Preferences > Memory) selon la RAM machine.
-4. Activer seulement les extensions nécessaires pour éviter les conflits.
+2. Installer `v0.7.0-rc1` avec le paquet adapté à votre système.
+3. Ouvrir QuPath une première fois pour créer le dossier de configuration.
+4. Ajuster la mémoire JVM (`Preferences > Memory`) selon la RAM machine.
 5. Valider l'installation sur une lame test (ouverture + annotation + export).
 
 ## À copier-coller
-```groovy
-println "QuPath version: " + getVersion()
-println "Image ouverte: " + getCurrentImageName()
-println "Annotations: " + getAnnotationObjects().size()
+```text
+Téléchargements officiels QuPath 0.7:
+- Release: https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1
+- Windows: https://github.com/qupath/qupath/releases/download/v0.7.0-rc1/QuPath-v0.7.0-rc1-Windows.zip
+- macOS Intel: https://github.com/qupath/qupath/releases/download/v0.7.0-rc1/QuPath-v0.7.0-rc1-Mac-x64.pkg
+- macOS Apple Silicon: https://github.com/qupath/qupath/releases/download/v0.7.0-rc1/QuPath-v0.7.0-rc1-Mac-arm64.pkg
+- Linux: https://github.com/qupath/qupath/releases/download/v0.7.0-rc1/QuPath-v0.7.0-rc1-Linux.tar.xz
 ```
 
 ## Vérifier que ça marche
+- `Help > About` affiche bien `0.7.0-rc1`.
 - La manipulation se lance sans erreur dans QuPath.
 - Le résultat attendu est visible sur l'image test.
 - Le projet se sauvegarde correctement.
 
 ## En cas de problème
 - Redémarrer QuPath puis relancer sur une image plus petite.
-- Vérifier la version QuPath et l'extension installée.
+- Vérifier que vos extensions sont compatibles avec QuPath 0.7.
+- Sauvegarder les anciens projets avant migration depuis QuPath 0.6.
 
 ## Documentation officielle
+- [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
 - [QuPath Releases](https://github.com/qupath/qupath/releases)
+- [Installation QuPath](https://qupath.readthedocs.io/en/latest/docs/intro/installation.html)
 - [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
 - [QuPath Scripting](https://qupath.readthedocs.io/en/latest/docs/scripting/overview.html)
 

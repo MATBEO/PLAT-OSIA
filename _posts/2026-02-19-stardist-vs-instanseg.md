@@ -17,7 +17,8 @@ layout: single
 À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
 
 ## Avant de commencer
-- QuPath installé.
+- QuPath 0.7 installé.
+- Au 3 mars 2026, la version officielle vérifiée est `v0.7.0-rc1`.
 - Extension InstanSeg ou StarDist installée selon l'article.
 - Une ROI test pour valider rapidement le résultat.
 
@@ -46,6 +47,7 @@ Décision rapide:
 - Réduire la taille de tuile si erreur mémoire.
 
 ## Documentation officielle
+- [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
 - [StarDist extension](https://github.com/qupath/qupath-extension-stardist)
 - [InstanSeg extension](https://github.com/qupath/qupath-extension-instanseg)
 

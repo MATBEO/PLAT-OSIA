@@ -17,16 +17,19 @@ layout: single
 À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
 
 ## Avant de commencer
-- QuPath installé et lancé une première fois.
+- QuPath 0.7 installé et lancé une première fois.
+- Au 3 mars 2026, la version officielle vérifiée est `v0.7.0-rc1`.
 - Une image test ouverte dans un projet QuPath.
 - Droits d'écriture sur le dossier de sortie.
 
 ## Pas à pas
 1. Définir une arborescence de classes avant la détection (`Cell`, `Tumor`, `Immune`, etc.).
-2. Associer une couleur fixe par classe (éviter les changements en cours de projet).
-3. Éviter les classes redondantes (`Tumeur` et `Tumor`).
-4. Valider les classes sur 3 lames avant lot complet.
+2. Créer ces classes une fois puis les réutiliser sur toutes les lames du projet.
+3. Associer une couleur fixe par classe pour éviter les changements visuels en cours d'analyse.
+4. Éviter les classes redondantes (`Tumeur` et `Tumor`).
 5. Versionner la nomenclature dans un fichier `classes.md`.
+
+En QuPath 0.7, gardez aussi un petit script de création de classes dans votre dépôt. N'utilisez pas d'ancien workflow enregistré.
 
 ## À copier-coller
 ```groovy
@@ -47,6 +50,7 @@ classes.each { name ->
 - Vérifier la version QuPath et l'extension installée.
 
 ## Documentation officielle
+- [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
 - [PathClass dans QuPath](https://qupath.readthedocs.io/en/latest/docs/scripting/overview.html)
 - [Bonnes pratiques de classification](https://qupath.readthedocs.io/en/latest/docs/starting/classification.html)
 

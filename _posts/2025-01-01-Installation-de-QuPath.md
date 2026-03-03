@@ -1,5 +1,5 @@
 ---
-title: "Installation de QuPath v0.6.0-rc3"
+title: "Installation de QuPath 0.7"
 date: 2025-01-01T00:00:00-01:00
 categories:
   - Visualisation
@@ -7,29 +7,73 @@ tags:
   - QuPath
 ---
 
-QuPath est un logiciel open source pour l’analyse d’images en pathologie numérique. La version 0.6.0-rc3 est une version candidate destinée aux tests et peut contenir des bugs. Il est recommandé de ne pas l’utiliser pour des travaux critiques et de sauvegarder vos projets avant de les ouvrir avec cette version.
+# Installation de QuPath 0.7
 
-# Étapes d’installation
+Au **3 mars 2026**, la source officielle que j'ai pu vérifier pour QuPath 0.7 est la **pré-release `v0.7.0-rc1` publiée le 17 février 2026** sur le GitHub officiel de QuPath.
 
-Rendez-vous sur la page des [releases de QuPath](https://github.com/qupath/qupath/releases) sur GitHub.
-Sous la version “v0.6.0-rc3”, téléchargez le fichier approprié pour votre système d’exploitation :
+## Téléchargements officiels
 
->  Pour des instructions détaillées et des solutions aux problèmes courants, consultez la [documentation officielle de QuPath](https://qupath.readthedocs.io/en/latest/docs/intro/installation.html).
+- Release GitHub: [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
+- Documentation d'installation: [Installation QuPath](https://qupath.readthedocs.io/en/latest/docs/intro/installation.html)
+- Documentation générale: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
 
-**Sinon, cliquez directement sur votre système d’installation : cela lancera le téléchargement de la bonne version.**
+### Liens directs
 
----
+- Windows: [QuPath-v0.7.0-rc1-Windows.zip](https://github.com/qupath/qupath/releases/download/v0.7.0-rc1/QuPath-v0.7.0-rc1-Windows.zip)
+- macOS Intel: [QuPath-v0.7.0-rc1-Mac-x64.pkg](https://github.com/qupath/qupath/releases/download/v0.7.0-rc1/QuPath-v0.7.0-rc1-Mac-x64.pkg)
+- macOS Apple Silicon: [QuPath-v0.7.0-rc1-Mac-arm64.pkg](https://github.com/qupath/qupath/releases/download/v0.7.0-rc1/QuPath-v0.7.0-rc1-Mac-arm64.pkg)
+- Linux: [QuPath-v0.7.0-rc1-Linux.tar.xz](https://github.com/qupath/qupath/releases/download/v0.7.0-rc1/QuPath-v0.7.0-rc1-Linux.tar.xz)
 
-[**Windows**](https://github.com/qupath/qupath/releases/download/v0.6.0-rc3/QuPath-v0.6.0-rc3-Windows.zip)
->  **Astuce :** Extrayez le contenu du fichier .zip dans le dossier de votre choix et double-cliquez sur QuPath-v0.6.0-rc3.exe pour lancer l’application.
+## Installation Windows
 
----
+1. Téléchargez `QuPath-v0.7.0-rc1-Windows.zip`.
+2. Décompressez l'archive dans un dossier simple, par exemple `C:\QuPath`.
+3. Ouvrez le dossier extrait.
+4. Lancez `QuPath-v0.7.0-rc1.exe`.
 
-[**MacOS Intel**](https://github.com/qupath/qupath/releases/download/v0.6.0-rc3/QuPath-v0.6.0-rc3-Mac-x64.pkg) ou [**MacOS Apple Silicon**](https://github.com/qupath/qupath/releases/download/v0.6.0-rc3/QuPath-v0.6.0-rc3-Mac-arm64.pkg)
->  **Astuce :** Si une alerte de sécurité apparaît, faites un clic droit sur le fichier, sélectionnez “Ouvrir” et confirmez.
+## Installation macOS
 
----
+1. Téléchargez le `.pkg` correspondant à votre machine:
+   - `Mac-x64.pkg` pour Intel
+   - `Mac-arm64.pkg` pour Apple Silicon
+2. Lancez l'installateur.
+3. Si macOS bloque l'ouverture:
+   - faites clic droit sur l'application
+   - choisissez `Ouvrir`
+   - confirmez l'ouverture
 
-[**Linux**](https://github.com/qupath/qupath/releases/download/v0.6.0-rc3/QuPath-v0.6.0-rc3-Linux.tar.xz)
->  **Astuce :** Extrayez le contenu du fichier .tar.xz.
-    Ouvrez un terminal, naviguez jusqu’au répertoire `QuPath/bin`, exécutez `chmod u+x QuPath` pour rendre le lanceur exécutable, puis lancez QuPath avec `./QuPath`
+## Installation Linux
+
+1. Téléchargez `QuPath-v0.7.0-rc1-Linux.tar.xz`.
+2. Décompressez l'archive.
+3. Ouvrez un terminal dans le dossier extrait.
+4. Rendez exécutable le lanceur puis lancez QuPath:
+
+```bash
+tar -xf QuPath-v0.7.0-rc1-Linux.tar.xz
+cd QuPath-*/bin
+chmod u+x QuPath
+./QuPath
+```
+
+## Vérifier l'installation
+
+Dans QuPath:
+
+1. Ouvrez `Help > About`.
+2. Vérifiez que la version affichée est bien `0.7.0-rc1`.
+3. Ouvrez une image test.
+4. Créez une annotation simple.
+5. Sauvegardez un projet.
+
+## Important
+
+- `0.7.0-rc1` est une **pré-release**.
+- Sauvegardez vos projets avant de les ouvrir avec cette version.
+- Vérifiez la compatibilité de vos extensions QuPath avant migration.
+
+## Voir aussi
+
+- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
+- [Liste des extensions QuPath]({{ site.baseurl }}{% post_url 2025-01-01-Liste_extension_QuPath %})
+- [Comment détecter des cellules dans QuPath]({{ site.baseurl }}{% post_url 2025-01-01-InstaSeg %})

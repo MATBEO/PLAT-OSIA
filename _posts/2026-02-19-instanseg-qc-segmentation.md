@@ -17,7 +17,8 @@ layout: single
 À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
 
 ## Avant de commencer
-- QuPath installé.
+- QuPath 0.7 installé.
+- Au 3 mars 2026, la version officielle vérifiée est `v0.7.0-rc1`.
 - Extension InstanSeg ou StarDist installée selon l'article.
 - Une ROI test pour valider rapidement le résultat.
 
@@ -47,6 +48,7 @@ print('area_q01_q99:', df['Cell: Area'].quantile([0.01, 0.99]).to_dict())
 - Réduire la taille de tuile si erreur mémoire.
 
 ## Documentation officielle
+- [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
 - [QuPath tutorials](https://qupath.readthedocs.io/en/latest/docs/tutorials/index.html)
 - [InstanSeg extension](https://github.com/qupath/qupath-extension-instanseg)
 
