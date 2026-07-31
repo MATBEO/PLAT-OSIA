@@ -1,65 +1,50 @@
 ---
-title: false
+title: " "
 layout: single
 classes: wide
+header:
+  overlay_image: "/assets/images/banner.svg"
 ---
 
-<div class="guide-home">
-  <section class="guide-hero">
-    <p class="guide-kicker">Tutoriels pratiques en pathologie numérique</p>
-    <h1>Apprendre QuPath, étape par étape.</h1>
-    <p>Des procédures courtes et vérifiables pour installer QuPath, analyser une lame, segmenter des cellules et exporter vos résultats.</p>
-    <div class="guide-actions">
-      <a class="guide-button guide-button--primary" href="{{ site.baseurl }}{% post_url 2025-01-01-Installation-de-QuPath %}">Commencer avec QuPath</a>
-      <a class="guide-button guide-button--secondary" href="{{ site.baseurl }}/parcours-recommande/">Voir le parcours complet</a>
-    </div>
-  </section>
+<div class="home-hub">
+  <p class="home-hub__intro">Guides et outils pour analyser des lames avec QuPath.</p>
 
-  <section class="guide-section" aria-labelledby="guide-start">
-    <div class="guide-section__heading">
-      <p class="guide-kicker">Le chemin le plus simple</p>
-      <h2 id="guide-start">Trois étapes pour être autonome</h2>
-    </div>
-    <div class="guide-grid guide-grid--steps">
-      <article class="guide-card guide-card--start">
-        <span>01</span>
-        <h3>Préparer le projet</h3>
-        <p>Installez QuPath, créez un projet propre puis contrôlez la calibration de vos lames.</p>
-        <a href="{{ site.baseurl }}/visualisation/">Démarrer avec QuPath <span aria-hidden="true">→</span></a>
-      </article>
-      <article class="guide-card guide-card--analyse">
-        <span>02</span>
-        <h3>Segmenter les cellules</h3>
-        <p>Testez InstanSeg sur une petite zone, puis validez le résultat avant de traiter une lame entière.</p>
-        <a href="{{ site.baseurl }}/cell/">Voir la segmentation <span aria-hidden="true">→</span></a>
-      </article>
-      <article class="guide-card guide-card--export">
-        <span>03</span>
-        <h3>Exporter et automatiser</h3>
-        <p>Exportez les mesures, les annotations et les images sans perdre la traçabilité.</p>
-        <a href="{{ site.baseurl }}/automatiser/">Voir les scripts et exports <span aria-hidden="true">→</span></a>
-      </article>
-    </div>
-  </section>
+  <nav class="home-hub__topics" aria-label="Rubriques">
+    <a href="{{ site.baseurl }}/visualisation/">
+      <img src="{{ site.baseurl }}/assets/images/visualisation.svg" alt="">
+      <span>Prise en main</span>
+      <small>Installer QuPath, importer une lame et créer un projet.</small>
+    </a>
+    <a href="{{ site.baseurl }}/cell/">
+      <img src="{{ site.baseurl }}/assets/images/cell.svg" alt="">
+      <span>Cellules et segmentation</span>
+      <small>Détecter des cellules et utiliser InstanSeg.</small>
+    </a>
+    <a href="{{ site.baseurl }}/align/">
+      <img src="{{ site.baseurl }}/assets/images/align.svg" alt="">
+      <span>Alignement</span>
+      <small>Comparer des coupes sériées et transférer des annotations.</small>
+    </a>
+    <a href="{{ site.baseurl }}/multiplex/">
+      <img src="{{ site.baseurl }}/assets/images/multiplex.svg" alt="">
+      <span>Multiplex</span>
+      <small>Préparer et analyser des lames multimarqueurs.</small>
+    </a>
+    <a href="{{ site.baseurl }}/pattern/">
+      <img src="{{ site.baseurl }}/assets/images/pattern.svg" alt="">
+      <span>Motifs et classification</span>
+      <small>Détecter, classer et quantifier des structures tissulaires.</small>
+    </a>
+    <a href="{{ site.baseurl }}/cluster/">
+      <img src="{{ site.baseurl }}/assets/images/cluster.svg" alt="">
+      <span>Clustering</span>
+      <small>Explorer des groupes de cellules ou de régions.</small>
+    </a>
+  </nav>
 
-  <section class="guide-section guide-section--compact" aria-labelledby="guide-references">
-    <div class="guide-section__heading">
-      <p class="guide-kicker">À garder sous la main</p>
-      <h2 id="guide-references">Les ressources utiles</h2>
-    </div>
-    <div class="guide-grid guide-grid--resources">
-      <a class="guide-resource" href="{{ site.baseurl }}{% post_url 2025-01-01-InstaSeg %}">
-        <strong>InstanSeg</strong>
-        <span>Segmenter cellules et noyaux dans QuPath.</span>
-      </a>
-      <a class="guide-resource" href="{{ site.baseurl }}{% post_url 2025-01-01-Liste-Script_Qupath %}">
-        <strong>Scripts QuPath</strong>
-        <span>Automatiser les actions répétitives.</span>
-      </a>
-      <a class="guide-resource" href="{{ site.baseurl }}/medias-utiles/">
-        <strong>Documentation</strong>
-        <span>Liens officiels et ressources sélectionnées.</span>
-      </a>
-    </div>
-  </section>
+  <p class="home-hub__links">
+    Vous débutez&nbsp;? <a href="{{ site.baseurl }}/parcours-recommande/">Suivre le parcours recommandé</a>
+    <span aria-hidden="true">·</span>
+    <a href="{{ site.baseurl }}/medias-utiles/">Consulter les ressources utiles</a>
+  </p>
 </div>
