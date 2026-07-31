@@ -1,60 +1,49 @@
 ---
-title: "QuPath : importer des lames entières (WSI) correctement"
+title: "Importer une lame entière dans QuPath"
 date: 2026-02-19T00:00:00-01:00
 categories:
   - Visualisation
 tags:
   - QuPath
 toc: true
-toc_label: "Table des matières"
-toc_sticky : true
+toc_label: "Sommaire"
 layout: single
 ---
 
-# QuPath : importer des lames entières (WSI) correctement
+N'analysez pas une lame avant d'avoir vérifié son échelle. Une taille de pixel erronée fausse les distances, les surfaces et les réglages de segmentation.
 
-## Objectif
-À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+## Importer la lame
 
-## Avant de commencer
-- QuPath 0.7 installé et lancé une première fois.
-- Au 3 mars 2026, la version officielle vérifiée est `v0.7.0-rc1`.
-- Une image test ouverte dans un projet QuPath.
-- Droits d'écriture sur le dossier de sortie.
+1. Créez d'abord un [projet QuPath]({{ site.baseurl }}{% post_url 2026-02-19-qupath-creer-projet-standard %}).
+2. Dans la fenêtre du projet, choisissez **Project > Add images...**.
+3. Sélectionnez les lames dans le dossier `lames/`; ne les copiez pas dans le dossier interne de QuPath.
+4. Choisissez le lecteur proposé pour le format. Si QuPath demande une confirmation, vérifiez le nom et les dimensions de la lame avant de valider.
+5. Ouvrez une lame, puis enregistrez le projet.
 
-## Pas à pas
-1. Vérifier que la lame est bien pyramidale (`.svs`, `.ndpi`, `.mrxs`, `.tif` pyramidal).
-2. Importer via `Project > Add images...` et ne pas dupliquer les fichiers.
-3. Contrôler la calibration pixel (`Image > Properties`).
-4. Vérifier orientation/couches de la lame avant annotation.
-5. Bloquer toute analyse si `pixel size` est absent ou incohérent.
+Les formats courants comprennent `.svs`, `.ndpi`, `.mrxs` et les TIFF pyramidaux. La [liste des formats de QuPath](https://qupath.readthedocs.io/en/latest/docs/intro/formats.html) précise les lecteurs disponibles.
 
-## À copier-coller
+## Contrôler la calibration
+
+Dans la visionneuse, ouvrez **Image > Properties** et relevez la taille de pixel. Elle doit correspondre à la fiche du scanner. Une valeur réaliste en histologie est souvent exprimée en micrometres par pixel, par exemple `0.25 um/px` ou `0.50 um/px`.
+
+Ce script affiche les métadonnées lues par QuPath:
+
 ```groovy
-def md = getCurrentServer().getMetadata()
-println "Width x Height: ${md.getWidth()} x ${md.getHeight()}"
-println "Pixel size (um): " + md.getPixelCalibration().getAveragedPixelSizeMicrons()
-println "Magnification: " + md.getMagnification()
+def metadata = getCurrentServer().getMetadata()
+def calibration = metadata.getPixelCalibration()
+
+println "Dimensions: ${metadata.getWidth()} x ${metadata.getHeight()} px"
+println "Taille de pixel: ${calibration.getAveragedPixelSizeMicrons()} um/px"
+println "Grossissement: ${metadata.getMagnification()}"
 ```
 
-## Vérifier que ça marche
-- La manipulation se lance sans erreur dans QuPath.
-- Le résultat attendu est visible sur l'image test.
-- Le projet se sauvegarde correctement.
+Si la taille de pixel est `NaN`, absente ou manifestement fausse, arrêtez-vous. Corrigez les métadonnées à partir de la documentation du scanner, puis documentez la valeur appliquée dans le `README.md` du projet.
 
-## En cas de problème
-- Redémarrer QuPath puis relancer sur une image plus petite.
-- Vérifier la version QuPath et l'extension installée.
+## Vérifier visuellement
 
-## Documentation officielle
-- [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
-- [Formats supportés par QuPath](https://qupath.readthedocs.io/en/latest/docs/intro/formats.html)
-- [OpenSlide (formats WSI)](https://openslide.org/formats/)
+Zoomez dans une zone de tissu, une zone vide et un coin de la lame. Les couleurs doivent être normales, l'orientation correcte et le tissu net. Faites cette vérification sur une lame par scanner avant de lancer une analyse en série.
 
-## Articles liés
-- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
-- [QuPath : créer un projet standard reproductible]({{ site.baseurl }}{% post_url 2026-02-19-qupath-creer-projet-standard %})
-- [QuPath : fondamentaux des annotations]({{ site.baseurl }}{% post_url 2026-02-19-qupath-annotations-fondamentaux %})
-- [Parcours recommandé]({{ site.baseurl }}/parcours-recommande/)
-- [Médias utiles]({{ site.baseurl }}/medias-utiles/)
-- [Page thématique : Visualisation]({{ site.baseurl }}/visualisation/)
+## Continuer
+
+- [Créer des annotations utiles]({{ site.baseurl }}{% post_url 2026-02-19-qupath-annotations-fondamentaux %})
+- [Exporter les mesures en CSV]({{ site.baseurl }}{% post_url 2026-02-19-qupath-mesures-export-csv %})

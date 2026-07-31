@@ -1,60 +1,51 @@
 ---
-title: "QuPath : exporter les mesures au format CSV"
+title: "Exporter les mesures QuPath en CSV"
 date: 2026-02-19T00:00:00-01:00
 categories:
   - Visualisation
 tags:
-  - QuPath
+  - Export
 toc: true
-toc_label: "Table des matières"
-toc_sticky : true
+toc_label: "Sommaire"
 layout: single
 ---
 
-# QuPath : exporter les mesures au format CSV
+Exportez les mesures seulement après avoir validé les détections sur une zone test. Un CSV propre contient les identifiants de lame, les classes et uniquement les mesures dont vous connaissez l'unité.
 
-## Objectif
-À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+## Préparer la table
 
-## Avant de commencer
-- QuPath 0.7 installé et lancé une première fois.
-- Au 3 mars 2026, la version officielle vérifiée est `v0.7.0-rc1`.
-- Une image test ouverte dans un projet QuPath.
-- Droits d'écriture sur le dossier de sortie.
+1. Ouvrez la lame et vérifiez la segmentation à fort grossissement.
+2. Ouvrez **Measure > Show detection measurements**.
+3. Contrôlez les colonnes essentielles: `Class`, aire, coordonnées et intensité éventuelle.
+4. Vérifiez dix lignes prises au hasard: une ligne doit correspondre à une cellule visible dans la lame.
+5. Exportez la table depuis la fenêtre de mesures, ou utilisez le script ci-dessous pour une sortie toujours au même emplacement.
 
-## Pas à pas
-1. Vérifier que la détection est terminée et gelée (pas de recalcul en parallèle).
-2. Choisir les mesures utiles (aire, circularité, intensité marqueur).
-3. Exporter en CSV depuis la table de mesures ou avec un script Groovy dédié.
-4. Inclure l'identifiant image et ROI dans le fichier exporté.
-5. Contrôler 10 lignes aléatoires dans un tableur avant import aval.
+Une surface n'a de sens que si la taille de pixel a été contrôlée lors de [l'import de la lame]({{ site.baseurl }}{% post_url 2026-02-19-qupath-importer-wsi %}).
 
-## À copier-coller
+## Exporter les détections de la lame courante
+
+Le script crée `exports/` dans le dossier du projet et y écrit un CSV pour la lame ouverte. Il refuse de s'exécuter si aucun projet n'est ouvert.
+
 ```groovy
-def out = buildFilePath(PROJECT_BASE_DIR, 'exports', 'detections.csv')
-mkdirs(new File(out).getParent())
-saveDetectionMeasurements(out)
-println 'Export: ' + out
+import qupath.lib.common.GeneralTools
+
+assert getProject() != null : 'Ouvrez un projet QuPath avant de lancer ce script.'
+
+def name = GeneralTools.getNameWithoutExtension(getCurrentServer().getMetadata().getName())
+def outputDir = buildFilePath(PROJECT_BASE_DIR, 'exports')
+new File(outputDir).mkdirs()
+def output = buildFilePath(outputDir, name + '_detections.csv')
+
+saveDetectionMeasurements(output)
+println "Mesures exportées: ${output}"
 ```
 
-## Vérifier que ça marche
-- La manipulation se lance sans erreur dans QuPath.
-- Le résultat attendu est visible sur l'image test.
-- Le projet se sauvegarde correctement.
+## Vérifier le fichier avant analyse statistique
 
-## En cas de problème
-- Redémarrer QuPath puis relancer sur une image plus petite.
-- Vérifier la version QuPath et l'extension installée.
+Ouvrez le CSV dans un tableur ou un script R/Python. Vérifiez que le séparateur est correctement interprété, que les nombres ne sont pas devenus du texte et que la colonne `Class` contient les classes attendues. Conservez le CSV brut, puis réalisez les filtres et les regroupements dans un fichier séparé.
 
-## Documentation officielle
-- [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
-- [Exporting results in QuPath](https://qupath.readthedocs.io/en/latest/docs/advanced/exporting_results.html)
-- [QuPath scripting API](https://qupath.readthedocs.io/en/latest/docs/scripting/overview.html)
+## Continuer
 
-## Articles liés
-- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
-- [QuPath : créer un projet standard reproductible]({{ site.baseurl }}{% post_url 2026-02-19-qupath-creer-projet-standard %})
-- [QuPath : importer des lames entières (WSI) correctement]({{ site.baseurl }}{% post_url 2026-02-19-qupath-importer-wsi %})
-- [Parcours recommandé]({{ site.baseurl }}/parcours-recommande/)
-- [Médias utiles]({{ site.baseurl }}/medias-utiles/)
-- [Page thématique : Visualisation]({{ site.baseurl }}/visualisation/)
+- [Organiser les classes d'objets]({{ site.baseurl }}{% post_url 2026-02-19-qupath-classes-objet %})
+- [Scripts QuPath utiles]({{ site.baseurl }}{% post_url 2025-01-01-Liste-Script_Qupath %})
+- [Documentation QuPath: exporter des résultats](https://qupath.readthedocs.io/en/latest/docs/advanced/exporting_results.html)

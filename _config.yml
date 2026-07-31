@@ -16,7 +16,7 @@
 title: PLAT-OSIA
 email: matthieu.tihy@aphp.fr
 description: >- # this means to ignore newlines until "baseurl:"
-  Plateforme de formation et de partage de tutoriels en histologie numérique.
+  Tutoriels pratiques pour utiliser QuPath en histologie numérique.
 github_username: MATBEO
 minimal_mistakes_skin: default
 search: true
@@ -63,7 +63,7 @@ plugins:
 author:
   name   : "Matthieu Tihy"
   avatar : "/assets/images/home.svg"
-  bio    : "Plateforme de tutoriels en histologie numérique."
+  bio    : "Tutoriels QuPath pour l'histologie numérique."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"

@@ -1,63 +1,56 @@
 ---
-title: "QuPath : organiser les classes d'objets"
+title: "Organiser les classes d'objets dans QuPath"
 date: 2026-02-19T00:00:00-01:00
 categories:
   - Visualisation
 tags:
   - QuPath
 toc: true
-toc_label: "Table des matières"
-toc_sticky : true
+toc_label: "Sommaire"
 layout: single
 ---
 
-# QuPath : organiser les classes d'objets
+Les classes permettent de distinguer les annotations et les détections. Une nomenclature courte et stable évite les erreurs lors des exports et des analyses groupées.
 
-## Objectif
-À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+## Définir une nomenclature avant l'analyse
 
-## Avant de commencer
-- QuPath 0.7 installé et lancé une première fois.
-- Au 3 mars 2026, la version officielle vérifiée est `v0.7.0-rc1`.
-- Une image test ouverte dans un projet QuPath.
-- Droits d'écriture sur le dossier de sortie.
+Écrivez la liste dans le `README.md` du projet avant d'annoter. Exemple pour une lame H&E:
 
-## Pas à pas
-1. Définir une arborescence de classes avant la détection (`Cell`, `Tumor`, `Immune`, etc.).
-2. Créer ces classes une fois puis les réutiliser sur toutes les lames du projet.
-3. Associer une couleur fixe par classe pour éviter les changements visuels en cours d'analyse.
-4. Éviter les classes redondantes (`Tumeur` et `Tumor`).
-5. Versionner la nomenclature dans un fichier `classes.md`.
+```text
+Tumor
+Stroma
+Immune
+Necrosis
+Artefact
+```
 
-En QuPath 0.7, gardez aussi un petit script de création de classes dans votre dépôt. N'utilisez pas d'ancien workflow enregistré.
+Choisissez une seule langue et une seule orthographe. `Tumor`, `Tumeur` et `tumor` sont trois classes différentes pour QuPath et pour un tableur.
 
-## À copier-coller
+## Appliquer les classes
+
+1. Sélectionnez un ou plusieurs objets dans la liste des objets ou dans la visionneuse.
+2. Dans le panneau **Classifications**, choisissez la classe voulue ou créez-la.
+3. Attribuez une couleur fixe, facile à distinguer sur vos lames.
+4. Vérifiez que la même classe est appliquée aux mêmes objets sur une deuxième lame.
+
+Utilisez une classe `Artefact` pour exclure explicitement une zone. Ne supprimez pas un artefact si son exclusion doit être traçable.
+
+## Créer les classes par script
+
+Le script suivant initialise les classes de la nomenclature. Il ne modifie aucun objet existant.
+
 ```groovy
-def classes = ['Tumor', 'Stroma', 'Immune', 'Artefact']
-classes.each { name ->
-    def pc = getPathClass(name)
-    println "Classe OK: " + pc
+['Tumor', 'Stroma', 'Immune', 'Necrosis', 'Artefact'].each { name ->
+    println "Classe disponible: ${getPathClass(name)}"
 }
 ```
 
-## Vérifier que ça marche
-- La manipulation se lance sans erreur dans QuPath.
-- Le résultat attendu est visible sur l'image test.
-- Le projet se sauvegarde correctement.
+## Contrôle avant export
 
-## En cas de problème
-- Redémarrer QuPath puis relancer sur une image plus petite.
-- Vérifier la version QuPath et l'extension installée.
+Dans la liste des objets, filtrez chaque classe une fois. Aucun objet sans classe ne doit rester si cette classe est nécessaire à votre analyse. Exportez ensuite les mesures ou le GeoJSON avec les classes visibles dans la table.
 
-## Documentation officielle
-- [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
-- [PathClass dans QuPath](https://qupath.readthedocs.io/en/latest/docs/scripting/overview.html)
-- [Bonnes pratiques de classification](https://qupath.readthedocs.io/en/latest/docs/starting/classification.html)
+## Continuer
 
-## Articles liés
-- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
-- [QuPath : créer un projet standard reproductible]({{ site.baseurl }}{% post_url 2026-02-19-qupath-creer-projet-standard %})
-- [QuPath : importer des lames entières (WSI) correctement]({{ site.baseurl }}{% post_url 2026-02-19-qupath-importer-wsi %})
-- [Parcours recommandé]({{ site.baseurl }}/parcours-recommande/)
-- [Médias utiles]({{ site.baseurl }}/medias-utiles/)
-- [Page thématique : Visualisation]({{ site.baseurl }}/visualisation/)
+- [Créer des annotations utiles]({{ site.baseurl }}{% post_url 2026-02-19-qupath-annotations-fondamentaux %})
+- [Exporter les mesures en CSV]({{ site.baseurl }}{% post_url 2026-02-19-qupath-mesures-export-csv %})
+- [Documentation QuPath: classification](https://qupath.readthedocs.io/en/latest/docs/starting/classification.html)

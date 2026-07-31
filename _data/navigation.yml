@@ -1,11 +1,11 @@
 main:
-  - title: "Parcours recommandé"
+  - title: "Démarrer"
+    url: /visualisation/
+  - title: "Segmenter"
+    url: /cell/
+  - title: "Automatiser"
+    url: /automatiser/
+  - title: "Parcours"
     url: /parcours-recommande/
-  - title: "Médias utiles"
+  - title: "Ressources"
     url: /medias-utiles/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
-  - title: "About"
-    url: /about/

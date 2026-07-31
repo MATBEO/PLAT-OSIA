@@ -1,79 +1,63 @@
 ---
-title: "Installation de QuPath 0.7"
+title: "Installer QuPath 0.7"
 date: 2025-01-01T00:00:00-01:00
 categories:
   - Visualisation
 tags:
   - QuPath
+  - Installation
+toc: true
+toc_label: "Sommaire"
 ---
 
-# Installation de QuPath 0.7
+Cette procédure installe la version stable **QuPath 0.7.0**, publiée le 2 mars 2026. Téléchargez toujours QuPath depuis la [publication officielle](https://github.com/qupath/qupath/releases/tag/v0.7.0).
 
-Au **3 mars 2026**, la source officielle que j'ai pu vérifier pour QuPath 0.7 est la **pré-release `v0.7.0-rc1` publiée le 17 février 2026** sur le GitHub officiel de QuPath.
+## Télécharger le bon fichier
 
-## Téléchargements officiels
+- Windows: [installateur `.msi`](https://github.com/qupath/qupath/releases/download/v0.7.0/QuPath-v0.7.0-Windows.msi). La [version portable `.zip`](https://github.com/qupath/qupath/releases/download/v0.7.0/QuPath-v0.7.0-Windows.zip) ne nécessite pas d'installation.
+- Mac Apple Silicon (M1, M2, M3, M4): [`.pkg` arm64](https://github.com/qupath/qupath/releases/download/v0.7.0/QuPath-v0.7.0-Mac-arm64.pkg).
+- Mac Intel: [`.pkg` x64](https://github.com/qupath/qupath/releases/download/v0.7.0/QuPath-v0.7.0-Mac-x64.pkg).
+- Linux 64 bits: [archive `.tar.xz`](https://github.com/qupath/qupath/releases/download/v0.7.0/QuPath-v0.7.0-Linux.tar.xz).
 
-- Release GitHub: [QuPath `v0.7.0-rc1`](https://github.com/qupath/qupath/releases/tag/v0.7.0-rc1)
-- Documentation d'installation: [Installation QuPath](https://qupath.readthedocs.io/en/latest/docs/intro/installation.html)
-- Documentation générale: [Documentation QuPath](https://qupath.readthedocs.io/en/latest/)
+Pour connaître le processeur d'un Mac: menu Apple, puis **A propos de ce Mac**. La ligne `Puce` indique Apple Silicon; la ligne `Processeur` indique Intel.
 
-### Liens directs
+## Windows
 
-- Windows: [QuPath-v0.7.0-rc1-Windows.zip](https://github.com/qupath/qupath/releases/download/v0.7.0-rc1/QuPath-v0.7.0-rc1-Windows.zip)
-- macOS Intel: [QuPath-v0.7.0-rc1-Mac-x64.pkg](https://github.com/qupath/qupath/releases/download/v0.7.0-rc1/QuPath-v0.7.0-rc1-Mac-x64.pkg)
-- macOS Apple Silicon: [QuPath-v0.7.0-rc1-Mac-arm64.pkg](https://github.com/qupath/qupath/releases/download/v0.7.0-rc1/QuPath-v0.7.0-rc1-Mac-arm64.pkg)
-- Linux: [QuPath-v0.7.0-rc1-Linux.tar.xz](https://github.com/qupath/qupath/releases/download/v0.7.0-rc1/QuPath-v0.7.0-rc1-Linux.tar.xz)
+1. Téléchargez `QuPath-v0.7.0-Windows.msi` et ouvrez-le.
+2. Conservez le dossier proposé, puis terminez l'installation.
+3. Lancez **QuPath** depuis le menu Démarrer.
 
-## Installation Windows
+Pour la version portable, décompressez le `.zip` dans un dossier où vous avez les droits d'écriture, par exemple `C:\Applications\QuPath`, puis lancez `QuPath.exe`. Ne lancez pas QuPath directement depuis le dossier Téléchargements.
 
-1. Téléchargez `QuPath-v0.7.0-rc1-Windows.zip`.
-2. Décompressez l'archive dans un dossier simple, par exemple `C:\QuPath`.
-3. Ouvrez le dossier extrait.
-4. Lancez `QuPath-v0.7.0-rc1.exe`.
+## macOS
 
-## Installation macOS
+1. Téléchargez le paquet adapté à votre processeur.
+2. Ouvrez le fichier `.pkg` et suivez l'installateur.
+3. Lancez QuPath depuis **Applications**.
 
-1. Téléchargez le `.pkg` correspondant à votre machine:
-   - `Mac-x64.pkg` pour Intel
-   - `Mac-arm64.pkg` pour Apple Silicon
-2. Lancez l'installateur.
-3. Si macOS bloque l'ouverture:
-   - faites clic droit sur l'application
-   - choisissez `Ouvrir`
-   - confirmez l'ouverture
+Si macOS refuse l'ouverture, allez dans **Réglages Système > Confidentialité et sécurité**, puis choisissez **Ouvrir quand même**. Ne téléchargez pas une application depuis un site tiers pour contourner ce blocage.
 
-## Installation Linux
+## Linux
 
-1. Téléchargez `QuPath-v0.7.0-rc1-Linux.tar.xz`.
-2. Décompressez l'archive.
-3. Ouvrez un terminal dans le dossier extrait.
-4. Rendez exécutable le lanceur puis lancez QuPath:
+Dans un terminal, exécutez les commandes suivantes dans le dossier où l'archive a été téléchargée:
 
 ```bash
-tar -xf QuPath-v0.7.0-rc1-Linux.tar.xz
-cd QuPath-*/bin
+tar -xf QuPath-v0.7.0-Linux.tar.xz
+cd QuPath-v0.7.0/bin
 chmod u+x QuPath
 ./QuPath
 ```
 
-## Vérifier l'installation
+## Vérifier avant de commencer une analyse
 
-Dans QuPath:
+1. Dans QuPath, ouvrez **Help > About QuPath**: la version doit être `0.7.0`.
+2. Créez un projet avec **File > Project > Create project...**.
+3. Ajoutez une image test, dessinez une annotation, puis fermez et rouvrez le projet.
 
-1. Ouvrez `Help > About`.
-2. Vérifiez que la version affichée est bien `0.7.0-rc1`.
-3. Ouvrez une image test.
-4. Créez une annotation simple.
-5. Sauvegardez un projet.
+Si vous aviez une ancienne installation, mettez aussi les extensions à jour avec **Extensions > Manage extensions**. Gardez une copie du projet avant de l'ouvrir avec une nouvelle version.
 
-## Important
+## Continuer
 
-- `0.7.0-rc1` est une **pré-release**.
-- Sauvegardez vos projets avant de les ouvrir avec cette version.
-- Vérifiez la compatibilité de vos extensions QuPath avant migration.
-
-## Voir aussi
-
-- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
-- [Liste des extensions QuPath]({{ site.baseurl }}{% post_url 2025-01-01-Liste_extension_QuPath %})
-- [Comment détecter des cellules dans QuPath]({{ site.baseurl }}{% post_url 2025-01-01-InstaSeg %})
+- [Créer un projet QuPath reproductible]({{ site.baseurl }}{% post_url 2026-02-19-qupath-creer-projet-standard %})
+- [Importer une lame entière et contrôler son échelle]({{ site.baseurl }}{% post_url 2026-02-19-qupath-importer-wsi %})
+- [Segmenter des cellules avec InstanSeg]({{ site.baseurl }}{% post_url 2025-01-01-InstaSeg %})

@@ -1,109 +1,82 @@
 ---
-title: "Scripts QuPath"
+title: "Scripts QuPath utiles"
 date: 2025-01-01T00:00:00-01:00
 categories:
   - Visualisation
 tags:
-  - QuPath
+  - Script
 layout: single
 toc: true
-toc_label: "Table des matières"
+toc_label: "Sommaire"
 classes: wide
 ---
 
-# Extraction GeoJSON
+Ces scripts sont prévus pour QuPath 0.7. Ouvrez **Automate > Show script editor**, collez un script, puis enregistrez-le dans le dossier du projet. Les anciens workflows enregistrés ne sont plus une solution fiable pour rejouer une analyse.
 
-Scripts relus pour **QuPath 0.7**.
-Point important : les anciens workflows enregistrés ne sont plus supportés en 0.7. Gardez vos scripts dans **Automate > Show script editor** puis sauvegardez-les dans votre dépôt.
+## Exporter toutes les annotations du projet en GeoJSON
+
+Le script crée `exports/annotations/` dans le dossier du projet et produit un fichier GeoJSON par lame. Ouvrez un projet avant de l'exécuter.
 
 ```groovy
 import qupath.lib.common.GeneralTools
 
-// Define output where to save annotations
-def pathOutput = buildFilePath(PROJECT_BASE_DIR, 'exports', 'annotations')
-print pathOutput
-mkdirs(pathOutput)
-
-// To get all image of the project -> in order to run the scripts on all function (if no project: just getCurrentImageData() and remove the loop)
 def project = getProject()
 assert project != null : 'Ouvrez un projet QuPath avant de lancer ce script.'
 
-for (img in project.getImageList()) {
-// Get image data, hierarchy and annotations for given image
-def imageData = img.readImageData()
-def hierarchy = imageData.getHierarchy()
-def annotations = hierarchy.getAnnotationObjects()
+def outputDir = buildFilePath(PROJECT_BASE_DIR, 'exports', 'annotations')
+new File(outputDir).mkdirs()
 
-
-// name of the output file to save
-def name = GeneralTools.getNameWithoutExtension(imageData.getServer().getMetadata().getName())
-def fileOutput = buildFilePath(pathOutput, name + '.geojson')
-println "save annotation: " + fileOutput
-exportObjectsToGeoJson(annotations, fileOutput, 'FEATURE_COLLECTION')
+for (entry in project.getImageList()) {
+    def imageData = entry.readImageData()
+    def annotations = imageData.getHierarchy().getAnnotationObjects()
+    def name = GeneralTools.getNameWithoutExtension(imageData.getServer().getMetadata().getName())
+    def output = buildFilePath(outputDir, name + '.geojson')
+    exportObjectsToGeoJson(annotations, output, 'FEATURE_COLLECTION')
+    println "Exporté: ${output}"
 }
-println 'done'
 ```
 
-# Détection vers annotation
+## Transformer les détections en annotations
+
+Utilisez ce script seulement si vous voulez éditer manuellement les objets détectés. Il supprime les détections d'origine.
+
 ```groovy
 import qupath.lib.objects.PathObjects
 
 def detections = getDetectionObjects()
-def newAnnotations = detections.collect {
+def annotations = detections.collect {
     PathObjects.createAnnotationObject(it.getROI(), it.getPathClass())
 }
 removeObjects(detections, true)
-addObjects(newAnnotations)
+addObjects(annotations)
+fireHierarchyUpdate()
 ```
 
-# Annotation vers détection
+## Transformer les annotations en détections
+
 ```groovy
 import qupath.lib.objects.PathObjects
 
 def annotations = getAnnotationObjects()
-def newDetections = annotations.collect {
+def detections = annotations.collect {
     PathObjects.createDetectionObject(it.getROI(), it.getPathClass())
 }
-// removeObjects(annotations, true) // uncomment to remove original annotations
-addObjects(newDetections)
+addObjects(detections)
+fireHierarchyUpdate()
 ```
 
-# TMA To Annotation
+## Définir le type d'image et la calibration
+
+Renseignez la taille de pixel réellement fournie par le scanner. Ne copiez pas `0.262100` sans la vérifier dans les métadonnées de votre lame.
+
 ```groovy
-import qupath.lib.objects.PathObjects
-
-// Récupérer tous les TMA cores
-def tmaCores = getTMACoreList()
-
-def newAnnotations = []
-
-tmaCores.each { core ->
-    def roi = core.getROI()
-    def cls
-
-    // Si le core est marqué comme manquant
-    if (core.isMissing()) {
-        cls = getPathClass('no Tumor')
-    } else {
-        cls = getPathClass('Tumor')
-    }
-
-    def ann = PathObjects.createAnnotationObject(roi, cls)
-    newAnnotations << ann
-}
-
-// Supprimer les TMA cores originaux
-removeTMAGrid()
-
-// Ajouter les nouvelles annotations
-addObjects(newAnnotations)
-
-print "Transformé ${tmaCores.size()} TMA cores en annotations avec classification Tumor / no Tumor."
-```
-
-# Définir le type d'image et l'échelle
-```groovy
-setImageType('BRIGHTFIELD_H_E');
-setColorDeconvolutionStains('{"Name" : "H&E default", "Stain 1" : "Hematoxylin", "Values 1" : "0.65111 0.70119 0.29049", "Stain 2" : "Eosin", "Values 2" : "0.2159 0.8012 0.5581", "Background" : " 255 255 255"}');
+setImageType('BRIGHTFIELD_H_E')
+setColorDeconvolutionStains('{"Name":"H&E default","Stain 1":"Hematoxylin","Values 1":"0.65111 0.70119 0.29049","Stain 2":"Eosin","Values 2":"0.2159 0.8012 0.5581","Background":"255 255 255"}')
 setPixelSizeMicrons(0.262100, 0.262100)
 ```
+
+## Continuer
+
+- [Créer un projet QuPath reproductible]({{ site.baseurl }}{% post_url 2026-02-19-qupath-creer-projet-standard %})
+- [Exporter des mesures en CSV]({{ site.baseurl }}{% post_url 2026-02-19-qupath-mesures-export-csv %})
+- [Exporter un TMA en GeoJSON]({{ site.baseurl }}{% post_url 2025-01-01-exporter_TMA-en-geosjon %})

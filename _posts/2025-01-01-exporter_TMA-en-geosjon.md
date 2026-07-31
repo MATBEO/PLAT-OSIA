@@ -1,64 +1,51 @@
 ---
-title: "Exporter des TMA de QuPath en GeoJSON puis les réimporter"
+title: "Exporter un TMA QuPath en GeoJSON"
 date: 2025-01-01T00:00:00-01:00
 categories:
   - Visualisation
 tags:
-  - QuPath
+  - Export
 toc: true
-toc_sticky : true
+toc_label: "Sommaire"
 layout: single
 ---
 
-# Définir la zone d'intérêt sur QuPath
+Cette procédure convertit les cores d'une grille TMA en annotations, puis exporte ces annotations en GeoJSON. Faites une copie du projet: le script supprime la grille TMA après la conversion.
 
-Ouvrez QuPath et créez les TMA.
-Pour cela :
-Allez dans **TMA → TMA dearray**
-Précisez le nombre de lignes et de colonnes, ainsi que la taille des cores.
+## Créer ou vérifier la grille TMA
 
-Déplacez les cores si nécessaire.
+1. Ouvrez une lame dans un projet QuPath 0.7.
+2. Lancez **TMA > TMA dearray**.
+3. Indiquez le nombre de lignes, de colonnes et le diamètre des cores.
+4. Ajustez chaque core et marquez les cores absents dans la grille.
+5. Enregistrez le projet avant la conversion.
 
-Au **3 mars 2026**, la version QuPath 0.7 que j'ai pu vérifier est **`v0.7.0-rc1`**.
-Pour QuPath 0.7, gardez ce script dans **Automate → Show script editor**. N'utilisez pas d'ancien workflow enregistré.
+## Convertir les cores en annotations
 
-# Lancer le script en Groovy
+Ouvrez **Automate > Show script editor**, puis lancez ce script. Les cores présents reçoivent la classe `Tumor`; les cores marqués absents reçoivent `no Tumor`. Adaptez ces deux noms à votre nomenclature avant l'exécution.
 
 ```groovy
 import qupath.lib.objects.PathObjects
 
-// Récupérer tous les TMA cores
-def tmaCores = getTMACoreList()
+def cores = getTMACoreList()
+assert !cores.isEmpty() : 'Aucune grille TMA trouvée dans cette lame.'
 
-def newAnnotations = []
-
-tmaCores.each { core ->
-    def roi = core.getROI()
-    def cls
-
-    // Si le core est marqué comme manquant
-    if (core.isMissing()) {
-        cls = getPathClass('no Tumor')
-    } else {
-        cls = getPathClass('Tumor')
-    }
-
-    def ann = PathObjects.createAnnotationObject(roi, cls)
-    newAnnotations << ann
+def annotations = cores.collect { core ->
+    def pathClass = core.isMissing() ? getPathClass('no Tumor') : getPathClass('Tumor')
+    PathObjects.createAnnotationObject(core.getROI(), pathClass)
 }
 
-// Supprimer les TMA cores originaux
 removeTMAGrid()
-
-// Ajouter les nouvelles annotations
-addObjects(newAnnotations)
-
-print "Transformé ${tmaCores.size()} TMA cores en annotations avec classification Tumor / no Tumor."
+addObjects(annotations)
+fireHierarchyUpdate()
+println "${annotations.size()} cores convertis en annotations."
 ```
 
-# Sauvegarder le GeoJSON
+## Exporter le GeoJSON
 
-Sauvegardez votre objet GeoJSON.
-Dans QuPath 0.7, utilisez **File → Export objects as GeoJSON...**
-Si ce menu n'apparaît pas, sélectionnez les annotations dans la liste des objets puis exportez-les en GeoJSON.
-Sélectionnez : **All objects**.
+1. Enregistrez le projet.
+2. Choisissez **File > Export objects as GeoJSON...**.
+3. Sélectionnez **All objects** et enregistrez, par exemple, `TMA_001.geojson` dans `exports/`.
+4. Ouvrez le fichier dans un éditeur de texte: il doit contenir un tableau `features` avec un objet par core.
+
+Pour automatiser cet export sur tout le projet, utilisez le [script d'export GeoJSON]({{ site.baseurl }}{% post_url 2025-01-01-Liste-Script_Qupath %}).

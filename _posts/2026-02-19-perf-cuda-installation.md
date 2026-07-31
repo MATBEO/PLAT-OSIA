@@ -1,89 +1,77 @@
 ---
-title: "Performance : installer CUDA proprement"
+title: "Installer CUDA pour les extensions QuPath"
 date: 2026-02-19T00:00:00-01:00
 categories:
   - Visualisation
 tags:
-  - Performance
+  - GPU
 toc: true
-toc_label: "Table des matières"
-toc_sticky : true
+toc_label: "Sommaire"
+toc_sticky: true
 layout: single
 ---
 
-# Performance : installer CUDA proprement
+CUDA concerne uniquement les cartes **NVIDIA**. QuPath fonctionne sans CUDA; installez-le seulement si une extension de deep learning, comme InstanSeg, doit utiliser votre GPU. Les Mac Apple Silicon utilisent MPS, pas CUDA.
 
-## Objectif
-À la fin, vous aurez reproduit cette étape de bout en bout sur un cas test.
+La procédure ci-dessous vise CUDA 13.3. Vérifiez d'abord que votre carte est [compatible CUDA](https://developer.nvidia.com/cuda-gpus).
 
-## Avant de commencer
-- Machine compatible avec la procédure.
-- Droits administrateur si installation système.
-- Un cas test pour valider avant production.
+## 1. Installer et tester le pilote NVIDIA
 
-## Pas à pas
-1. Installer le pilote NVIDIA depuis la page officielle des pilotes.
-2. Télécharger CUDA Toolkit depuis la page NVIDIA officielle.
-3. Installer CUDA puis redémarrer la machine.
-4. Vérifier `nvidia-smi` et `nvcc --version`.
-5. Tester l'accès CUDA depuis Python (si pipeline Python).
+1. Téléchargez le pilote adapté à votre carte depuis [NVIDIA Driver Downloads](https://www.nvidia.com/download/index.aspx).
+2. Installez-le, puis redémarrez l'ordinateur.
+3. Ouvrez un terminal (ou PowerShell sous Windows) et lancez:
 
-## À copier-coller
 ```bash
-# Téléchargements officiels
-# Driver: https://www.nvidia.com/download/index.aspx
-# CUDA:   https://developer.nvidia.com/cuda-downloads
-# Archive: https://developer.nvidia.com/cuda-toolkit-archive
+nvidia-smi
+```
 
-# Windows (PowerShell)
-# 1) Télécharger le .exe local depuis cuda-downloads
-# 2) Lancer l'installateur en administrateur
-# 3) Vérifier:
-# nvidia-smi
-# nvcc --version
-# where nvcc
+La commande doit afficher le modèle de la carte et une version de pilote. Si elle échoue, n'installez pas encore CUDA Toolkit: corrigez d'abord le pilote.
 
-# Ubuntu 24.04 (APT)
+## 2. Windows
+
+1. Ouvrez [CUDA Downloads](https://developer.nvidia.com/cuda-downloads), puis choisissez **Windows > x86_64 > version de Windows > exe (local)**.
+2. Téléchargez CUDA 13.3 et lancez l'installateur en tant qu'administrateur.
+3. Gardez les composants Toolkit proposés. Le pilote NVIDIA est déjà installé à l'étape précédente.
+4. Fermez puis rouvrez PowerShell et vérifiez:
+
+```powershell
+nvidia-smi
+nvcc --version
+where.exe nvcc
+```
+
+`nvcc --version` doit afficher `release 13.3`. Si `where.exe nvcc` ne retourne rien, rouvrez une session Windows avant de modifier manuellement la variable `PATH`.
+
+## 3. Ubuntu 24.04
+
+Ces commandes installent le Toolkit 13.3 sans remplacer votre environnement par une installation générique. Elles supposent qu'un pilote NVIDIA fonctionnel est déjà présent.
+
+```bash
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt update
-sudo apt install -y cuda-toolkit-13-1
-sudo reboot
-
-# Vérification
+sudo apt install -y cuda-toolkit-13-3
+echo 'export PATH=/usr/local/cuda-13.3/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
 nvidia-smi
 nvcc --version
-
-# Vérification Python (optionnel)
-python - <<'PY'
-import torch
-print('torch:', torch.__version__)
-print('cuda available:', torch.cuda.is_available())
-if torch.cuda.is_available():
-    print('device:', torch.cuda.get_device_name(0))
-PY
 ```
 
-## Vérifier que ça marche
-- Les commandes de contrôle répondent correctement.
-- Le gain (ou la stabilité) est mesuré sur cas test.
-- Les versions logicielles sont tracées.
+Sur une autre distribution Linux, sélectionnez la distribution exacte sur [CUDA Downloads](https://developer.nvidia.com/cuda-downloads). N'utilisez pas les commandes Ubuntu sur Debian, Fedora ou WSL sans adapter le dépôt.
+
+## 4. Vérifier dans QuPath
+
+Dans **Extensions > Manage extensions**, vérifiez que **Deep Java Library** et **InstanSeg** sont installés. Lancez d'abord InstanSeg sur une petite annotation avec `cpu`, puis choisissez le périphérique GPU dans l'interface si l'extension le propose. Un `nvidia-smi` valide prouve que le système voit le GPU; il ne prouve pas à lui seul que l'extension utilise CUDA.
 
 ## En cas de problème
-- Vérifier compatibilité driver/toolkit.
-- Tester les commandes de diagnostic système.
 
-## Documentation officielle
-- [CUDA downloads](https://developer.nvidia.com/cuda-downloads)
-- [CUDA toolkit archive](https://developer.nvidia.com/cuda-toolkit-archive)
-- [NVIDIA driver downloads](https://www.nvidia.com/download/index.aspx)
-- [Guide installation CUDA Linux](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
-- [Guide installation CUDA Windows](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html)
+- `nvidia-smi` introuvable: pilote NVIDIA absent ou non chargé.
+- `nvcc` introuvable: Toolkit absent ou terminal ouvert avant l'installation.
+- mémoire insuffisante pendant une segmentation: réduisez la taille de tuile ou testez une annotation plus petite.
+- Mac Apple Silicon: utilisez `mps` ou `cpu`, sans installer CUDA.
 
-## Articles liés
-- [QuPath : installation propre et vérification initiale]({{ site.baseurl }}{% post_url 2026-02-19-qupath-installation-propre %})
-- [Performance : vérifier CUDA côté système]({{ site.baseurl }}{% post_url 2026-02-19-perf-cuda-verification %})
-- [Performance : choisir CPU/GPU selon la tâche]({{ site.baseurl }}{% post_url 2026-02-19-perf-qupath-gpu-choix %})
-- [Parcours recommandé]({{ site.baseurl }}/parcours-recommande/)
-- [Médias utiles]({{ site.baseurl }}/medias-utiles/)
-- [Page thématique : Visualisation]({{ site.baseurl }}/visualisation/)
+## Continuer
+
+- [Segmenter des cellules avec InstanSeg]({{ site.baseurl }}{% post_url 2025-01-01-InstaSeg %})
+- [Documentation CUDA 13.3 pour Linux](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/)
+- [Documentation CUDA pour Windows](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/)

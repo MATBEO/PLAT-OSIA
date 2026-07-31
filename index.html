@@ -1,202 +1,65 @@
 ---
-title : " "
+title: false
 layout: single
-header:
-  overlay_image: "/assets/images/banner.svg"
+classes: wide
 ---
 
-<!-- CSS pour l'effet gris/couleur, la disposition responsive et le contrôle de la taille des images -->
-<style>
-  :root {
-    /* Variables pour ajuster la taille des images */
-    --discover-card-width: 180px;
-    --discover-img-size: 130px;
-  }
+<div class="guide-home">
+  <section class="guide-hero">
+    <p class="guide-kicker">Tutoriels pratiques en pathologie numérique</p>
+    <h1>Apprendre QuPath, étape par étape.</h1>
+    <p>Des procédures courtes et vérifiables pour installer QuPath, analyser une lame, segmenter des cellules et exporter vos résultats.</p>
+    <div class="guide-actions">
+      <a class="guide-button guide-button--primary" href="{{ site.baseurl }}{% post_url 2025-01-01-Installation-de-QuPath %}">Commencer avec QuPath</a>
+      <a class="guide-button guide-button--secondary" href="{{ site.baseurl }}/parcours-recommande/">Voir le parcours complet</a>
+    </div>
+  </section>
 
-  /* Chaque image et son texte */
-  .discover-images a {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      width: var(--discover-card-width);
-      flex: 0 0 var(--discover-card-width);
-}
-  /* Pour les écrans moyens */
-  @media (max-width: 1080px) {
-    .discover-images a {
-      flex: 1 1 calc(33.33% - 10px);  /* Trois images par ligne */
-      max-width: calc(33.33% - 10px);
-    }
-  }
-  /* Pour les écrans moyens */
-  @media (max-width: 768px) {
-    .discover-images a {
-      flex: 1 1 calc(50% - 20px);  /* Deux images par ligne */
-      max-width: calc(50% - 20px);
-    }
-  }
+  <section class="guide-section" aria-labelledby="guide-start">
+    <div class="guide-section__heading">
+      <p class="guide-kicker">Le chemin le plus simple</p>
+      <h2 id="guide-start">Trois étapes pour être autonome</h2>
+    </div>
+    <div class="guide-grid guide-grid--steps">
+      <article class="guide-card guide-card--start">
+        <span>01</span>
+        <h3>Préparer le projet</h3>
+        <p>Installez QuPath, créez un projet propre puis contrôlez la calibration de vos lames.</p>
+        <a href="{{ site.baseurl }}/visualisation/">Démarrer avec QuPath <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="guide-card guide-card--analyse">
+        <span>02</span>
+        <h3>Segmenter les cellules</h3>
+        <p>Testez InstanSeg sur une petite zone, puis validez le résultat avant de traiter une lame entière.</p>
+        <a href="{{ site.baseurl }}/cell/">Voir la segmentation <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="guide-card guide-card--export">
+        <span>03</span>
+        <h3>Exporter et automatiser</h3>
+        <p>Exportez les mesures, les annotations et les images sans perdre la traçabilité.</p>
+        <a href="{{ site.baseurl }}/automatiser/">Voir les scripts et exports <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </section>
 
-  /* Pour les petits écrans */
-  @media (max-width: 480px) {
-    .discover-images a {
-      flex: 1 1 100%;  /* Une image par ligne */
-      max-width: 100%;
-    }
-  }
-
-  /* Style pour les images circulaires */
-  .discover-images img {
-    width: var(--discover-img-size);
-    height: var(--discover-img-size);
-    display: block;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-    border-radius: 50%;       /* Rend l'image circulaire */
-    object-fit: cover;        /* Pour recadrer l'image au besoin */
-  }
-
-  /* Au survol, l'image reprend ses couleurs */
-  .discover-images img:hover {
-    filter: grayscale(0%);
-  }
-
-/* Positionne l'overlay au-dessus de toutes les images */
-.overlay-text {
-    position: absolute;
-    top: -40px; /* Déplace le texte vers le haut */
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    text-align: center;
-    width: max-content;
-    max-width: 250px; /* Ajuste la largeur pour éviter trop d'étalement */
-    z-index: 10; /* Assure que l'overlay est au-dessus des autres éléments */
-}
-
-/* Affichage du texte overlay au survol */
-.discover-images a:hover .overlay-text {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Bandeau de texte dynamique au-dessus des images */
-.overlay-banner {
-    width: 100%;
-    text-align: center;
-    background: #d3d3d3; /* Gris clair */
-    background: transparent; /* transparent */
-    color: black; /* Texte en noir */
-    padding: 15px;
-    font-size: 1.1em;
-    font-weight: normal; /* Suppression du bold */
-    border-radius: 8px;
-    margin-bottom: 20px; /* Espacement entre le bandeau et les images */
-    height: 100px; /* Hauteur fixe */
-    display: flex;
-    align-items: center; /* Centre le texte verticalement */
-    justify-content: center; /* Centre le texte horizontalement */
-    transition: opacity 0.3s ease;
-    box-sizing: border-box; /* Empêche le padding d'augmenter la hauteur */
-}
-
-/* Conteneur des images */
-.discover-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* Images en gris par défaut */
-.discover-images img {
-    width: var(--discover-img-size);
-    height: var(--discover-img-size);
-    display: block;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* Effet couleur au survol */
-.discover-images a:hover img {
-    filter: grayscale(0%);
-}
-
-/* Texte sous les images */
-.caption-container {
-    text-align: center;
-    margin-top: 8px;
-}
-
-/* Style du figcaption */
-.caption-container figcaption {
-    font-weight: bold;
-    font-size: 1.1em;
-    font-family: sans-serif;
-}
-
-</style>
-
-<!-- Bandeau de texte dynamique -->
-<div class="overlay-banner">
-  <p id="banner-text">Passez la souris sur une image pour voir la description</p>
+  <section class="guide-section guide-section--compact" aria-labelledby="guide-references">
+    <div class="guide-section__heading">
+      <p class="guide-kicker">À garder sous la main</p>
+      <h2 id="guide-references">Les ressources utiles</h2>
+    </div>
+    <div class="guide-grid guide-grid--resources">
+      <a class="guide-resource" href="{{ site.baseurl }}{% post_url 2025-01-01-InstaSeg %}">
+        <strong>InstanSeg</strong>
+        <span>Segmenter cellules et noyaux dans QuPath.</span>
+      </a>
+      <a class="guide-resource" href="{{ site.baseurl }}{% post_url 2025-01-01-Liste-Script_Qupath %}">
+        <strong>Scripts QuPath</strong>
+        <span>Automatiser les actions répétitives.</span>
+      </a>
+      <a class="guide-resource" href="{{ site.baseurl }}/medias-utiles/">
+        <strong>Documentation</strong>
+        <span>Liens officiels et ressources sélectionnées.</span>
+      </a>
+    </div>
+  </section>
 </div>
-
-<!-- Section des images "Découvrir" -->
-<div class="discover-images">
-  <a href="{{ site.baseurl }}/align/" data-text="Outils d'alignement entre plusieurs lames sériées et projection d'annotations interlames">
-    <img src="{{ site.baseurl }}/assets/images/align.svg">
-    <div class="caption-container"><figcaption>Alignement</figcaption></div>
-  </a>
-  
-  <a href="{{ site.baseurl }}/cell/" data-text="Outils afin de détecter des cellules et mesurer des variables d'intérêt">
-    <img src="{{ site.baseurl }}/assets/images/cell.svg">
-    <div class="caption-container"><figcaption>Cellularité</figcaption></div>
-  </a>
-  
-  <a href="{{ site.baseurl }}/cluster/" data-text="Outils de clusterisation de tissus ou de cellules">
-    <img src="{{ site.baseurl }}/assets/images/cluster.svg">
-    <div class="caption-container"><figcaption>Cluster</figcaption></div>
-  </a>
-  
-  <a href="{{ site.baseurl }}/multiplex/" data-text="Outils pour analyser des lames de multiplex">
-    <img src="{{ site.baseurl }}/assets/images/multiplex.svg">
-    <div class="caption-container"><figcaption>Multiplex</figcaption></div>
-  </a>
-  
-  <a href="{{ site.baseurl }}/pattern/" data-text="Détection et classification de patterns cellulaires ou tissulaires">
-    <img src="{{ site.baseurl }}/assets/images/pattern.svg">
-    <div class="caption-container"><figcaption>Pattern</figcaption></div>
-  </a>
-  
-  <a href="{{ site.baseurl }}/visualisation/" data-text="Outils pour la visualisation">
-    <img src="{{ site.baseurl }}/assets/images/visualisation.svg">
-    <div class="caption-container"><figcaption>Visualisation</figcaption></div>
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-      const bannerText = document.getElementById("banner-text");
-      const images = document.querySelectorAll(".discover-images a");
-
-      images.forEach(image => {
-          image.addEventListener("mouseover", function () {
-              bannerText.textContent = this.getAttribute("data-text");
-          });
-
-          image.addEventListener("mouseout", function () {
-              bannerText.textContent = "Passez la souris sur une image pour voir la description";
-          });
-      });
-  });
-</script>
