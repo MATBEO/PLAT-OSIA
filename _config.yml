@@ -22,6 +22,7 @@ minimal_mistakes_skin: default
 search: true
 baseurl: "/PLAT-OSIA"
 url: "https://matbeo.github.io"
+css_version: "20260731"
 
 # Build settings
 markdown: kramdown

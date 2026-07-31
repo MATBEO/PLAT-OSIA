@@ -5,6 +5,8 @@ layout: single
 classes: wide
 ---
 
+{% include guide-fallback.html %}
+
 <div class="guide-page">
   <p class="guide-kicker">Segmentation</p>
   <p class="guide-page__intro">Commencez toujours sur une petite annotation. Vérifiez les contours, les objets manqués et les faux positifs avant d'appliquer le même réglage à un lot entier.</p>

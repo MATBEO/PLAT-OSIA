@@ -5,6 +5,8 @@ layout: single
 classes: wide
 ---
 
+{% include guide-fallback.html %}
+
 <div class="guide-page">
   <p class="guide-kicker">Scripts et sorties</p>
   <p class="guide-page__intro">Ces tutoriels servent quand la manipulation fonctionne déjà sur une lame. Gardez les scripts avec votre projet afin de pouvoir refaire exactement la même analyse.</p>

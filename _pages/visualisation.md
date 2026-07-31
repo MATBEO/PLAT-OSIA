@@ -5,6 +5,8 @@ layout: single
 classes: wide
 ---
 
+{% include guide-fallback.html %}
+
 <div class="guide-page">
   <p class="guide-kicker">Les bases</p>
   <p class="guide-page__intro">Suivez ces guides dans l'ordre. À la fin, vous aurez un projet QuPath propre, une lame importée correctement et des annotations prêtes pour l'analyse.</p>

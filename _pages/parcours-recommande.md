@@ -5,6 +5,8 @@ layout: single
 classes: wide
 ---
 
+{% include guide-fallback.html %}
+
 <div class="guide-page">
   <p class="guide-kicker">Le parcours complet</p>
   <p class="guide-page__intro">Suivez l'ordre ci-dessous. Ne passez à l'étape suivante que lorsque la vérification indiquée dans l'article précédent est réussie.</p>
